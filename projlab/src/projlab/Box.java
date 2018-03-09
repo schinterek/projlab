@@ -1,6 +1,7 @@
 package projlab;
 
 public class Box {
-	// ez egy box
+	private int numofboxes;
+	// game
 
 }
