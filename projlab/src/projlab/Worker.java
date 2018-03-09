@@ -1,5 +1,5 @@
 package projlab;
 
-public class Box {
+public class Worker {
 
 }
