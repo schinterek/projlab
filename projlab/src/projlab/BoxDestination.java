@@ -1,6 +1,6 @@
 package projlab;
 
-public class BoxDestination extends Cell implements Visitor {
+public class BoxDestination extends Floor implements Visitor {
 	// Az a mezõ, ahova a Box-okat kell eljuttatni.
 	
 	public boolean accept(Movable m) {
