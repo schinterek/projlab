@@ -1,43 +1,43 @@
 package projlab;
-
+///
 public class Box extends Movable implements Visitor{
-	// Egy dobozt reprezentál, amit a helyére kell tolni.
+	// Egy dobozt reprezentï¿½l, amit a helyï¿½re kell tolni.
 
 	public boolean accept(Movable m){
-		// Ha egy Movable el akarja tolni a Boxot, akkor eldönti,
-		// hogy el tud-e tolódni, ezzel tér vissza. */
+		// Ha egy Movable el akarja tolni a Boxot, akkor eldï¿½nti,
+		// hogy el tud-e tolï¿½dni, ezzel tï¿½r vissza. */
 		
 		// TODO
 		return false;
 	}
 	
 	public boolean acceptVisitor(Visitor v){
-		// Azon a Box-on hívjuk meg, amelyikkel el akarjuk tolni
-		// a paraméterként kapott Visitor-t.
-		// Visszaadja, hogy sikerült-e az eltolás.
+		// Azon a Box-on hï¿½vjuk meg, amelyikkel el akarjuk tolni
+		// a paramï¿½terkï¿½nt kapott Visitor-t.
+		// Visszaadja, hogy sikerï¿½lt-e az eltolï¿½s.
 		
 		// TODO
 		return false;
 	}
 	
 	public void setSwitch(){
-		// Ha a Box kapcsolóra tolódik, ez a függvény kapcsolja
-		// be a kapcsolót.
+		// Ha a Box kapcsolï¿½ra tolï¿½dik, ez a fï¿½ggvï¿½ny kapcsolja
+		// be a kapcsolï¿½t.
 		
 		// TODO
 	}
 	
 	public boolean pushWorker(){
-		// EZT NEM VÁGOM, doksiba csak annyi van írva, hogy:
-		// visszatér true-val.
+		// EZT NEM Vï¿½GOM, doksiba csak annyi van ï¿½rva, hogy:
+		// visszatï¿½r true-val.
 		
 		// TODO
 		return true;
 	}
 	
 	public void destinationReached(){
-		// Ha a láda eléri a számára kijelölt pozíciót a padlón,
-		// eltûnik.
+		// Ha a lï¿½da elï¿½ri a szï¿½mï¿½ra kijelï¿½lt pozï¿½ciï¿½t a padlï¿½n,
+		// eltï¿½nik.
 		
 		// TODO
 	}
