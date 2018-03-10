@@ -3,11 +3,16 @@ package projlab;
 public class BoxDestination extends Cell implements Visitor {
 	// Az a mezõ, ahova a Box-okat kell eljuttatni.
 	
-	public void accept(Movable m) {
+	public boolean accept(Movable m) {
 		// Ha a megfelelõ Box-ot tolják rá, akkor
 		// azt eltünteti a pályáról.
 		
+		// !!!
+		// Visitorban az accpet() boolean-nek van írva,
+		// de a doksiban ez a függvény void volt.
+		
 		// TODO
+		return true;
 	}
 	
 	@Override

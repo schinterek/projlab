@@ -3,9 +3,10 @@ package projlab;
 public abstract class Cell implements Visitor {
 	// Egy mezõt reprezentáló absztrakt osztály.
 	
-	public void accept(Movable m){
+	public boolean accept(Movable m){
 		// Üres függvény, ebben az osztályban úgysem
 		// csinál semmit.
+		return true;
 	}
 	
 	public boolean canArrive(Movable toArrive, Direction dir, Player src){
