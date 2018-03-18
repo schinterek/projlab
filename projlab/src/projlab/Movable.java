@@ -3,6 +3,7 @@ package projlab;
 public abstract class Movable {
 	
 	protected Floor container;
+	protected Movable pusher;
 	
 	public void acceptCell(Cell v) {
 		v.accept(this);
@@ -49,6 +50,12 @@ public abstract class Movable {
 	public Floor getContainer() 
 	{  
 	    return container; 
+	}
+	
+	public void addPoint()
+	{
+		if(pusher==null) return;
+		pusher.addPoint();
 	}
 	
 }

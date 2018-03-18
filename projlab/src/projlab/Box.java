@@ -12,14 +12,6 @@ public class Box extends Movable{
 		
 	}
 	
-	public void acceptCell(Cell v){
-		// Azon a Box-on h�vjuk meg, amelyikkel el akarjuk tolni
-		// a param�terk�nt kapott Visitor-t.
-		// Visszaadja, hogy siker�lt-e az eltol�s.
-		
-		// TODO
-		v.accept(this);
-	}
 	
 	public boolean setSwitch(){
 		// Ha a Box kapcsol�ra tol�dik, ez a f�ggv�ny kapcsolja
@@ -29,19 +21,11 @@ public class Box extends Movable{
 		return true;
 	}
 	
-	public boolean pushWorker(){
-		// EZT NEM V�GOM, doksiba csak annyi van �rva, hogy:
-		// visszat�r true-val.
-		
-		// TODO
-		return true;
-	}
-	
 	public void destinationReached(){
 		// Ha a l�da el�ri a sz�m�ra kijel�lt poz�ci�t a padl�n,
 		// elt�nik.
 		addPoint();
-		BoxCounter.boxDisappeared();
+		//BoxCounter.boxDisappeared();
 		Die();
 		// TODO
 	}
