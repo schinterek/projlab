@@ -24,8 +24,10 @@ public class Box extends Movable{
 	public void destinationReached(){
 		// Ha a l�da el�ri a sz�m�ra kijel�lt poz�ci�t a padl�n,
 		// elt�nik.
+		BoxCounter.boxDisappeared();
 		addPoint();
 		//BoxCounter.boxDisappeared();
+
 		Die();
 		// TODO
 	}

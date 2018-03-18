@@ -60,10 +60,14 @@ public class Worker extends Movable {
 			Die();
 			return true;
 			
+			
 		}
 		else {
 			System.out.println("Falnak mentél!");
+
 		return false; }
+
+
 
 	}
 

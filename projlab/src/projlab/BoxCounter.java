@@ -7,7 +7,7 @@ public class BoxCounter {
 	private int numOfBoxes;
 	private Game game;
 	
-	public void boxDisappeared(){
+	public static void boxDisappeared(){
 		// Ha egy Box lyukba esett, vagy a helyére került,
 		// azaz eltûnt, csökkenti a Box-ok számát 1-gyel.
 		
