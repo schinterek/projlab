@@ -18,9 +18,5 @@ public class BoxDestination extends Floor {
 		m.destinationReached();
 	}
 	
-	@Override
-	public Movable getContained() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 }

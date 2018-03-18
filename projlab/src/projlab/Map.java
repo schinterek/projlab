@@ -23,6 +23,11 @@ public class Map {
 		
 		cells.add(c);
 	}
+	
+	public void removeAll() 
+	{
+		cells.removeAll(cells);
+	}
 
 	
 	public boolean move(Movable toMove, Direction dir, Player src){
@@ -36,7 +41,7 @@ public class Map {
 		
 		// TODO
 		int actualindex = cells.indexOf(toMove.getContainer());
-		 if ( actualindex > 0  ) { 
+		 if ( actualindex >= 0  ) { 
 			 
 			 boolean canarrive = cells.get(actualindex+1).canArrive(toMove, dir, src); 
 			 if (canarrive) {
@@ -90,10 +95,6 @@ public class Map {
 		System.out.println("Map created") ;
 	}
 	
-	public void removeAll()
-	{
-		cells.removeAll(cells);
-	}
 	
 }	
 

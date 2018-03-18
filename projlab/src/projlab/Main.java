@@ -11,7 +11,7 @@ public class Main {
 		Floor c2 = new Floor();
 		Floor c3 = new Floor();
 		Switch s1 = new Switch();
-		Floor c4 = new Floor();
+		Floor c4 = new Floor(); 
 		Floor c5 = new Floor();
 		Map map = Map.getInstance();
 
@@ -31,9 +31,10 @@ public class Main {
 		
 		
 		c2.move(b1, null, null);
+
 		
 		map.removeAll();
-		
+
 		System.out.println();
 		System.out.println("Masodik teszteset: magaba foglalja a munkas tol ladat, lada munkasra tolodik, aki mogott fal van, lada eleri a destinationjet");
 		System.out.println();
@@ -41,8 +42,6 @@ public class Main {
 		Floor c7 = new Floor();
 		BoxDestination c8 = new BoxDestination();
 		Wall c9 = new Wall();
-		
-		Map map2 = Map.getInstance();
 
 		Box b3=  new Box();
 		Worker w1 = new Worker();
@@ -55,10 +54,10 @@ public class Main {
 		c8.containedMovable = w2;
 		w2.container = c8;
 			
-		map2.Add(c6);
-		map2.Add(c7);
-		map2.Add(c8);
-		map2.Add(c9);	
+		map.Add(c6);
+		map.Add(c7);
+		map.Add(c8);
+		map.Add(c9);	
 		
 		w1.move(Direction.RIGHT, null);
 		
