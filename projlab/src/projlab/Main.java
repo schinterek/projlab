@@ -11,7 +11,7 @@ public class Main {
 		Floor c2 = new Floor();
 		Floor c3 = new Floor();
 		Switch s1 = new Switch();
-		Floor c4 = new Floor();
+		Floor c4 = new Floor(); 
 		Floor c5 = new Floor();
 		Map map = Map.getInstance();
 
