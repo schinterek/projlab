@@ -31,6 +31,9 @@ public class Main {
 		
 		
 		c2.move(b1, null, null);
+		
+		map.removeAll();
+		
 		System.out.println();
 		System.out.println("Masodik teszteset: magaba foglalja a munkas tol ladat, lada munkasra tolodik, aki mogott fal van, lada eleri a destinationjet");
 		System.out.println();

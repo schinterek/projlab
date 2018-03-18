@@ -10,7 +10,7 @@ public class Map {
 
 	private Map() {System.out.println("Map created") ; }
 	
-	public static Map getInstance() {System.out.println("Map getInstance fv") ; return map;}
+	public static Map getInstance() { return map;}
 	// A p�ly�t �s a rajta l�v� mez�ket val�s�tja meg.
 	
 	// !!!
@@ -88,6 +88,11 @@ public class Map {
 		numofworkers = 0;
 
 		System.out.println("Map created") ;
+	}
+	
+	public void removeAll()
+	{
+		cells.removeAll(cells);
 	}
 	
 }	
