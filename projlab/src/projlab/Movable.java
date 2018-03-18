@@ -37,10 +37,8 @@ public abstract class Movable {
 		// elt�nik a doboz.
 	}
 	
-	public void wallReached(){
-		// Ha egy Movable el�ri a falat, ezt a f�gv�nyt h�vjuk.
-		
-		// Alap�rtelmezetten �res.
+	public boolean wallReached(){
+		return false;
 	}
 	
 	public void setContainer(Floor f) 
