@@ -10,6 +10,5 @@ public class Hole extends Cell{
 		m.Die();
 	}
 	
-	public Movable getContained() { return null;}
 	
 }
