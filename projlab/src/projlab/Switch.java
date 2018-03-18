@@ -3,20 +3,21 @@ package projlab;
 import java.util.zip.ZipEntry;
 
 public class Switch extends Floor implements Visitor {
-	// A kapcsolókat reprezentálja.
+	// A kapcsolï¿½kat reprezentï¿½lja.
 	
 	private boolean isOpen;
 	
 	public boolean accept(Movable m) {
-		// Meghívja a Movable setSwitch metódusát.
+		// Meghï¿½vja a Movable setSwitch metï¿½dusï¿½t.
 		m.setSwitch();
 		// TODO
 		return true;
 	}
 	
 	public void containedLeft(){
-		// Az isOpen attribútumot false-ra állítja.
+		// Az isOpen attribï¿½tumot false-ra ï¿½llï¿½tja.
 		// ???
+		//elment rola a doboz, ezert lekapcsol a switch
 		isOpen = false;
 	}
 	
