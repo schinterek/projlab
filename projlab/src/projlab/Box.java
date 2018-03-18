@@ -12,14 +12,6 @@ public class Box extends Movable{
 		
 	}
 	
-	public void acceptCell(Cell v){
-		// Azon a Box-on h�vjuk meg, amelyikkel el akarjuk tolni
-		// a param�terk�nt kapott Visitor-t.
-		// Visszaadja, hogy siker�lt-e az eltol�s.
-		
-		// TODO
-		v.accept(this);
-	}
 	
 	public boolean setSwitch(){
 		// Ha a Box kapcsol�ra tol�dik, ez a f�ggv�ny kapcsolja

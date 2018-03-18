@@ -11,8 +11,7 @@ public class SwitchableHole extends Hole {
 	@Override
 	public void accept(Movable m) {
 		if( switches.isOpen()) {
-			Movable.Die();
-			return true;
+			m.Die();
 		}
 		
 	}
