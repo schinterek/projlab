@@ -18,9 +18,10 @@ public class Switch extends Floor {
         m.setContainer(this);
 		if (m.setSwitch()) { 
 			isOpen=true;
+			if (switchablehole!=null) {
 			if(switchablehole.getContained()!=null) { 
 				switchablehole.getContained().Die();
-				switchablehole.containedLeft();
+				switchablehole.containedLeft();}
 			}
 			}
 		// TODO

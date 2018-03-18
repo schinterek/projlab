@@ -28,8 +28,7 @@ public class Main {
 		map.Add(c5);
 		
 		
-		c2.accept(b2);
-		b2.accept(b1);
+		c2.move(b1, null, null);
 		
 
 	}
