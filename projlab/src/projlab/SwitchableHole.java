@@ -2,36 +2,33 @@ package projlab;
 
 import java.util.ArrayList;
 
-public class SwitchableHole extends Hole {
+public class SwitchableHole extends Floor {
 	// Az �tkapcsolhat� lyukakat val�s�tja meg.
 	
 	private Switch switches;
-	private Movable contained;
 	
 	@Override
 	public void accept(Movable m) {
 		if( switches.isOpen()) {
 			m.Die();
 		}
+		else {
+			this.setContainedMovable(m);
+		}
 		
 	}
 	
-	public Movable getContained(){
-		return contained;
-	}
-	
+	@Override
 	public boolean canArrive(Movable toArrive, Direction dir, Player src) {
 		if(switches.isOpen()) {
 			return true;
 		}
 		else {
-			if(contained==null)
+			if(getContained()==null)
 				return true;
 			else
-				return contained.accept(toArrive);
+				return getContained().accept(toArrive);
 		}
 	}
-	public void containedLeft() {
-		contained=null;
-	}
+
 }

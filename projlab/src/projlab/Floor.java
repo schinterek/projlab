@@ -37,6 +37,10 @@ public class Floor extends Cell{
 	}
 	
 	
+	public void setContainedMovable(Movable m) {
+		m.setContainer(this);
+	}
+	
    
 	
 }

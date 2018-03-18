@@ -9,8 +9,8 @@ public class Wall extends Cell {
 	public boolean canArrive(Movable toArrive, Direction dir, Player src){
 		// Megh�vja a Movable->wallReached() f�ggv�ny�t.
 		// ???
-		toArrive.wallReached();
-		return false;
+		return toArrive.wallReached();
+		
 	}
 
 }
