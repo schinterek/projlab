@@ -85,7 +85,6 @@ public class Worker extends Movable {
 	public void Die()
 	{
 		System.out.println("Worker meghalt :( ");
-		container.containedLeft();
 		
 
 	}
