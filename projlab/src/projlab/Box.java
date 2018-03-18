@@ -8,6 +8,7 @@ public class Box extends Movable{
 		// Ha egy Movable el akarja tolni a Boxot, akkor eld�nti,
 		// hogy el tud-e tol�dni, ezzel t�r vissza. */
 		// TODO
+		pusher=m;
 		return container.move(this, Direction.RIGHT, null);
 		
 	}
@@ -33,7 +34,6 @@ public class Box extends Movable{
 
 	public void Die()
 	{
-		container.containedLeft();
 		System.out.println("Box eltűnt");
 		
 	}

@@ -3,6 +3,11 @@ package projlab;
 public class Floor extends Cell{
 	// Sima padl�t val�s�tja meg.
 	
+	public Floor()
+	{
+		System.out.println("Floor created");
+	}
+	
 	protected Movable containedMovable;
 
 	public Movable getContained() {
