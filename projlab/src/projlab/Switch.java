@@ -19,6 +19,7 @@ public class Switch extends Floor {
         m.setContainer(this);
 		if (m.setSwitch()) { 
 			isOpen=true;
+			System.out.println("Switch felkapcsolt");
 			if (switchablehole!=null) {
 			if(switchablehole.getContained()!=null) { 
 				switchablehole.getContained().Die();
@@ -30,7 +31,7 @@ public class Switch extends Floor {
 	}
 	
 	public void containedLeft(){
-		System.out.println("Switch containedLeft fv");
+		System.out.println("Switch lekapcsolt");
 		// Az isOpen attrib�tumot false-ra �ll�tja.
 		//elment rola a doboz, ezert lekapcsol a switch
 

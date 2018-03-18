@@ -30,7 +30,8 @@ public class Worker extends Movable {
 			boolean canarrive = container.move(this, Direction.RIGHT, player);
 			pusher= null;
 		   setPushed(false);
-				
+		  if(canarrive==true)
+			  System.out.println("Worker lépett");
 		   return  canarrive;
 		}
 
@@ -83,19 +84,16 @@ public class Worker extends Movable {
 
 	public void setPushed(boolean b)
 	{
-		System.out.println("Worker setPushed fv");
 		isPushed=b;
 	}
 
 	public Player getPlayer()
 	{
-		System.out.println("Worker Player fv");
 		return player;
 	}
 
 	public void Die()
 	{
-		System.out.println("Worker Die fv");
 		System.out.println("Worker meghalt :( ");
 		
 

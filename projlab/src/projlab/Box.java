@@ -18,6 +18,8 @@ public class Box extends Movable{
 		pusher=m;
 		boolean moved = container.move(this, Direction.RIGHT, null);
 		pusher = null;
+		if (moved==true)
+			System.out.println("Box lépett");
 		return moved;
 		
 	}
@@ -45,7 +47,6 @@ public class Box extends Movable{
 
 	public void Die()
 	{
-		System.out.println("Box Die fv");
 		System.out.println("Box eltűnt");
 		
 	}
