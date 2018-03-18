@@ -12,7 +12,7 @@ public class Worker extends Movable {
 	// Meg�rkez�s ut�n hamisra �ll�t�dik.
 	
 	public boolean accept(Movable m){
-		// Ha egy Movable el akarja tolni,
+		// Ha egy Movable el akarja tolni,  dd
 		// akkor � is megpr�b�l tov�bbtol�dni.
 		// Azzal t�r vissza, hogy ez siker�lt-e;
 
