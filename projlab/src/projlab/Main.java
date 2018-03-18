@@ -12,9 +12,7 @@ public class Main {
 		Floor c4 = new Floor();
 		Floor c5 = new Floor();
 		Map map = Map.getInstance();
-		map.Add(c1);
-		map.Add(c2);
-		
+
 		Box b1=  new Box();
 		Box b2=  new Box();
 		
