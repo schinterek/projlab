@@ -3,7 +3,8 @@ package projlab;
 public class Worker extends Movable {
 	// A j�t�kosok �ltal ir�ny�tott munk�sokat reprezent�lja.
 	// Tudnak mozogni �s l�d�kat tolni.
-	
+
+	private Player player;
 	private boolean isPushed;
 	// Azt mondja meg, hogy l�d�val toltuk-e arr�bb.
 	// Csak addig igaz, m�g meg nem �rkezett arra a cell�ra,
@@ -15,9 +16,27 @@ public class Worker extends Movable {
 		// akkor � is megpr�b�l tov�bbtol�dni.
 		// Azzal t�r vissza, hogy ez siker�lt-e;
 
-		m.pushWorker();
+		bool canpush=m.pushWorker();
+		if (canpush==true)
+		{
+			setPushed(true);
+			bool canarrive = container.move(m, dir, player);
+			if (canarrive = true)
+			{
+				setPushed(false);
+				return true;
+			}
+			else return false;
+		}
+
+		else
+		{
+			return false;
+		}
+
+
 		// TODO
-		return false;
+
 	}
 	
 	public void move(Direction dir, Player src){
@@ -34,6 +53,15 @@ public class Worker extends Movable {
 		// Ha a j�t�kos el�ri a falat:
 		// ha az isPushed v�ltoz� igaz, meghal,
 		// ha nem, akkor nem.
+
+		if (isPushed == true)
+		{
+			Die();
+			System.out.println("Munkás meghalt mert falnak tolták");
+		}
+		else
+			System.out.println("Pálya széle!");
+
 	}
 	
 	@Override
@@ -43,9 +71,23 @@ public class Worker extends Movable {
 		// Visitort.
 		// Visszaadja, hogy siker�lt-e az eltol�s.
 
-		Die();
+
 		// TODO
 		return false;
+	}
+
+	public void setPushed(boolean b)
+	{
+		if(b==false)
+		{
+			isPushed=false;
+		}
+		else isPushed=true;
+	}
+
+	public void getPlayer()
+	{
+		return player;
 	}
 
 	public void Die()
