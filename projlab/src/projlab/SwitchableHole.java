@@ -9,6 +9,7 @@ public class SwitchableHole extends Floor {
 	
 	@Override
 	public void accept(Movable m) {
+		System.out.println("SwitchableHole accept fv");
 		if( switches.isOpen()) {
 			m.Die();
 		}
@@ -20,6 +21,7 @@ public class SwitchableHole extends Floor {
 	
 	@Override
 	public boolean canArrive(Movable toArrive, Direction dir, Player src) {
+		System.out.println("SwitchableHole canArrive fv");
 		if(switches.isOpen()) {
 			return true;
 		}

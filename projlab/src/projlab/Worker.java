@@ -17,6 +17,7 @@ public class Worker extends Movable {
 	}
 	
 	public boolean accept(Movable m){
+		System.out.println("Worker accept fv");
 		// Ha egy Movable el akarja tolni,  dd
 		// akkor � is megpr�b�l tov�bbtol�dni.
 		// Azzal t�r vissza, hogy ez siker�lt-e;
@@ -30,7 +31,7 @@ public class Worker extends Movable {
 			pusher= null;
 		   setPushed(false);
 				
-		   return canarrive;
+		   return  canarrive;
 		}
 
 		else
@@ -45,17 +46,19 @@ public class Worker extends Movable {
 	
 	public void move(Direction dir, Player src){
 		// Mozgatjuk a munk�st az adott ir�nyba.
-		
+		System.out.println("Worker move fv");
 		this.getContainer().move(this, dir, src);
 	}
 	
 	public boolean pushWorker(){
+		System.out.println("Worker psuhWorker fv");
 		// False-szal t�r vissza, mert munk�s nem
 		// tud munk�st eltolni.
 		return false;
 	}
 	
 	public boolean wallReached(){
+		System.out.println("Worker wallReached fv");
 		// Ha a j�t�kos el�ri a falat:
 		// ha az isPushed v�ltoz� igaz, meghal,
 		// ha nem, akkor nem.
@@ -80,16 +83,19 @@ public class Worker extends Movable {
 
 	public void setPushed(boolean b)
 	{
+		System.out.println("Worker setPushed fv");
 		isPushed=b;
 	}
 
 	public Player getPlayer()
 	{
+		System.out.println("Worker Player fv");
 		return player;
 	}
 
 	public void Die()
 	{
+		System.out.println("Worker Die fv");
 		System.out.println("Worker meghalt :( ");
 		
 

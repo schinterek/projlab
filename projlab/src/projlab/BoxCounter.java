@@ -8,6 +8,7 @@ public class BoxCounter {
 	private Game game;
 	
 	public void boxDisappeared(){
+		System.out.println("BoxCounter boxDisappeared fv");
 		// Ha egy Box lyukba esett, vagy a hely�re ker�lt,
 		// azaz elt�nt, cs�kkenti a Box-ok sz�m�t 1-gyel.
 		

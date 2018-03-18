@@ -13,6 +13,7 @@ public class Switch extends Floor {
 	}
 	
 	public void accept(Movable m) {
+		System.out.println("Switch accept fv");
 		// Megh�vja a Movable setSwitch met�dus�t.
         this.containedMovable=m;
         m.setContainer(this);
@@ -29,6 +30,7 @@ public class Switch extends Floor {
 	}
 	
 	public void containedLeft(){
+		System.out.println("Switch containedLeft fv");
 		// Az isOpen attrib�tumot false-ra �ll�tja.
 		//elment rola a doboz, ezert lekapcsol a switch
 
@@ -37,15 +39,18 @@ public class Switch extends Floor {
 	}
 	
 	public boolean isOpen(){
+		System.out.println("Switch isOpen fv");
 		return isOpen;
 	}
 	
 	public void SetOpen(Boolean b) {
+		System.out.println("Switch SetOpen fv");
 		isOpen=b;
 	}
 	
 	public void setSwitchableHole(SwitchableHole sh)
 	{
+		System.out.println("Switch setSwitchableHole fv");
 		switchablehole = sh;
 	}
 

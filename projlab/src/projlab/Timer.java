@@ -11,6 +11,7 @@ public class Timer {
 	}
 	
 	public void run(){
+		System.out.println("Timer run fv");
 		// ELindítja a Timer-nek a szálát, amely
 		// idõközönként meghívja a Controller->step()
 		// metódusát.

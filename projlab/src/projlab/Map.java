@@ -8,9 +8,9 @@ public class Map {
 	
 	private static Map map = new Map();
 
-	private Map() {}
+	private Map() {System.out.println("Map created") ; }
 	
-	public static Map getInstance() {System.out.println("Map created") ; return map;}
+	public static Map getInstance() {System.out.println("Map getInstance fv") ; return map;}
 	// A p�ly�t �s a rajta l�v� mez�ket val�s�tja meg.
 	
 	// !!!
@@ -20,11 +20,13 @@ public class Map {
 	// Milyen struktur�ban k�ne t�rolni?
 	
 	public void Add(Cell c) {
+		
 		cells.add(c);
 	}
 
 	
 	public boolean move(Movable toMove, Direction dir, Player src){
+		System.out.println("Map move fv");
 		// Egy bizonyos Movable egy bizonyos ir�nyba akar l�pni.
 		// Ez a f�ggv�ny mondja meg, hogy arra a cell�ra
 		// r� lehet-e l�pni, �s hogy �llnak-e m�r rajta.
@@ -57,6 +59,7 @@ public class Map {
 	
 	public void initMap(int numofcells, int numofworkers, int numofboxes)
 	{
+		System.out.println("Map initMap fv");
 		for(int i=0; i<numofcells; i++) 
 		{
 			Floor f= new Floor();

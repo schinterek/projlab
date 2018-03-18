@@ -22,13 +22,14 @@ public class Game {
 	
 	public void start(){
 		// A j�t�k ind�t�s�hoz sz�ks�ges l�p�seket v�gzi el.
+		System.out.println("Game start fv");
 		timer.run();
 		// TODO
 	}
 	
 	public void gameEnded(){
 		// A j�t�k v�g�t kezeli.
-		
+		System.out.println("Game gameEnded fv");
 		// TODO
 	}
 }
