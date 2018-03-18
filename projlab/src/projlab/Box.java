@@ -29,19 +29,11 @@ public class Box extends Movable{
 		return true;
 	}
 	
-	public boolean pushWorker(){
-		// EZT NEM V�GOM, doksiba csak annyi van �rva, hogy:
-		// visszat�r true-val.
-		
-		// TODO
-		return true;
-	}
-	
 	public void destinationReached(){
 		// Ha a l�da el�ri a sz�m�ra kijel�lt poz�ci�t a padl�n,
 		// elt�nik.
 		addPoint();
-		BoxCounter.boxDisappeared();
+		//BoxCounter.boxDisappeared();
 		Die();
 		// TODO
 	}

@@ -3,6 +3,7 @@ package projlab;
 public abstract class Movable {
 	
 	protected Floor container;
+	protected Movable pusher;
 	
 	public abstract void acceptCell(Cell v);
 	// Ehhez nem volt le�r�s a doksiban.
@@ -51,6 +52,12 @@ public abstract class Movable {
 	public Floor getContainer() 
 	{  
 	    return container; 
+	}
+	
+	public void addPoint()
+	{
+		if(pusher==null) return;
+		pusher.addPoint();
 	}
 	
 }

@@ -56,11 +56,12 @@ public class Worker extends Movable {
 
 		if (isPushed == true)
 		{
-			Die();
 			System.out.println("Munkás meghalt mert falnak tolták");
+			Die();
+			
 		}
 		else
-			System.out.println("Pálya széle!");
+			System.out.println("Falnak mentél!");
 
 	}
 	
@@ -69,7 +70,6 @@ public class Worker extends Movable {
 		// Azona  Worker-en h�vjuk meg, amelyikkel
 		// el akarjuk tolni a param�terk�nt kapott
 		// Visitort.
-		// Visszaadja, hogy siker�lt-e az eltol�s.
 
 
 		// TODO
