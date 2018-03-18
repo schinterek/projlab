@@ -29,13 +29,13 @@ public abstract class Movable {
 		return false;
 	}
 	
-	public void Die(){
+	public abstract void Die();
 		// !!!
 		// Mi�rt nagy bet�? Mert destruktor?
 		// A l�da �s a munk�s implement�lja,
 		// jelezz�k, mikor meghal a munk�s vagy
 		// elt�nik a doboz.
-	}
+	
 	
 	public boolean wallReached(){
 		return false;

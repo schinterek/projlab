@@ -27,7 +27,7 @@ public class Worker extends Movable {
 			pusher=m;
 			setPushed(true);
 			boolean canarrive = container.move(this, Direction.RIGHT, player);
-			
+			pusher= null;
 		   setPushed(false);
 				
 		   return canarrive;
@@ -94,6 +94,7 @@ public class Worker extends Movable {
 		
 
 	}
+	
 	
 	
 }
