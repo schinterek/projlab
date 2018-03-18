@@ -35,7 +35,7 @@ public class Map {
 			 
 			 boolean canarrive = cells.get(actualindex+1).canArrive(toMove, dir, src); 
 			 if (canarrive) {
-				 toMove.acceptCell(cells.get(actualindex+1));
+				 if(toMove!=null) toMove.acceptCell(cells.get(actualindex+1));
 				 
 				 cells.get(actualindex).containedLeft();
 				 return true;

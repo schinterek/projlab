@@ -58,6 +58,7 @@ public class Worker extends Movable {
 		if (isPushed == true)
 		{
 			System.out.println("Munkás meghalt mert falnak tolták");
+			container.containedLeft();
 			Die();
 			return true;
 			
