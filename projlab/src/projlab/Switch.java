@@ -9,6 +9,7 @@ public class Switch extends Floor implements Visitor {
 	
 	public boolean accept(Movable m) {
 		// Megh�vja a Movable setSwitch met�dus�t.
+
 		m.setSwitch();
 		// TODO
 		return true;

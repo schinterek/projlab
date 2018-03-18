@@ -1,12 +1,13 @@
 package projlab;
 
 public class Hole implements Visitor {
-	// A luykakat reprezentálja.
+	// A luykakat reprezentï¿½lja.
 
 	@Override
 	public boolean accept(Movable m) {		
-		// Meghívja a ráérkezõ Movable-nek a Die() függvényét.
+		// Meghï¿½vja a rï¿½ï¿½rkezï¿½ Movable-nek a Die() fï¿½ggvï¿½nyï¿½t.
 		// TODO
+		m.Die();
 		return true;
 	}
 }
