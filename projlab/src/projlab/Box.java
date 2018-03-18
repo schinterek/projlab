@@ -24,8 +24,7 @@ public class Box extends Movable{
 	public void setSwitch(){
 		// Ha a Box kapcsol�ra tol�dik, ez a f�ggv�ny kapcsolja
 		// be a kapcsol�t.
-
-		return true;
+		
 		// TODO
 	}
 	
