@@ -17,6 +17,12 @@ public class Map {
 	private ArrayList<Cell> cells = new ArrayList<Cell>();
 	// !!!
 	// Milyen struktur�ban k�ne t�rolni?	
+	// Milyen struktur�ban k�ne t�rolni?
+	
+	public void Add(Cell c) {
+		cells.add(c);
+	}
+
 	
 	public boolean move(Movable toMove, Direction dir, Player src){
 		// Egy bizonyos Movable egy bizonyos ir�nyba akar l�pni.
@@ -32,7 +38,7 @@ public class Map {
 			 
 			 boolean canarrive = cells.get(actualindex+1).canArrive(toMove, dir, src); 
 			 if (canarrive) {
-				 toMove.acceptCell(cells.get(actualindex+1));
+				 if(cells.get(actualindex).getContained()!=null) toMove.acceptCell(cells.get(actualindex+1));
 				 
 				 cells.get(actualindex).containedLeft();
 				 return true;
@@ -50,7 +56,8 @@ public class Map {
 	{
 		for(int i=0; i<numofcells; i++) 
 		{
-			
+			Floor f= new Floor();
+			cells.add(f);
 		}
 		System.out.println("Map created") ;
 	}

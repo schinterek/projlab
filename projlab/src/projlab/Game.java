@@ -15,7 +15,8 @@ public class Game {
 	
 	public void init(int numofcells){
 		// Inicializ�l, l�trehozza a sz�ks�ges objektumokat.
-		Map.getInstance().initMap(numofcells);
+		Map map = Map.getInstance();
+		map.initMap(numofcells);
 		// TODO
 	}
 	
