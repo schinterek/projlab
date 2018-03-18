@@ -16,17 +16,16 @@ public class Worker extends Movable {
 		// akkor � is megpr�b�l tov�bbtol�dni.
 		// Azzal t�r vissza, hogy ez siker�lt-e;
 
-		bool canpush=m.pushWorker();
+		boolean canpush=m.pushWorker();
 		if (canpush==true)
 		{
 			setPushed(true);
-			bool canarrive = container.move(m, dir, player);
-			if (canarrive = true)
-			{
-				setPushed(false);
-				return true;
-			}
-			else return false;
+			boolean canarrive = container.move(this, Direction.RIGHT, player);
+			
+		   setPushed(false);
+				
+			
+			return canarrive;
 		}
 
 		else
@@ -85,7 +84,7 @@ public class Worker extends Movable {
 		else isPushed=true;
 	}
 
-	public void getPlayer()
+	public Player getPlayer()
 	{
 		return player;
 	}
