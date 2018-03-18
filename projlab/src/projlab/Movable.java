@@ -14,11 +14,10 @@ public abstract class Movable {
 	public void destinationReached() {
 	// Megmondja, hogy a l�da el�rte-e a megfelel� helyet,
 	// ha igen, elt�nteti a l�d�t.
+	//worker eseten nem csinal semmit a fuggveny
 	}
 	
 	public boolean pushWorker(){
-		// Ehhez annyi volt �rva a doksiban, hogy:
-		// True-t ad vissza.
 		return true;
 	}
 	
