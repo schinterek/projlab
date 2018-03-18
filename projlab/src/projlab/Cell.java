@@ -3,11 +3,7 @@ package projlab;
 public abstract class Cell {
 	// Egy mez�t reprezent�l� absztrakt oszt�ly.
 	
-	public boolean accept(Movable m){
-		// �res f�ggv�ny, ebben az oszt�lyban �gysem
-		// csin�l semmit.
-		return true;
-	}
+	public abstract void accept(Movable m);
 	
 	public boolean canArrive(Movable toArrive, Direction dir, Player src){
 		// Ha egy Movable objektum (toArrive) akar �rkezni a egy bizonyos
@@ -28,9 +24,8 @@ public abstract class Cell {
 	
 	public void containedLeft(){
 		// Azt kezeli, hogy egy objektum elhagyta az adott cell�t.
+		
 	}
 	
-	public abstract Movable getContained();
-	// Absztrakt f�ggv�ny, visszaadja, hogy milyen
-	// objektum van rajta.
+	
 }

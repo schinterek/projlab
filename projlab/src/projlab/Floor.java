@@ -3,9 +3,8 @@ package projlab;
 public class Floor extends Cell{
 	// Sima padl�t val�s�tja meg.
 	
-	private Movable containedMovable;
+	protected Movable containedMovable;
 
-	@Override
 	public Movable getContained() {
 		return containedMovable;
 	}
@@ -16,5 +15,28 @@ public class Floor extends Cell{
 		if(getContained()==null) return true;
 		else return getContained().accept(toArrive);
 	}
+	
+	@Override
+	public void containedLeft(){
+		// Azt kezeli, hogy egy objektum elhagyta az adott cell�t.
+		containedMovable = null;
+	}
+	
+	public void accept(Movable m) 
+	{
+		containedMovable = m;
+		m.setContainer(this);
+	}
+	
+	@Override
+	
+	public boolean move(Movable toMove, Direction dir, Player src) {
+	    Map map = Map.getInstance();
+	    return map.move(toMove, dir, src);
+		
+	}
+	
+	
+   
 	
 }

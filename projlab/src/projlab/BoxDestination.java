@@ -3,7 +3,8 @@ package projlab;
 public class BoxDestination extends Floor {
 	// Az a mez�, ahova a Box-okat kell eljuttatni.
 	
-	public boolean accept(Movable m) {
+	
+	public void accept(Movable m) {
 		// Ha a megfelel� Box-ot tolj�k r�, akkor
 		// azt elt�nteti a p�ly�r�l.
 		
@@ -12,7 +13,7 @@ public class BoxDestination extends Floor {
 		// de a doksiban ez a f�ggv�ny void volt.
 		
 		// TODO
-		return true;
+		
 	}
 	
 	@Override
