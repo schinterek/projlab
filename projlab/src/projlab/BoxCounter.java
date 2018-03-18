@@ -2,16 +2,16 @@ package projlab;
 
 // <<singleton>>
 public class BoxCounter {
-	// A pályán lévõ Box-ok számát tartja nyílván.
+	// A pï¿½lyï¿½n lï¿½vï¿½ Box-ok szï¿½mï¿½t tartja nyï¿½lvï¿½n.
 	
 	private int numOfBoxes;
 	private Game game;
 	
 	public void boxDisappeared(){
-		// Ha egy Box lyukba esett, vagy a helyére került,
-		// azaz eltûnt, csökkenti a Box-ok számát 1-gyel.
-		
-		// TODO
+		numOfBoxes--;
+		if(numOfBoxes==0){
+			game.gameEnded();
+		}
 	}
 
 }
