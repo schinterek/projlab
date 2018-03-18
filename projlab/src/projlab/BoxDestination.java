@@ -13,6 +13,8 @@ public class BoxDestination extends Floor {
 		// de a doksiban ez a f�ggv�ny void volt.
 		
 		// TODO
+		m.setContainer(this);
+		this.setContainedMovable(m);
 		m.destinationReached();
 	}
 	

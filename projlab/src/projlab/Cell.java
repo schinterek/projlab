@@ -14,10 +14,7 @@ public abstract class Cell {
 		return true;
 	}
 	
-	public boolean move(Movable toMove, Direction dir, Player src){
-	
-		return true;
-	}
+	public abstract boolean move(Movable toMove, Direction dir, Player src);
 	
 	public void containedLeft(){
 		// Azt kezeli, hogy egy objektum elhagyta az adott cell�t.
