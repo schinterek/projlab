@@ -71,8 +71,10 @@ public class Map {
 		}
 					
 		numofcells = 0;
-		numofworkers = 0;
 		numofboxes = 0;
+		numofworkers = 0;
+		
+		
 		System.out.println("Map created") ;
 	}
 	
