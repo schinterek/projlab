@@ -5,15 +5,34 @@ import java.util.ArrayList;
 public class SwitchableHole extends Hole {
 	// Az �tkapcsolhat� lyukakat val�s�tja meg.
 	
-	private ArrayList<Switch> switches;
-	// Csak random be�rtam ebbe a strukt�r�ba.
+	private Switch switches;
+	private Movable contained;
 	
 	@Override
 	public void accept(Movable m) {
-		// TODO Auto-generated method stub
+		if( switches.isOpen()) {
+			Movable.Die();
+			return true;
+		}
 		
-		// Itt ennek akkor nem boolean-nek, hanem
-		// void-nak k�ne lennie?
-
+	}
+	
+	public Movable getContained(){
+		return contained;
+	}
+	
+	public boolean canArrive(Movable toArrive, Direction dir, Player src) {
+		if(switches.isOpen()) {
+			return true;
+		}
+		else {
+			if(contained==null)
+				return true;
+			else
+				return contained.accept(toArrive);
+		}
+	}
+	public void containedLeft() {
+		contained=null;
 	}
 }
