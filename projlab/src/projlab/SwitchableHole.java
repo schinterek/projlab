@@ -9,19 +9,22 @@ public class SwitchableHole extends Floor {
 	
 	@Override
 	public void accept(Movable m) {
-		System.out.println("SwitchableHole accept fv");
+		
 		if( switches.isOpen()) {
+			System.out.println("SwitchHole: Valaki leesett xd lol");
 			m.Die();
 		}
 		else {
+			System.out.println("SwitchHole: Rámléptek");
 			this.setContainedMovable(m);
+			m.setContainer(this);
 		}
 		
 	}
 	
 	@Override
 	public boolean canArrive(Movable toArrive, Direction dir, Player src) {
-		System.out.println("SwitchableHole canArrive fv");
+		//System.out.println("SwitchableHole canArrive fv");
 		if(switches.isOpen()) {
 			return true;
 		}

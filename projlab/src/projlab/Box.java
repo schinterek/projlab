@@ -11,7 +11,7 @@ public class Box extends Movable{
 		System.out.println("Box created");
 	}
 	public boolean accept(Movable m){
-		System.out.println("Box accept fv");
+		//System.out.println("Box accept fv");
 		// Ha egy Movable el akarja tolni a Boxot, akkor eld�nti,
 		// hogy el tud-e tol�dni, ezzel t�r vissza. */
 		// TODO
@@ -20,13 +20,14 @@ public class Box extends Movable{
 		pusher = null;
 		if (moved==true)
 			System.out.println("Box lépett");
+		else System.out.println("Box nem lépett");
 		return moved;
 		
 	}
 	
 	
 	public boolean setSwitch(){
-		System.out.println("Box setSwitch fv");
+	//	System.out.println("Box setSwitch fv");
 		// Ha a Box kapcsol�ra tol�dik, ez a f�ggv�ny kapcsolja
 		// be a kapcsol�t.
 		
@@ -35,7 +36,7 @@ public class Box extends Movable{
 	}
 	
 	public void destinationReached(){
-		System.out.println("Box destinationReached fv");
+		System.out.println("Box: Célba értem lol");
 		// Ha a l�da el�ri a sz�m�ra kijel�lt poz�ci�t a padl�n,
 		// elt�nik.
 		addPoint();

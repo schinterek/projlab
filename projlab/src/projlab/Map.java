@@ -26,7 +26,7 @@ public class Map {
 
 	
 	public boolean move(Movable toMove, Direction dir, Player src){
-		System.out.println("Map move fv");
+	//	System.out.println("Map move fv");
 		// Egy bizonyos Movable egy bizonyos ir�nyba akar l�pni.
 		// Ez a f�ggv�ny mondja meg, hogy arra a cell�ra
 		// r� lehet-e l�pni, �s hogy �llnak-e m�r rajta.
@@ -43,14 +43,15 @@ public class Map {
 				 if(cells.get(actualindex).getContained()!=null) toMove.acceptCell(cells.get(actualindex+1));
 				 
 				 cells.get(actualindex).containedLeft();
-				 System.out.println("Map move fv");
+			//	 System.out.println("Map move fv");
 				 return true;
 			 } 
-			 else System.out.println("Map move fv"); return false;
+	//		 else System.out.println("Map move fv"); 
+			 return false;
 		 
 		 }
 		 else  {
-			 System.out.println("Map move fv");
+			// System.out.println("Map move fv");
 			 System.out.println("Pálya széle!");
 			 return false;
 		 }		
