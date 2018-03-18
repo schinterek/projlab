@@ -7,6 +7,10 @@ public class Switch extends Floor {
 	
 	private boolean isOpen = false;
 	
+	public Switch() {
+		System.out.println("Switch created");
+	}
+	
 	public void accept(Movable m) {
 		// Megh�vja a Movable setSwitch met�dus�t.
 

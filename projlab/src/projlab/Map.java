@@ -10,7 +10,7 @@ public class Map {
 
 	private Map() {}
 	
-	public static Map getInstance() { return map;}
+	public static Map getInstance() {System.out.println("Map created") ; return map;}
 	// A p�ly�t �s a rajta l�v� mez�ket val�s�tja meg.
 	
 	// !!!
@@ -41,11 +41,14 @@ public class Map {
 				 if(cells.get(actualindex).getContained()!=null) toMove.acceptCell(cells.get(actualindex+1));
 				 
 				 cells.get(actualindex).containedLeft();
+				 System.out.println("Map move fv");
 				 return true;
-			 } else return false;
+			 } 
+			 else System.out.println("Map move fv"); return false;
 		 
 		 }
 		 else  {
+			 System.out.println("Map move fv");
 			 System.out.println("Pálya széle!");
 			 return false;
 		 }		

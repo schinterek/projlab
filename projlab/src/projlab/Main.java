@@ -4,8 +4,26 @@ public class Main {
 	public static void main(String [ ] args) 
 	{
 		Game g1 = new Game();
-		g1.init(3,0,2);
-	
+		
+		Floor c1 = new Floor();
+		Floor c2 = new Floor();
+		Floor c3 = new Floor();
+		Switch s1 = new Switch();
+		Floor c4 = new Floor();
+		Floor c5 = new Floor();
+		Map map = Map.getInstance();
+
+		Box b1=  new Box();
+		Box b2=  new Box();
+		
+		c2.containedMovable = b1;
+		c3.containedMovable = b2;
+		b1.container = c2;
+		b2.container = c3;
+		c2.accept(b2);
+		b2.accept(b1);
+		
+
 	}
 	
 }
