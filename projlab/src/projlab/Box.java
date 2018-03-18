@@ -11,13 +11,12 @@ public class Box extends Movable{
 		return false;
 	}
 	
-	public boolean acceptCell(Cell v){
+	public void acceptCell(Cell v){
 		// Azon a Box-on h�vjuk meg, amelyikkel el akarjuk tolni
 		// a param�terk�nt kapott Visitor-t.
 		// Visszaadja, hogy siker�lt-e az eltol�s.
 		
 		// TODO
-		return false;
 	}
 	
 	public void setSwitch(){

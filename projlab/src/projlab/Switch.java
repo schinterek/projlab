@@ -7,12 +7,12 @@ public class Switch extends Floor {
 	
 	private boolean isOpen;
 	
-	public boolean accept(Movable m) {
+	public void accept(Movable m) {
 		// Megh�vja a Movable setSwitch met�dus�t.
 
 		m.setSwitch();
 		// TODO
-		return true;
+		
 	}
 	
 	public void containedLeft(){

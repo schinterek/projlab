@@ -39,6 +39,8 @@ public class Worker extends Movable {
 	
 	public void move(Direction dir, Player src){
 		// Mozgatjuk a munk�st az adott ir�nyba.
+		
+		this.getContainer().move(this, dir, src);
 	}
 	
 	public boolean pushWorker(){
@@ -63,7 +65,7 @@ public class Worker extends Movable {
 	}
 	
 	@Override
-	public boolean acceptCell(Cell v) {
+	public void acceptCell(Cell v) {
 		// Azona  Worker-en h�vjuk meg, amelyikkel
 		// el akarjuk tolni a param�terk�nt kapott
 		// Visitort.
@@ -71,7 +73,7 @@ public class Worker extends Movable {
 
 
 		// TODO
-		return false;
+		v.accept(this);
 	}
 
 	public void setPushed(boolean b)
@@ -90,6 +92,7 @@ public class Worker extends Movable {
 
 	public void Die()
 	{
+		System.out.println("Worker meghalt :( ");
 
 	}
 }

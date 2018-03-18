@@ -9,9 +9,9 @@ public class SwitchableHole extends Hole {
 	// Csak random be�rtam ebbe a strukt�r�ba.
 	
 	@Override
-	public boolean accept(Movable m) {
+	public void accept(Movable m) {
 		// TODO Auto-generated method stub
-		return super.accept(m);
+		
 		// Itt ennek akkor nem boolean-nek, hanem
 		// void-nak k�ne lennie?
 

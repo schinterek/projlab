@@ -1,17 +1,13 @@
 package projlab;
 
 public class Wall extends Cell {
-	// Doksiba az volt írva, hogy implementálja a Visitort.
-	// De az osztálydiagramon nem.
+	// Doksiba az volt ï¿½rva, hogy implementï¿½lja a Visitort.
+	// De az osztï¿½lydiagramon nem.
 
-	@Override
-	public Movable getContained() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public void accept(Movable m) {}
 	
 	public boolean canArrive(Movable toArrive, Direction dir, Player src){
-		// Meghívja a Movable->wallReached() függvényét.
+		// Meghï¿½vja a Movable->wallReached() fï¿½ggvï¿½nyï¿½t.
 		// ???
 		toArrive.wallReached();
 		return false;

@@ -4,7 +4,7 @@ public abstract class Movable {
 	
 	protected Floor container;
 	
-	public abstract boolean acceptCell(Cell v);
+	public abstract void acceptCell(Cell v);
 	// Ehhez nem volt le�r�s a doksiban.
 	
 	public abstract boolean accept(Movable m);
