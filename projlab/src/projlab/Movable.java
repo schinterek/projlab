@@ -3,9 +3,11 @@ package projlab;
 public abstract class Movable {
 	
 	protected Floor container;
+	protected Movable pusher;
 	
-	public abstract void acceptCell(Cell v);
-	// Ehhez nem volt le�r�s a doksiban.
+	public void acceptCell(Cell v) {
+		v.accept(this);
+	}
 	
 	public abstract boolean accept(Movable m);
 	// Ehhez sem.
@@ -13,13 +15,10 @@ public abstract class Movable {
 	public void destinationReached() {
 	// Megmondja, hogy a l�da el�rte-e a megfelel� helyet,
 	// ha igen, elt�nteti a l�d�t.
-	
-	// TODO
+	//worker eseten nem csinal semmit a fuggveny
 	}
 	
 	public boolean pushWorker(){
-		// Ehhez annyi volt �rva a doksiban, hogy:
-		// True-t ad vissza.
 		return true;
 	}
 	
@@ -38,10 +37,8 @@ public abstract class Movable {
 		// elt�nik a doboz.
 	}
 	
-	public void wallReached(){
-		// Ha egy Movable el�ri a falat, ezt a f�gv�nyt h�vjuk.
-		
-		// Alap�rtelmezetten �res.
+	public boolean wallReached(){
+		return false;
 	}
 	
 	public void setContainer(Floor f) 
@@ -51,6 +48,12 @@ public abstract class Movable {
 	public Floor getContainer() 
 	{  
 	    return container; 
+	}
+	
+	public void addPoint()
+	{
+		if(pusher==null) return;
+		pusher.addPoint();
 	}
 	
 }

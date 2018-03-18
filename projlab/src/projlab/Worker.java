@@ -49,40 +49,28 @@ public class Worker extends Movable {
 		return false;
 	}
 	
-	public void wallReached(){
+	public boolean wallReached(){
 		// Ha a j�t�kos el�ri a falat:
 		// ha az isPushed v�ltoz� igaz, meghal,
 		// ha nem, akkor nem.
 
 		if (isPushed == true)
 		{
-			Die();
 			System.out.println("Munkás meghalt mert falnak tolták");
+			Die();
+			
+			
 		}
 		else
-			System.out.println("Pálya széle!");
+			System.out.println("Falnak mentél!");
+		
+		return true;
 
-	}
-	
-	@Override
-	public void acceptCell(Cell v) {
-		// Azona  Worker-en h�vjuk meg, amelyikkel
-		// el akarjuk tolni a param�terk�nt kapott
-		// Visitort.
-		// Visszaadja, hogy siker�lt-e az eltol�s.
-
-
-		// TODO
-		v.accept(this);
 	}
 
 	public void setPushed(boolean b)
 	{
-		if(b==false)
-		{
-			isPushed=false;
-		}
-		else isPushed=true;
+		isPushed=b;
 	}
 
 	public Player getPlayer()
