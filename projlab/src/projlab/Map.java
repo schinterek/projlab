@@ -76,11 +76,6 @@ public class Map {
 		numofcells = 0;
 		numofboxes = 0;
 		numofworkers = 0;
-<<<<<<< HEAD
-=======
-		
-		
->>>>>>> branch 'master' of https://github.com/schinterek/projlab
 		System.out.println("Map created") ;
 	}
 	
