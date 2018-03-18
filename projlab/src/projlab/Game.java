@@ -11,6 +11,9 @@ public class Game {
 		// Inicializ�l, l�trehozza a sz�ks�ges objektumokat.
 		
 		// TODO
+		Map map = Map.getInstance();
+		Floor f = new Floor();
+		map.Add(f);
 	}
 	
 	public void start(){

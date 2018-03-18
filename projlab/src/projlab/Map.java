@@ -14,10 +14,13 @@ public class Map {
 	// A p�ly�t �s a rajta l�v� mez�ket val�s�tja meg.
 	
 	// !!!
-	private ArrayList<Cell> cells;
+	private ArrayList<Cell> cells = new ArrayList<Cell>();
 	// !!!
 	// Milyen struktur�ban k�ne t�rolni?
 	
+	public void Add(Cell c) {
+		cells.add(c);
+	}
 	
 	
 	
