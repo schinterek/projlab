@@ -8,8 +8,8 @@ public class Box extends Movable{
 		// Ha egy Movable el akarja tolni a Boxot, akkor eld�nti,
 		// hogy el tud-e tol�dni, ezzel t�r vissza. */
 		// TODO
-		container.move(this, Direction.RIGHT, null);
-		return false;
+		return container.move(this, Direction.RIGHT, null);
+		
 	}
 	
 	public void acceptCell(Cell v){
@@ -18,13 +18,15 @@ public class Box extends Movable{
 		// Visszaadja, hogy siker�lt-e az eltol�s.
 		
 		// TODO
+		v.accept(this);
 	}
 	
-	public void setSwitch(){
+	public boolean setSwitch(){
 		// Ha a Box kapcsol�ra tol�dik, ez a f�ggv�ny kapcsolja
 		// be a kapcsol�t.
 		
 		// TODO
+		return true;
 	}
 	
 	public boolean pushWorker(){
@@ -46,6 +48,7 @@ public class Box extends Movable{
 
 	public void Die()
 	{
+		System.out.println("Box eltűnt");
 		
 	}
 }

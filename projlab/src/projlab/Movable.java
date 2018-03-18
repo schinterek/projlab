@@ -23,10 +23,11 @@ public abstract class Movable {
 		return true;
 	}
 	
-	public void setSwitch(){
+	public boolean setSwitch(){
 		// Vizsg�lja, hogy �ll�tani kell-e a kapcsol�t,
 		// ami att�l f�gg, hogy munk�s (ekkor nem)
 		// vagy l�da (ekkor igen) l�pett r�.
+		return false;
 	}
 	
 	public void Die(){

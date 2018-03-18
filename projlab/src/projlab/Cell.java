@@ -27,5 +27,9 @@ public abstract class Cell {
 		
 	}
 	
+	public Movable getContained() {
+		return null;
+	}
+	
 	
 }
