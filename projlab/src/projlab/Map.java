@@ -52,13 +52,27 @@ public class Map {
 		
 	}
 	
-	public void initMap(int numofcells)
+	public void initMap(int numofcells, int numofworkers, int numofboxes)
 	{
 		for(int i=0; i<numofcells; i++) 
 		{
 			Floor f= new Floor();
 			cells.add(f);
 		}
+		
+		for(int i=0; i<numofboxes; i++) 
+		{
+			Box b= new Box();
+		}
+		
+		for(int i=0; i<numofworkers; i++) 
+		{
+			Worker w= new Worker();
+		}
+					
+		numofcells = 0;
+		numofworkers = 0;
+		numofboxes = 0;
 		System.out.println("Map created") ;
 	}
 	

@@ -4,6 +4,12 @@ public class Box extends Movable{
 	// Egy dobozt reprezent�l, amit a hely�re kell tolni.
 
 	protected BoxDestination boxdestination;
+	
+	
+	public Box()
+	{
+		System.out.println("Box created");
+	}
 	public boolean accept(Movable m){
 		// Ha egy Movable el akarja tolni a Boxot, akkor eld�nti,
 		// hogy el tud-e tol�dni, ezzel t�r vissza. */

@@ -13,10 +13,10 @@ public class Game {
 	// A j�t�k menet�t ir�ny�tja.
 
 	
-	public void init(int numofcells){
+	public void init(int numofcells, int numofworkers, int numofboxes){
 		// Inicializ�l, l�trehozza a sz�ks�ges objektumokat.
 		Map map = Map.getInstance();
-		map.initMap(numofcells);
+		map.initMap(numofcells, numofworkers, numofboxes);
 		// TODO
 	}
 	

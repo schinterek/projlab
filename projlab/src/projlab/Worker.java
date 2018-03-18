@@ -11,6 +11,11 @@ public class Worker extends Movable {
 	// amivel a l�d�ra toltuk.
 	// Meg�rkez�s ut�n hamisra �ll�t�dik.
 	
+	public Worker()
+	{
+		System.out.println("Worker created");
+	}
+	
 	public boolean accept(Movable m){
 		// Ha egy Movable el akarja tolni,  dd
 		// akkor � is megpr�b�l tov�bbtol�dni.
