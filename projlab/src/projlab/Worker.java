@@ -19,6 +19,7 @@ public class Worker extends Movable {
 		boolean canpush=m.pushWorker();
 		if (canpush==true)
 		{
+			pusher=m;
 			setPushed(true);
 			boolean canarrive = container.move(this, Direction.RIGHT, player);
 			
@@ -84,6 +85,10 @@ public class Worker extends Movable {
 	public void Die()
 	{
 		System.out.println("Worker meghalt :( ");
+		container.containedLeft();
+		
 
 	}
+	
+	
 }

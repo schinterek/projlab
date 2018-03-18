@@ -8,6 +8,7 @@ public class Box extends Movable{
 		// Ha egy Movable el akarja tolni a Boxot, akkor eld�nti,
 		// hogy el tud-e tol�dni, ezzel t�r vissza. */
 		// TODO
+		pusher=m;
 		return container.move(this, Direction.RIGHT, null);
 		
 	}
@@ -24,7 +25,6 @@ public class Box extends Movable{
 	public void destinationReached(){
 		// Ha a l�da el�ri a sz�m�ra kijel�lt poz�ci�t a padl�n,
 		// elt�nik.
-		BoxCounter.boxDisappeared();
 		addPoint();
 		//BoxCounter.boxDisappeared();
 
@@ -35,6 +35,7 @@ public class Box extends Movable{
 	public void Die()
 	{
 		System.out.println("Box eltűnt");
+		container.containedLeft();
 		
 	}
 }
