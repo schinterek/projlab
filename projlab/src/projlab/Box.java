@@ -9,7 +9,9 @@ public class Box extends Movable{
 		// hogy el tud-e tol�dni, ezzel t�r vissza. */
 		// TODO
 		pusher=m;
-		return container.move(this, Direction.RIGHT, null);
+		boolean moved = container.move(this, Direction.RIGHT, null);
+		pusher = null;
+		return moved;
 		
 	}
 	
