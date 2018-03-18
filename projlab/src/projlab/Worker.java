@@ -50,6 +50,6 @@ public class Worker extends Movable implements Visitor{
 
 	public void Die()
 	{
-		
+
 	}
 }

@@ -41,4 +41,9 @@ public class Box extends Movable implements Visitor{
 		
 		// TODO
 	}
+
+	public void Die()
+	{
+		
+	}
 }
