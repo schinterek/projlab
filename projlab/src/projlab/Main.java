@@ -20,6 +20,14 @@ public class Main {
 		c3.containedMovable = b2;
 		b1.container = c2;
 		b2.container = c3;
+		map.Add(c1);
+		map.Add(c2);
+		map.Add(c3);
+		map.Add(s1);
+		map.Add(c4);
+		map.Add(c5);
+		
+		
 		c2.accept(b2);
 		b2.accept(b1);
 		
