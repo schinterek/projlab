@@ -10,4 +10,11 @@ public class Floor extends Cell{
 		return containedMovable;
 	}
 	
+	@Override
+	public boolean canArrive(Movable toArrive, Direction dir, Player src) 
+	{
+		if(getContained()==null) return true;
+		else return getContained().accept(toArrive);
+	}
+	
 }
