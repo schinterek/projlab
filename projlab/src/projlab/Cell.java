@@ -15,10 +15,7 @@ public abstract class Cell {
 	}
 	
 	public boolean move(Movable toMove, Direction dir, Player src){
-		// Ha egy Movable egy bizonyos ir�nyba szeretne l�pni,
-		// ez a f�ggv�ny d�nti el, hogy l�phet-e.
-		
-		// Alap�rtelmezetten true-t ad vissza.
+	
 		return true;
 	}
 	

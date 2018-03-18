@@ -26,5 +26,9 @@ public class Switch extends Floor {
 	public boolean isOpen(){
 		return isOpen;
 	}
+	
+	public void SetOpen(Boolean b) {
+		isOpen=b;
+	}
 
 }
