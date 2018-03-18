@@ -12,5 +12,4 @@ public class Hole extends Cell{
 	
 	public Movable getContained() { return null;}
 	
-	public boolean move(Movable toMove, Direction dir, Player src) {return true;}
 }
