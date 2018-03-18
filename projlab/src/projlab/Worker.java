@@ -24,8 +24,7 @@ public class Worker extends Movable {
 			
 		   setPushed(false);
 				
-			
-			return canarrive;
+		   return canarrive;
 		}
 
 		else
