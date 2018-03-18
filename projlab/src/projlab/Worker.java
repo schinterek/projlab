@@ -1,46 +1,47 @@
 package projlab;
 
 public class Worker extends Movable implements Visitor{
-	// A játékosok által irányított munkásokat reprezentálja.
-	// Tudnak mozogni és ládákat tolni.
+	// A jï¿½tï¿½kosok ï¿½ltal irï¿½nyï¿½tott munkï¿½sokat reprezentï¿½lja.
+	// Tudnak mozogni ï¿½s lï¿½dï¿½kat tolni.
 	
 	private boolean isPushed;
-	// Azt mondja meg, hogy ládával toltuk-e arrébb.
-	// Csak addig igaz, míg meg nem érkezett arra a cellára,
-	// amivel a ládára toltuk.
-	// Megérkezés után hamisra állítódik.
+	// Azt mondja meg, hogy lï¿½dï¿½val toltuk-e arrï¿½bb.
+	// Csak addig igaz, mï¿½g meg nem ï¿½rkezett arra a cellï¿½ra,
+	// amivel a lï¿½dï¿½ra toltuk.
+	// Megï¿½rkezï¿½s utï¿½n hamisra ï¿½llï¿½tï¿½dik.
 	
 	public boolean accept(Movable m){
 		// Ha egy Movable el akarja tolni,
-		// akkor õ is megpróbál továbbtolódni.
-		// Azzal tér vissza, hogy ez sikerült-e;
-		
+		// akkor ï¿½ is megprï¿½bï¿½l tovï¿½bbtolï¿½dni.
+		// Azzal tï¿½r vissza, hogy ez sikerï¿½lt-e;
+
+		m.pushWorker();
 		// TODO
 		return false;
 	}
 	
 	public void move(Direction dir, Player src){
-		// Mozgatjuk a munkást az adott irányba.
+		// Mozgatjuk a munkï¿½st az adott irï¿½nyba.
 	}
 	
 	public boolean pushWorker(){
-		// False-szal tér vissza, mert munkás nem
-		// tud munkást eltolni.
+		// False-szal tï¿½r vissza, mert munkï¿½s nem
+		// tud munkï¿½st eltolni.
 		return false;
 	}
 	
 	public void wallReached(){
-		// Ha a játékos eléri a falat:
-		// ha az isPushed változó igaz, meghal,
+		// Ha a jï¿½tï¿½kos elï¿½ri a falat:
+		// ha az isPushed vï¿½ltozï¿½ igaz, meghal,
 		// ha nem, akkor nem.
 	}
 	
 	@Override
 	public boolean acceptVisitor(Visitor v) {
-		// Azona  Worker-en hívjuk meg, amelyikkel
-		// el akarjuk tolni a paraméterként kapott
+		// Azona  Worker-en hï¿½vjuk meg, amelyikkel
+		// el akarjuk tolni a paramï¿½terkï¿½nt kapott
 		// Visitort.
-		// Visszaadja, hogy sikerült-e az eltolás.
+		// Visszaadja, hogy sikerï¿½lt-e az eltolï¿½s.
 		
 		// TODO
 		return false;

@@ -3,16 +3,17 @@ package projlab;
 import java.util.ArrayList;
 
 public class SwitchableHole extends Hole implements Visitor {
-	// Az átkapcsolható lyukakat valósítja meg.
+	// Az ï¿½tkapcsolhatï¿½ lyukakat valï¿½sï¿½tja meg.
 	
 	private ArrayList<Switch> switches;
-	// Csak random beírtam ebbe a struktúrába.
+	// Csak random beï¿½rtam ebbe a struktï¿½rï¿½ba.
 	
 	@Override
 	public boolean accept(Movable m) {
 		// TODO Auto-generated method stub
 		return super.accept(m);
 		// Itt ennek akkor nem boolean-nek, hanem
-		// void-nak kéne lennie?
+		// void-nak kï¿½ne lennie?
+
 	}
 }
