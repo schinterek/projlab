@@ -33,6 +33,7 @@ public class Box extends Movable{
 
 	public void Die()
 	{
+		container.containedLeft();
 		System.out.println("Box eltűnt");
 		
 	}

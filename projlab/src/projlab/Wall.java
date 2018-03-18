@@ -12,6 +12,5 @@ public class Wall extends Cell {
 		return toArrive.wallReached();
 		
 	}
-	
 
 }
