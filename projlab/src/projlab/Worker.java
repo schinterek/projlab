@@ -42,8 +42,14 @@ public class Worker extends Movable {
 		// el akarjuk tolni a param�terk�nt kapott
 		// Visitort.
 		// Visszaadja, hogy siker�lt-e az eltol�s.
-		
+
+		Die();
 		// TODO
 		return false;
+	}
+
+	public void Die()
+	{
+
 	}
 }

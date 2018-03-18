@@ -41,4 +41,9 @@ public class Box extends Movable{
 		
 		// TODO
 	}
+
+	public void Die()
+	{
+		
+	}
 }
