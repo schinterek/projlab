@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 // <<singleton>>
 public class Controller {
-	// A játékosokat kezeli.
+	// A jatekosokat kezeli.
 	
 	private ArrayList<Player> alivePlayers;
 	private ArrayList<Player> deadPlayers;
 	// !!!
-	// Ez a doksiban úgy volt, hogy simán csak Player a típusuk,
-	// megcsináltam ArrayListnek. Megfelel?
+	// Ez a doksiban ugy volt, hogy siman csak Player a tipusuk,
+	// megcsinaltam ArrayListnek. Megfelel?
 	
 	public Controller()
 	{
@@ -18,37 +18,37 @@ public class Controller {
 	}
 	
 	public void playerDied(Player player){
-		// A meghalt játékost kiveszi a játékosok listájából.
-		// Ha nulla lesz a játékosok száma, szól a Game-nek,
-		// hogy vége a játéknak.
+		// A meghalt jatekost kiveszi a jatekosok listajabol.
+		// Ha nulla lesz a jatekosok szama, szol a Game-nek,
+		// hogy vege a jateknak.
 	
 		// TODO
 	}
 	
 	public void step(){
-		// Beolvassa a parancsokat és lépteti a játékosokat.
+		// Beolvassa a parancsokat es lepteti a jatekosokat.
 		
 		// TODO
 	}
 	
 	public void showEndScores() {
-		// Kiírja a végeredményt.
+		// Kiirja a vegeredmenyt.
 		
 		// !!!
-		// Amit mellesleg nem számolunk sehol egyelõre.
+		// Amit mellesleg nem szamolunk sehol egyelore.
 		
 		// TODO
 	}
 	
 	public int numOfAlivePlayers(){
-		// A még játékban lévõ játékosok számát adja vissza.
+		// A meg jatekban levo jatekosok szamat adja vissza.
 		
 		return alivePlayers.size();
 	}
 	
 	public boolean movableBoxes(){
-		// Ha már nincs olyan Boxm amit a helyére lehet rakni,
-		// visszatér false-sal, egyébként true.
+		// Ha mar nincs olyan Boxm amit a helyere lehet rakni,
+		// visszater false-sal, egyebkent true.
 		
 		// TODO
 		return true;

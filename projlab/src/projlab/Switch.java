@@ -3,7 +3,7 @@ package projlab;
 import java.util.zip.ZipEntry;
 
 public class Switch extends Floor {
-	// A kapcsol�kat reprezent�lja.
+	// A kapcsolokat reprezentalja.
 	
 	private boolean isOpen = false;
 	private SwitchableHole switchablehole;
@@ -13,8 +13,8 @@ public class Switch extends Floor {
 	}
 	
 	public void accept(Movable m) {
-		System.out.println("Switch: Rámléptek");
-		// Megh�vja a Movable setSwitch met�dus�t.
+		System.out.println("Switch: Ramleptek");
+		// Meghivja a Movable setSwitch metodusat.
         this.containedMovable=m;
         m.setContainer(this);
 		if (m.setSwitch()) { 
@@ -32,7 +32,7 @@ public class Switch extends Floor {
 	
 	public void containedLeft(){
 		System.out.println("Switch lekapcsolt");
-		// Az isOpen attrib�tumot false-ra �ll�tja.
+		// Az isOpen attributumot false-ra allitja.
 		//elment rola a doboz, ezert lekapcsol a switch
 
 		isOpen = false;

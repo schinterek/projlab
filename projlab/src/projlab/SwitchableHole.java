@@ -3,7 +3,7 @@ package projlab;
 import java.util.ArrayList;
 
 public class SwitchableHole extends Floor {
-	// Az �tkapcsolhat� lyukakat val�s�tja meg.
+	// Az atkapcsolhato lyukakat valositja meg.
 	
 	private Switch switches;
 	
@@ -11,11 +11,11 @@ public class SwitchableHole extends Floor {
 	public void accept(Movable m) {
 		
 		if( switches.isOpen()) {
-			System.out.println("SwitchHole: Valaki leesett xd lol");
+			System.out.println("SwitchHole: Valaki leesett");
 			m.Die();
 		}
 		else {
-			System.out.println("SwitchHole: Rámléptek");
+			System.out.println("SwitchHole: Ramleptek");
 			this.setContainedMovable(m);
 			m.setContainer(this);
 		}

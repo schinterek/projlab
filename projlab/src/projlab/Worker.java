@@ -1,15 +1,15 @@
 package projlab;
 
 public class Worker extends Movable {
-	// A j�t�kosok �ltal ir�ny�tott munk�sokat reprezent�lja.
-	// Tudnak mozogni �s l�d�kat tolni.
+	// A jatekosok altal iranyitott munkasokat reprezentalja.
+	// Tudnak mozogni es ladakat tolni.
 
 	private Player player;
 	private boolean isPushed;
-	// Azt mondja meg, hogy l�d�val toltuk-e arr�bb.
-	// Csak addig igaz, m�g meg nem �rkezett arra a cell�ra,
-	// amivel a l�d�ra toltuk.
-	// Meg�rkez�s ut�n hamisra �ll�t�dik.
+	// Azt mondja meg, hogy ladaval toltuk-e arrebb.
+	// Csak addig igaz, mig meg nem erkezett arra a cellara,
+	// amivel a ladara toltuk.
+	// Megerkezes utan hamisra allitodik.
 	
 	public Worker()
 	{
@@ -19,8 +19,8 @@ public class Worker extends Movable {
 	public boolean accept(Movable m){
 		//System.out.println("Worker accept fv");
 		// Ha egy Movable el akarja tolni,  dd
-		// akkor � is megpr�b�l tov�bbtol�dni.
-		// Azzal t�r vissza, hogy ez siker�lt-e;
+		// akkor o is megprobal tovabbtolodni.
+		// Azzal ter vissza, hogy ez sikerult-e;
 
 		boolean canpush=m.pushWorker();
 		if (canpush==true)
@@ -31,8 +31,8 @@ public class Worker extends Movable {
 			pusher= null;
 		   setPushed(false);
 		  if(canarrive==true)
-			  System.out.println("Worker lépett");
-		  else System.out.println("Worker nem lépett");
+			  System.out.println("Worker lepett");
+		  else System.out.println("Worker nem lepett");
 		   return  canarrive;
 		}
 
@@ -47,27 +47,27 @@ public class Worker extends Movable {
 	}
 	
 	public void move(Direction dir, Player src){
-		// Mozgatjuk a munk�st az adott ir�nyba.
+		// Mozgatjuk a munkast az adott iranyba.
 		//System.out.println("Worker move fv");
 		this.getContainer().move(this, dir, src);
 	}
 	
 	public boolean pushWorker(){
 		//System.out.println("Worker psuhWorker fv");
-		// False-szal t�r vissza, mert munk�s nem
-		// tud munk�st eltolni.
+		// False-szal ter vissza, mert munkas nem
+		// tud munkast eltolni.
 		return false;
 	}
 	
 	public boolean wallReached(){
 	//	System.out.println("Worker wallReached fv");
-		// Ha a j�t�kos el�ri a falat:
-		// ha az isPushed v�ltoz� igaz, meghal,
+		// Ha a jatekos eleri a falat:
+		// ha az isPushed valtozo igaz, meghal,
 		// ha nem, akkor nem.
 
 		if (isPushed == true)
 		{
-			System.out.println("Munkás meghalt mert falnak tolták");
+			System.out.println("Munkas meghalt mert falnak toltak");
 			container.containedLeft();
 			Die();
 			return true;
@@ -75,7 +75,7 @@ public class Worker extends Movable {
 			
 		}
 		else {
-			System.out.println("Falnak mentél!");
+			System.out.println("Falnak mentel!");
 
 		return false; }
 

@@ -1,7 +1,7 @@
 package projlab;
 
 public class Floor extends Cell{
-	// Sima padl�t val�s�tja meg.
+	// Sima padlot valositja meg.
 	
 	public Floor()
 	{
@@ -25,14 +25,14 @@ public class Floor extends Cell{
 	
 	@Override
 	public void containedLeft(){
-		System.out.println("Floor: Elléptek rólam");
-		// Azt kezeli, hogy egy objektum elhagyta az adott cell�t.
+		System.out.println("Floor: Elleptek rolam");
+		// Azt kezeli, hogy egy objektum elhagyta az adott cellat.
 		containedMovable = null;
 	}
 	
 	public void accept(Movable m) 
 	{
-		System.out.println("Floor: Rámléptek");
+		System.out.println("Floor: Ramleptek");
 		containedMovable = m;
 		m.setContainer(this);
 	}

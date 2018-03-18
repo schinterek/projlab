@@ -1,13 +1,13 @@
 package projlab;
 
 public class Hole extends Cell{
-	// A luykakat reprezent�lja.
+	// A luykakat reprezentalja.
 
 	@Override
 	public void accept(Movable m) {		
-		// Megh�vja a r��rkez� Movable-nek a Die() f�ggv�ny�t.
+		// Meghivja a raerkezo Movable-nek a Die() fuggvenyet.
 		// TODO
-		System.out.println("Hole: Valaki leesett xd lol");
+		System.out.println("Hole: Valaki leesett");
 		m.Die();
 	}
 	

@@ -2,7 +2,7 @@ package projlab;
 
 // <<singleton>>
 public class Timer {
-	// Az idõ telését figyelõ osztály.
+	// Az ido teleset figyelo osztaly.
 	
 	
 	public Timer()
@@ -12,9 +12,9 @@ public class Timer {
 	
 	public void run(){
 		System.out.println("Timer run fv");
-		// ELindítja a Timer-nek a szálát, amely
-		// idõközönként meghívja a Controller->step()
-		// metódusát.
+		// ELinditja a Timer-nek a szalat, amely
+		// idokozonkent meghivja a Controller->step()
+		// metodusat.
 		System.out.println("The game is running");
 	}
 }

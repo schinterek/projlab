@@ -3,7 +3,7 @@ package projlab;
 public class Main {
 	public static void main(String [ ] args) 
 	{
-		System.out.println("Elsõ teszteset: magába foglalja a láda tol ládát, láda üres területre tolódik, láda switchet kapcsol");
+		System.out.println("Elso teszteset: magaba foglalja a lada tol ladat, lada ures teruletre tolodik, lada switchet kapcsol");
 		System.out.println();
 		Game g1 = new Game();
 		
@@ -32,7 +32,7 @@ public class Main {
 		
 		c2.move(b1, null, null);
 		System.out.println();
-		System.out.println("Második teszteset: magába foglalja a munkás tol ládát, láda munkásra tolódik, aki mögött fal van, láda eléri a destinationjét");
+		System.out.println("Masodik teszteset: magaba foglalja a munkas tol ladat, lada munkasra tolodik, aki mogott fal van, lada eleri a destinationjet");
 		System.out.println();
 		Floor c6 = new Floor();
 		Floor c7 = new Floor();

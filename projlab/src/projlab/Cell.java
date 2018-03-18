@@ -1,23 +1,23 @@
 package projlab;
 
 public abstract class Cell {
-	// Egy mez�t reprezent�l� absztrakt oszt�ly.
+	// Egy mezot reprezentalo absztrakt osztaly.
 	
 	public abstract void accept(Movable m);
 	
 	public boolean canArrive(Movable toArrive, Direction dir, Player src){
-		// Ha egy Movable objektum (toArrive) akar �rkezni a egy bizonyos
-		// ir�nyb�l (dir), egy bizonyos j�t�kos �ltal (src),
-		// akkor eld�nti, hogy meg�rkezhet-e a mez�re.
+		// Ha egy Movable objektum (toArrive) akar erkezni a egy bizonyos
+		// iranybol (dir), egy bizonyos jatekos altal (src),
+		// akkor eldonti, hogy megerkezhet-e a mezore.
 		
-		// Alap�rtelmezetten true-t ad vissza.
+		// Alapertelmezetten true-t ad vissza.
 		return true;
 	}
 	
 	public boolean move(Movable toMove, Direction dir, Player src) {return true;}
 	
 	public void containedLeft(){
-		// Azt kezeli, hogy egy objektum elhagyta az adott cell�t.
+		// Azt kezeli, hogy egy objektum elhagyta az adott cellat.
 		
 	}
 	

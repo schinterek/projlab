@@ -1,25 +1,25 @@
 package projlab;
 
 public class Player {
-	// A játékosokat valósítja meg.
+	// A jatekosokat valositja meg.
 	
 	private int points;
 	private Worker worker;
 	
 	public void recieveCommand(char c){
-		// Kezeli a játékosok által lenyomott billentyûket.
-		// Ha az adott játékoshoz tartozik az inputként kapott karakter,
-		// reagál rá, mások nem.
+		// Kezeli a jatekosok altal lenyomott billentyuket.
+		// Ha az adott jatekoshoz tartozik az inputkent kapott karakter,
+		// reagal ra, masok nem.
 		
 		// !!!
-		// Ezt is el kéne tárolni, hogy melyik játékoshoz
-		// milyen billentyûkombinációk tartoznak.
+		// Ezt is el kene tarolni, hogy melyik jatekoshoz
+		// milyen billentyukombinaciok tartoznak.
 		
 		// TODO
 	}
 	
 	public void addPoint(){
-		// Növeli a játékos pontjait.
+		// Noveli a jatekos pontjait.
 	}
 
 }

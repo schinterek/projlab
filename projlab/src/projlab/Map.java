@@ -27,12 +27,12 @@ public class Map {
 	
 	public boolean move(Movable toMove, Direction dir, Player src){
 	//	System.out.println("Map move fv");
-		// Egy bizonyos Movable egy bizonyos ir�nyba akar l�pni.
-		// Ez a f�ggv�ny mondja meg, hogy arra a cell�ra
-		// r� lehet-e l�pni, �s hogy �llnak-e m�r rajta.
+		// Egy bizonyos Movable egy bizonyos iranyba akar lepni.
+		// Ez a fuggveny mondja meg, hogy arra a cellara
+		// ra lehet-e lepni, es hogy allnak-e mar rajta.
 		
 		// !!!
-		// "�s hogy �llnak-e m�r rajta?"
+
 		
 		// TODO
 		int actualindex = cells.indexOf(toMove.getContainer());
@@ -52,7 +52,7 @@ public class Map {
 		 }
 		 else  {
 			// System.out.println("Map move fv");
-			 System.out.println("Pálya széle!");
+			 System.out.println("Palya szele!");
 			 return false;
 		 }		
 		

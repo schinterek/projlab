@@ -13,8 +13,8 @@ public abstract class Movable {
 	// Ehhez sem.
 	
 	public void destinationReached() {
-	// Megmondja, hogy a l�da el�rte-e a megfelel� helyet,
-	// ha igen, elt�nteti a l�d�t.
+	// Megmondja, hogy a lada elerte-e a megfelelo helyet,
+	// ha igen, eltunteti a ladat.
 	//worker eseten nem csinal semmit a fuggveny
 	}
 	
@@ -23,18 +23,17 @@ public abstract class Movable {
 	}
 	
 	public boolean setSwitch(){
-		// Vizsg�lja, hogy �ll�tani kell-e a kapcsol�t,
-		// ami att�l f�gg, hogy munk�s (ekkor nem)
-		// vagy l�da (ekkor igen) l�pett r�.
+		// Vizsgalja, hogy allitani kell-e a kapcsolot,
+		// ami attol fugg, hogy munkas (ekkor nem)
+		// vagy lada (ekkor igen) lepett ra.
 		return false;
 	}
 	
 	public abstract void Die();
 		// !!!
-		// Mi�rt nagy bet�? Mert destruktor?
-		// A l�da �s a munk�s implement�lja,
-		// jelezz�k, mikor meghal a munk�s vagy
-		// elt�nik a doboz.
+		// A lada es a munkas implementalja,
+		// jelezzuk, mikor meghal a munkas vagy
+		// eltunik a doboz.
 	
 	
 	public boolean wallReached(){

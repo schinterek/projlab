@@ -1,7 +1,7 @@
 package projlab;
 ///
 public class Box extends Movable{
-	// Egy dobozt reprezent�l, amit a hely�re kell tolni.
+	// Egy dobozt reprezental, amit a helyere kell tolni.
 
 	protected BoxDestination boxdestination;
 	
@@ -12,15 +12,15 @@ public class Box extends Movable{
 	}
 	public boolean accept(Movable m){
 		//System.out.println("Box accept fv");
-		// Ha egy Movable el akarja tolni a Boxot, akkor eld�nti,
-		// hogy el tud-e tol�dni, ezzel t�r vissza. */
+		// Ha egy Movable el akarja tolni a Boxot, akkor eldonti,
+		// hogy el tud-e tolodni, ezzel ter vissza. */
 		// TODO
 		pusher=m;
 		boolean moved = container.move(this, Direction.RIGHT, null);
 		pusher = null;
 		if (moved==true)
-			System.out.println("Box lépett");
-		else System.out.println("Box nem lépett");
+			System.out.println("Box lepett");
+		else System.out.println("Box nem lepett");
 		return moved;
 		
 	}
@@ -28,17 +28,17 @@ public class Box extends Movable{
 	
 	public boolean setSwitch(){
 	//	System.out.println("Box setSwitch fv");
-		// Ha a Box kapcsol�ra tol�dik, ez a f�ggv�ny kapcsolja
-		// be a kapcsol�t.
+		// Ha a Box kapcsolora tolodik, ez a fuggveny kapcsolja
+		// be a kapcsolot.
 		
 		// TODO
 		return true;
 	}
 	
 	public void destinationReached(){
-		System.out.println("Box: Célba értem lol");
-		// Ha a l�da el�ri a sz�m�ra kijel�lt poz�ci�t a padl�n,
-		// elt�nik.
+		System.out.println("Box: Celba ertem");
+		// Ha a lada eleri a szamara kijelolt pozociot a padlon,
+		// eltunik.
 		addPoint();
 		//BoxCounter.boxDisappeared();
         container.containedLeft();
@@ -48,7 +48,7 @@ public class Box extends Movable{
 
 	public void Die()
 	{
-		System.out.println("Box eltűnt");
+		System.out.println("Box eltunt");
 		
 	}
 }

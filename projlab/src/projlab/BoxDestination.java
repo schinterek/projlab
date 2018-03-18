@@ -1,16 +1,16 @@
 package projlab;
 
 public class BoxDestination extends Floor {
-	// Az a mez�, ahova a Box-okat kell eljuttatni.
+	// Az a mezo, ahova a Box-okat kell eljuttatni.
 	
 	
 	public void accept(Movable m) {
-		// Ha a megfelel� Box-ot tolj�k r�, akkor
-		// azt elt�nteti a p�ly�r�l.
+		// Ha a megfelelo Box-ot toljak ra, akkor
+		// azt eltunteti a palyarol.
 		
 		// !!!
-		// Visitorban az accpet() boolean-nek van �rva,
-		// de a doksiban ez a f�ggv�ny void volt.
+		// Visitorban az accpet() boolean-nek van irva,
+		// de a doksiban ez a fuggveny void volt.
 		
 		// TODO
 		m.setContainer(this);
