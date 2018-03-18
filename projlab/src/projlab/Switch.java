@@ -16,8 +16,8 @@ public class Switch extends Floor implements Visitor {
 	
 	public void containedLeft(){
 		// Az isOpen attrib�tumot false-ra �ll�tja.
-		// ???
 		//elment rola a doboz, ezert lekapcsol a switch
+
 		isOpen = false;
 	}
 	
