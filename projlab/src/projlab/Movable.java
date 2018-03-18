@@ -4,8 +4,9 @@ public abstract class Movable {
 	
 	protected Floor container;
 	
-	public abstract void acceptCell(Cell v);
-	// Ehhez nem volt le�r�s a doksiban.
+	public void acceptCell(Cell v) {
+		v.accept(this);
+	}
 	
 	public abstract boolean accept(Movable m);
 	// Ehhez sem.
@@ -13,8 +14,6 @@ public abstract class Movable {
 	public void destinationReached() {
 	// Megmondja, hogy a l�da el�rte-e a megfelel� helyet,
 	// ha igen, elt�nteti a l�d�t.
-	
-	// TODO
 	}
 	
 	public boolean pushWorker(){
