@@ -5,6 +5,11 @@ public abstract class Cell {
 	
 	public abstract void accept(Movable m);
 	
+	public Cell()
+	{
+		System.out.println("Cell created");
+	}
+	
 	public boolean canArrive(Movable toArrive, Direction dir, Player src){
 		// Ha egy Movable objektum (toArrive) akar �rkezni a egy bizonyos
 		// ir�nyb�l (dir), egy bizonyos j�t�kos �ltal (src),

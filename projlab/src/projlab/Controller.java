@@ -12,6 +12,11 @@ public class Controller {
 	// Ez a doksiban úgy volt, hogy simán csak Player a típusuk,
 	// megcsináltam ArrayListnek. Megfelel?
 	
+	public Controller()
+	{
+		System.out.println("Controller created");
+	}
+	
 	public void playerDied(Player player){
 		// A meghalt játékost kiveszi a játékosok listájából.
 		// Ha nulla lesz a játékosok száma, szól a Game-nek,

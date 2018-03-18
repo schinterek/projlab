@@ -10,16 +10,13 @@ public class Map {
 
 	private Map() {}
 	
-	public static Map getInstance() {return map;}
+	public static Map getInstance() { return map;}
 	// A p�ly�t �s a rajta l�v� mez�ket val�s�tja meg.
 	
 	// !!!
-	private ArrayList<Cell> cells;
+	private ArrayList<Cell> cells = new ArrayList<Cell>();
 	// !!!
-	// Milyen struktur�ban k�ne t�rolni?
-	
-	
-	
+	// Milyen struktur�ban k�ne t�rolni?	
 	
 	public boolean move(Movable toMove, Direction dir, Player src){
 		// Egy bizonyos Movable egy bizonyos ir�nyba akar l�pni.
@@ -45,10 +42,17 @@ public class Map {
 		 else  {
 			 System.out.println("Pálya széle!");
 			 return false;
-		 }
+		 }		
 		
-		
-		
+	}
+	
+	public void initMap(int numofcells)
+	{
+		for(int i=0; i<numofcells; i++) 
+		{
+			
+		}
+		System.out.println("Map created") ;
 	}
 	
 }	
