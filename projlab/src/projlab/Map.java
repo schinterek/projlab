@@ -1,10 +1,11 @@
 package projlab;
 
+import java.awt.List;
 import java.util.ArrayList;
 
 // <<singleton>>
 public class Map {
-
+		
 	
 	private static Map map = new Map();
 
@@ -46,8 +47,6 @@ public class Map {
 			 System.out.println("Pálya széle!");
 			 return false;
 		 }
-		
-		
 		
 	}
 	
