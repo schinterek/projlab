@@ -8,10 +8,10 @@ public class BoxCounter {
 	private Game game;
 	
 	public void boxDisappeared(){
-		numOfBoxes--;
-		if(numOfBoxes==0){
-			game.gameEnded();
-		}
+		// Ha egy Box lyukba esett, vagy a hely�re ker�lt,
+		// azaz elt�nt, cs�kkenti a Box-ok sz�m�t 1-gyel.
+		
+		// TODO
 	}
 
 }

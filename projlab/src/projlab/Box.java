@@ -26,6 +26,7 @@ public class Box extends Movable{
 		// elt�nik.
 		addPoint();
 		//BoxCounter.boxDisappeared();
+
 		Die();
 		// TODO
 	}

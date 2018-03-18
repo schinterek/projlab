@@ -49,7 +49,7 @@ public class Worker extends Movable {
 		return false;
 	}
 	
-	public void wallReached(){
+	public boolean wallReached(){
 		// Ha a j�t�kos el�ri a falat:
 		// ha az isPushed v�ltoz� igaz, meghal,
 		// ha nem, akkor nem.
@@ -58,10 +58,16 @@ public class Worker extends Movable {
 		{
 			System.out.println("Munkás meghalt mert falnak tolták");
 			Die();
+			return true;
+			
 			
 		}
-		else
+		else {
 			System.out.println("Falnak mentél!");
+
+		return false; }
+
+
 
 	}
 
