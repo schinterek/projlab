@@ -29,7 +29,7 @@ public class Game {
 	
 	public void gameEnded(){
 		// A jatek veget kezeli.
-		System.out.println("Game gameEnded fv");
+		System.out.println("Vege a jateknak");
 		// TODO
 	}
 }

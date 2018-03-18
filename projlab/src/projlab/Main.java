@@ -36,7 +36,7 @@ public class Main {
 		map.removeAll();
 
 		System.out.println();
-		System.out.println("Masodik teszteset: magaba foglalja a munkas tol ladat, lada munkasra tolodik, aki mogott fal van, lada eleri a destinationjet");
+		System.out.println("Masodik teszteset: magaba foglalja a munkas tol ladat, lada munkasra tolodik, aki mogott fal van, lada eleri a destinationjet, játék vége");
 		System.out.println();
 		Floor c6 = new Floor();
 		Floor c7 = new Floor();
@@ -60,8 +60,63 @@ public class Main {
 		map.Add(c9);	
 		
 		w1.move(Direction.RIGHT, null);
+		g1.gameEnded();
 		
-
+		map.removeAll();
+		
+		System.out.println();
+		System.out.println("Harmadik teszteset: munkés lép switchre, majd munkás mozog falnak");
+		System.out.println();
+		
+		Floor c10 = new Floor();
+		Switch c11 = new Switch();
+		Wall c12= new Wall();
+		
+		Worker w3= new Worker();
+		
+		w3.container = c10;
+		c10.containedMovable = w3;
+		
+		map.Add(c10);
+		map.Add(c11);
+		map.Add(c12);
+		
+		w3.move(Direction.RIGHT, null);
+		w3.move(Direction.RIGHT, null);
+		
+		map.removeAll();
+		
+		System.out.println();
+		System.out.println("Negyedik teszteset: munkás tol ládát falnak");
+		System.out.println();
+		
+		
+		Floor c13 = new Floor();
+		Floor c14 = new Floor();
+		Floor c15 = new Floor();
+		Wall c16= new Wall();
+		
+		Worker w4= new Worker();
+		Box b4 = new Box();
+		
+		w4.container = c13;
+		c13.containedMovable = w4;
+		b4.container = c14;
+		c14.containedMovable = b4;
+		
+		map.Add(c13);
+		map.Add(c14);
+		map.Add(c15);
+		map.Add(c16);
+		
+		w4.move(Direction.RIGHT, null);
+		w4.move(Direction.RIGHT, null);
+		
+		map.removeAll();
+		
+		System.out.println();
+		System.out.println("Ötödik teszteset: munkés tol ládát lyukra, majd ő is belelép");
+		System.out.println();
 	}
 	
 }

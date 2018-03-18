@@ -47,6 +47,7 @@ public class Worker extends Movable {
 	}
 	
 	public void move(Direction dir, Player src){
+		System.out.println("Munkas lépett");
 		// Mozgatjuk a munkast az adott iranyba.
 		//System.out.println("Worker move fv");
 		this.getContainer().move(this, dir, src);
