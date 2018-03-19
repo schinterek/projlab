@@ -117,6 +117,32 @@ public class Main {
 		System.out.println();
 		System.out.println("Ötödik teszteset: munkés tol ládát lyukra, majd ő is belelép");
 		System.out.println();
+		
+		Game g2 = new Game();
+		
+		Floor c17 = new Floor();
+		Floor c18 = new Floor();
+		Hole c19= new Hole();
+		
+		Worker w5= new Worker();
+		Box b5 = new Box();
+		
+		w5.container = c17;
+		c17.containedMovable = w5;
+		b5.container = c18;
+		c18.containedMovable = b5;
+		
+		map.Add(c17);
+		map.Add(c18);
+		map.Add(c19);
+		
+		w5.move(Direction.RIGHT, null);
+		w5.move(Direction.RIGHT, null);
+		
+		g2.gameEnded();
+		
+		map.removeAll();
+		
 	}
 	
 }
