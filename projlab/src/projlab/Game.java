@@ -20,7 +20,7 @@ public class Game {
 		Map map = Map.getInstance();
 		map.initMap(read());
 		map.printMap();
-		Player player = new Player();
+		Player player = new Player("Vámpír Ági");
 		controller.addPlayer(player);
 		BoxCounter.getInstance().setGame(this);
 		Worker w = (Worker)map.getWorker();
@@ -39,6 +39,7 @@ public class Game {
 		// A jatek veget kezeli.
 		System.out.println("Vege a jateknak");
 		controller.ended();
+		controller.showEndScores();
 		// TODO
 	}
 	

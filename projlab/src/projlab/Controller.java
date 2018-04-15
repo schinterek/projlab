@@ -66,6 +66,16 @@ public class Controller {
 		// Amit mellesleg nem szamolunk sehol egyelore.
 		
 		// TODO
+		int max = 0;
+		for (Player p: alivePlayers)
+		{
+			p.printPoints();
+			if(p.getPoints()>max) max = p.getPoints();
+		}
+		for (Player p: alivePlayers)
+		{
+			if(p.getPoints()==max) System.out.println("A gyoztes: " + p.getName());
+		}
 		
 	}
 	

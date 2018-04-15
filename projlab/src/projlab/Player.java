@@ -5,6 +5,11 @@ public class Player {
 	
 	private int points=0;
 	private Worker worker;
+	private String name;
+	
+	public Player(String n) {
+		name = n;
+	}
 	
 	public void recieveCommand(String c){
 		// Kezeli a jatekosok altal lenyomott billentyuket.
@@ -46,5 +51,13 @@ public class Player {
 		worker = w;
 		w.setPlayer(this);
 	}
+	
+	public void setPoints(int p) {points = p;}
+	public int getPoints() { return points; }
+	public void printPoints()
+	{
+		System.out.println(name + ": " + Integer.toString(points));
+	}
+	public String getName() { return name; }
 
 }
