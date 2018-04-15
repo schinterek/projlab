@@ -73,6 +73,7 @@ public class Floor extends Cell{
 			slippery=1;
 		else
 			slippery=0.5;
+		System.out.println("A Slippery = "+Double.toString(slippery) );
 	}
 	
 	public void getHoneyed() {
@@ -80,6 +81,7 @@ public class Floor extends Cell{
 			slippery=1;
 		else
 			slippery=2;
+		System.out.println("A Slippery = "+Double.toString(slippery) );
 	}
 	
 	public void print()

@@ -36,6 +36,12 @@ public class Player {
 		case "d": 
 			worker.move(Direction.RIGHT, this);
 			break;
+		case "o":
+			worker.spillOil();
+			break;
+		case "h":
+			worker.spillHoney();
+			break;
 		}
 
 		

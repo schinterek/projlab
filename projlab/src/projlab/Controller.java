@@ -47,7 +47,7 @@ public class Controller {
 		while(scanner.hasNext())
 		{
 			String s = scanner.nextLine();
-			if (s.equals("s") || s.equals("w") || s.equals("a") || s.equals("d")) {
+			if (s.equals("s") || s.equals("w") || s.equals("a") || s.equals("d") || s.equals("o")|| s.equals("h")) {
 			alivePlayers.get(0).recieveCommand(s);
 			map.printMap();
 			if( ended ) break;
