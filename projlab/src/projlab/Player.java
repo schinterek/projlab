@@ -6,7 +6,7 @@ public class Player {
 	private int points;
 	private Worker worker;
 	
-	public void recieveCommand(char c){
+	public void recieveCommand(String c){
 		// Kezeli a jatekosok altal lenyomott billentyuket.
 		// Ha az adott jatekoshoz tartozik az inputkent kapott karakter,
 		// reagal ra, masok nem.
@@ -16,12 +16,34 @@ public class Player {
 		// milyen billentyukombinaciok tartoznak.
 		
 		// TODO
+		
+		switch(c)
+		{
+		case "w": 
+			worker.move(Direction.UP, this);
+			break;
+		case "a": 
+			worker.move(Direction.LEFT, this);
+			break;
+		case "s": 
+			worker.move(Direction.DOWN, this);
+			break;
+		case "d": 
+			worker.move(Direction.RIGHT, this);
+			break;
+		}
 
 		
 	}
 	
 	public void addPoint(){
-		// Noveli a jatekos pontjait.
+		points++;
+	}
+	
+	public void setWorker(Worker w)
+	{
+		worker = w;
+		w.setPlayer(this);
 	}
 
 }
