@@ -5,14 +5,21 @@ public class Box extends Movable{
 
 	protected BoxDestination boxdestination;
 	private int weight;
+	private int index=0;
 	
-	
-	public Box(int x, int y, int weight)
+	public void setDestination(BoxDestination d) {
+		boxdestination=d;
+	}
+	public int getIndex() {
+		return index;
+	}
+	public Box(int x, int y, int weight, int index)
 	{
 		System.out.println("Box created");
 		this.x = x;
 		this.y = y;
 		this.weight = weight;
+		this.index=index;
 		
 	}
 	public boolean accept(Movable m, Direction dir, double strength){
@@ -41,14 +48,15 @@ public class Box extends Movable{
 	}
 	
 	public void destinationReached(){
-		System.out.println("Box: Celba ertem");
+		
 		// Ha a lada eleri a szamara kijelolt pozociot a padlon,
 		// eltunik.
-		addPoint();
-		//BoxCounter.boxDisappeared();
-        container.containedLeft();
-		Die();
-		BoxCounter.getInstance().boxDisappeared();
+		if(container==boxdestination) {
+			System.out.println("Box: Celba ertem");
+			addPoint();
+	        container.containedLeft();
+			Die();
+		}
 		// TODO
 	}
 

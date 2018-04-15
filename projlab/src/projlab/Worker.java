@@ -96,6 +96,14 @@ public class Worker extends Movable {
 
 
 	}
+	
+	public void addPoint()
+	{
+		if(pusher==null) 
+			player.addPoint();
+		else
+			pusher.addPoint();
+	}
 
 	public void setPushed(boolean b)
 	{

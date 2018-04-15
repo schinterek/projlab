@@ -10,8 +10,10 @@ public class Map {
 	private int columns;
 	private int rows;
 	private Worker w;
-	private Switch sw;
-	private SwitchableHole swh;
+	private ArrayList<Switch> switches =new ArrayList<Switch>();
+	private ArrayList<SwitchableHole> traps = new ArrayList<SwitchableHole>();
+	private ArrayList<Box> boxes= new ArrayList<Box>();
+	private ArrayList<BoxDestination> des = new ArrayList<BoxDestination>();
 
 	private Map() {System.out.println("Map created") ; }
 	
@@ -102,15 +104,15 @@ public class Map {
 			break;
 			
 		case "Switch":
-			Switch sw = new Switch(item.getX(),item.getY(),item.getData());
+			Switch sw = new Switch(item.getX(),item.getY(),item.getData(),item.getIndex());
 			cells[sw.getX()][sw.getY()] = sw;
-			this.sw = sw;
+			switches.add(sw);
 			break;
 			
 		case "SwitchableHole":
-			SwitchableHole swh = new SwitchableHole(item.getX(),item.getY(),item.getData());
+			SwitchableHole swh = new SwitchableHole(item.getX(),item.getY(),item.getData(),item.getIndex());
 			cells[swh.getX()][swh.getY()] = swh;
-			this.swh = swh;
+			traps.add(swh);
 			break;
 			
 		case "Wall":
@@ -119,8 +121,9 @@ public class Map {
 			break;
 			
 		case "BoxDestination":
-			BoxDestination boxd = new BoxDestination(item.getX(),item.getY(),item.getData());
+			BoxDestination boxd = new BoxDestination(item.getX(),item.getY(),item.getData(),item.getIndex());
 			cells[boxd.getX()][boxd.getY()] = boxd;
+			des.add(boxd);
 			break;
 			
 		case "Worker":
@@ -131,17 +134,36 @@ public class Map {
 			break;
 			
 		case "Box":
-			Box box = new Box(item.getX(),item.getY(),(int)item.getData());
+			Box box = new Box(item.getX(),item.getY(),(int)item.getData(),item.getIndex());
 			cells[box.getX()][box.getY()].accept(box);
 			BoxCounter.getInstance().increaseBoxes();
+			boxes.add(box);
 			break;
 			
 		
 		}
 	  }
-		sw.setSwitchableHole(swh);
+		BindItems();
 		System.out.println("Map created") ;
 	}
+	
+	public void BindItems() {
+		for(Box box: boxes) {
+			for(BoxDestination ds: des) {
+				if(ds.getIndex()==box.getIndex())
+					box.setDestination(ds);
+			}
+		}
+		
+		for(Switch sw: switches) {
+			for(SwitchableHole t: traps) {
+				if(sw.getIndex()==t.getIndex())
+					sw.setSwitchableHole(t);
+			}
+		}
+	}
+	
+
 	
 	public void printMap()
 	{

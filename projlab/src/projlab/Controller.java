@@ -66,6 +66,7 @@ public class Controller {
 		// Amit mellesleg nem szamolunk sehol egyelore.
 		
 		// TODO
+		
 	}
 	
 	public int numOfAlivePlayers(){

@@ -3,7 +3,7 @@ package projlab;
 public class Player {
 	// A jatekosokat valositja meg.
 	
-	private int points;
+	private int points=0;
 	private Worker worker;
 	
 	public void recieveCommand(String c){
@@ -38,6 +38,7 @@ public class Player {
 	
 	public void addPoint(){
 		points++;
+		System.out.println(Integer.toString(points)+" pontja van a jatekosnak");
 	}
 	
 	public void setWorker(Worker w)

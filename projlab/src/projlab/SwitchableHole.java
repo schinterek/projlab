@@ -5,8 +5,15 @@ import java.util.ArrayList;
 public class SwitchableHole extends Floor {
 	// Az atkapcsolhato lyukakat valositja meg.
 	
-	public SwitchableHole(int x, int y, double slippery) {
+	private int index=0;
+	
+	public SwitchableHole(int x, int y, double slippery, int index) {
 		super(x, y, slippery);
+		this.index=index;
+	}
+	
+	public int getIndex() {
+		return index;
 	}
 
 	private Switch switches;
@@ -46,8 +53,10 @@ public class SwitchableHole extends Floor {
 	
 	public void print()
 	{
-		if (containedMovable==null)
+		if (switches.isOpen()==true)
 		  System.out.print(" T");
+		else if(containedMovable==null)
+			System.out.print(" F");
 		else containedMovable.print();
 	}
 	

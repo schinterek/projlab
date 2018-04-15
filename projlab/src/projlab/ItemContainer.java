@@ -42,14 +42,14 @@ public class ItemContainer {
 		}catch(IOException ioe) {}
 	}
 	
-	public void listItems()
+	/*public void listItems()
 	{
 		for (Item item: items)
 		{
 			item.list();
 			System.out.println("");
 		}
-	}
+	}*/
 	
 	public int Count()
 	{

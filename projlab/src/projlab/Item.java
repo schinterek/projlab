@@ -6,22 +6,25 @@ public class Item implements Serializable{
 	private int x;
 	private int y;
 	private double data;
+	private int index;
 	
-	public Item(String type, int x, int y, double data)
+	public Item(String type, int x, int y, double data, int index)
 	{
 		this.type = type;
 		this.x = x;
 		this.y = y;
 		this.data = data;
+		this.index= index;
 	}
 	
 	public String getType() { return type; }
 	public int getX() { return x; }
 	public int getY() { return y; }
 	public double getData() { return data; }
+	public int  getIndex() {return index;}
 
-	public void list() {
+	/*public void list() {
 		System.out.print(type + " " + Integer.toString(x)+ " " + Integer.toString(y)+ " " + Double.toString(data));
 		
-	}
+	}*/
 }

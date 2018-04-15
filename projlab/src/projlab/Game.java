@@ -45,26 +45,26 @@ public class Game {
 	public void write()
 	{
 		ItemContainer con = new ItemContainer();
-		con.addItem(new Item("MapSize",4,4,0));
-		con.addItem(new Item("Floor",0,0,1));
-		con.addItem(new Item("Floor",2,1,1));
-		con.addItem(new Item("Hole",3,0,1));
-		con.addItem(new Item("Floor",0,1,1));
-		con.addItem(new Item("Floor",1,0,1));
-		con.addItem(new Item("Floor",1,1,1));
-		con.addItem(new Item("Floor",2,2,1));
-		con.addItem(new Item("Floor",3,1,1));
-		con.addItem(new Item("Floor",3,2,1));
-		con.addItem(new Item("Floor",3,3,1));
-		con.addItem(new Item("Floor",0,3,1));
-		con.addItem(new Item("Floor",1,3,1));
-		con.addItem(new Item("Floor",2,3,1));
-		con.addItem(new Item("Switch",2,0,1));
-		con.addItem(new Item("SwitchableHole",0,2,1));
-		con.addItem(new Item("Hole",1,2,1));
-		con.addItem(new Item("Worker",0,0,10));
-		con.addItem(new Item("Box",1,0,6));
-		con.addItem(new Item("Box",2,0,2));
+		con.addItem(new Item("MapSize",4,4,0,0));
+		con.addItem(new Item("Floor",0,0,1,0));
+		con.addItem(new Item("Floor",2,1,1,0));
+		con.addItem(new Item("Hole",3,0,1,0));
+		con.addItem(new Item("Floor",0,1,1,0));
+		con.addItem(new Item("Floor",1,0,1,0));
+		con.addItem(new Item("Floor",1,1,1,0));
+		con.addItem(new Item("Floor",2,2,1,0));
+		con.addItem(new Item("Floor",3,1,1,0));
+		con.addItem(new Item("Floor",3,2,1,0));
+		con.addItem(new Item("BoxDestination",3,3,1,1));
+		con.addItem(new Item("Floor",0,3,1,0));
+		con.addItem(new Item("Floor",1,3,1,0));
+		con.addItem(new Item("BoxDestination",2,3,1,2));
+		con.addItem(new Item("Switch",2,0,1,1));
+		con.addItem(new Item("SwitchableHole",0,2,1,1));
+		con.addItem(new Item("Floor",1,2,1,0));
+		con.addItem(new Item("Worker",0,0,10,0));
+		con.addItem(new Item("Box",1,1,6,1));
+		con.addItem(new Item("Box",2,1,2,2));
 		con.writeItems();  
 		
 	}
