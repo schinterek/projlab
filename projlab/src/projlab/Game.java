@@ -20,11 +20,7 @@ public class Game {
 		Map map = Map.getInstance();
 		map.initMap(read());
 		map.printMap();
-		Player player = new Player("Vámpír Ági");
-		controller.addPlayer(player);
 		BoxCounter.getInstance().setGame(this);
-		Worker w = (Worker)map.getWorker();
-		player.setWorker(w);
 		start();
 		// TODO
 	}
@@ -54,7 +50,7 @@ public class Game {
 		con.addItem(new Item("Floor",1,0,1,0));
 		con.addItem(new Item("Floor",1,1,1,0));
 		con.addItem(new Item("Floor",2,2,1,0));
-		con.addItem(new Item("Floor",3,1,1,0));
+		con.addItem(new Item("Wall",3,1,1,0));
 		con.addItem(new Item("Floor",3,2,1,0));
 		con.addItem(new Item("BoxDestination",3,3,1,1));
 		con.addItem(new Item("Floor",0,3,1,0));

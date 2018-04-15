@@ -1,6 +1,7 @@
 package projlab;
 
 import java.util.ArrayList;
+import java.util.*;
 
 // <<singleton>>
 public class Map {
@@ -9,7 +10,6 @@ public class Map {
 	private static Map map = new Map();
 	private int columns;
 	private int rows;
-	private Worker w;
 	private ArrayList<Switch> switches =new ArrayList<Switch>();
 	private ArrayList<SwitchableHole> traps = new ArrayList<SwitchableHole>();
 	private ArrayList<Box> boxes= new ArrayList<Box>();
@@ -76,7 +76,6 @@ public class Map {
 				}
 		 	}
 		 else  {
-			 System.out.println("Meghaltal mar bocsesz");
 			 return false;
 		 }		
 		return false;
@@ -84,6 +83,9 @@ public class Map {
 	
 	public void initMap(ItemContainer con)
 	{
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Add meg a neved: ");
+		String name = sc.nextLine();
 		Item sizeitem = con.GetMapSize();
 		columns = sizeitem.getX();
 		rows = sizeitem.getY();
@@ -129,7 +131,9 @@ public class Map {
 		case "Worker":
 			Worker worker = new Worker(item.getX(),item.getY(),item.getData());
 			cells[worker.getX()][worker.getY()].accept(worker);
-			w = worker;
+			Player player = new Player(name);
+			Controller.getInstance().addPlayer(player);
+			player.setWorker(worker);
 			
 			break;
 			
@@ -181,10 +185,6 @@ public class Map {
 		System.out.println("");
 	}
 	
-	public Movable getWorker()
-	{
-		return w;
-	}
 	
 	
 	
