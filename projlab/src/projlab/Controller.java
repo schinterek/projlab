@@ -37,6 +37,7 @@ public class Controller {
 	    }
 	    catch(IndexOutOfBoundsException e) {}
 		// TODO
+	    //kivetel
 	}
 	
 	public void step(){
