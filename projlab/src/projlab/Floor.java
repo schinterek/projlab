@@ -68,6 +68,20 @@ public class Floor extends Cell{
 		return slippery;
 	}
 	
+	public void getOily() {
+		if(slippery==2)
+			slippery=1;
+		else
+			slippery=0.5;
+	}
+	
+	public void getHoneyed() {
+		if(slippery==0.5)
+			slippery=1;
+		else
+			slippery=2;
+	}
+	
 	public void print()
 	{
 		if (containedMovable==null)

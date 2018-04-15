@@ -48,11 +48,13 @@ public class Box extends Movable{
 		//BoxCounter.boxDisappeared();
         container.containedLeft();
 		Die();
+		BoxCounter.getInstance().boxDisappeared();
 		// TODO
 	}
 
 	public void Die()
 	{
+		BoxCounter.getInstance().boxDisappeared();
 		System.out.println("Box eltunt");
 		
 	}

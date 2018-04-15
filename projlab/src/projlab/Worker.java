@@ -20,6 +20,15 @@ public class Worker extends Movable {
 		this.strength = strength;
 	}
 	
+	public void spillOil() {//Azt a Floor olajossa teszi amin eppen all a worker
+		container.getOily();
+	}
+	
+	public void spillHoney() { //Azt a Floor mezesse teszi amin eppen all a worker
+		container.getHoneyed();
+	}
+	
+	
 	public boolean accept(Movable m, Direction dir, double strength){
 		//System.out.println("Worker accept fv");
 		// Ha egy Movable el akarja tolni,  dd
