@@ -110,6 +110,11 @@ public class Worker extends Movable {
 	public void Die()
 	{
 		System.out.println("Worker meghalt :( ");
+		this.setX(-1);
+		this.setY(-1);
+		Controller cont = Controller.getInstance();
+		cont.playerDied(player);
+		
 		
 
 	}
@@ -123,6 +128,9 @@ public class Worker extends Movable {
 		System.out.print(" W");
 	}
 	public int getWeight() { return 1; }
-	
+	public void setPlayer(Player p)
+	{
+		player = p;
+	}
 	
 }

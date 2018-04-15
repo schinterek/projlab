@@ -8,6 +8,7 @@ public class Game {
 	public Game()
 	{
 		write();
+		controller.setGame(this);
 		System.out.println("Game created");
 	}
 
@@ -22,26 +23,21 @@ public class Game {
 		Player player = new Player();
 		controller.addPlayer(player);
 		Worker w = (Worker)map.getWorker();
-		w.move(Direction.RIGHT, null);
-		map.printMap();
-		w.move(Direction.RIGHT, null);
-		map.printMap();
-		w.move(Direction.DOWN, null);
-		map.printMap();
-		w.move(Direction.DOWN, null);
-		map.printMap();
+		player.setWorker(w);
+		start();
 		// TODO
 	}
 	
 	public void start(){
 		// A jatek inditasahoz szukseges lepeseket vegzi el.
-		System.out.println("Game start fv");
+		timer.run();
 		// TODO
 	}
 	
 	public void gameEnded(){
 		// A jatek veget kezeli.
 		System.out.println("Vege a jateknak");
+		controller.ended();
 		// TODO
 	}
 	

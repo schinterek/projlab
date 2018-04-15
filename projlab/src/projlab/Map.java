@@ -74,8 +74,7 @@ public class Map {
 				}
 		 	}
 		 else  {
-			// System.out.println("Map move fv");
-			 System.out.println("Palya szele!");
+			 System.out.println("Meghaltal mar bocsesz");
 			 return false;
 		 }		
 		return false;

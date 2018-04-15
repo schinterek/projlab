@@ -3,6 +3,7 @@ package projlab;
 import java.util.ArrayList;
 import java.io.IOException;
 import java.io.*;
+import java.util.*;
 
 // <<singleton>>
 public class Controller {
@@ -10,6 +11,8 @@ public class Controller {
 	private static Controller controller = new Controller();
 	private ArrayList<Player> alivePlayers = new ArrayList<Player>();
 	private ArrayList<Player> deadPlayers = new ArrayList<Player>();
+	private Game game;
+	private boolean ended = false;
 	// !!!
 	// Ez a doksiban ugy volt, hogy siman csak Player a tipusuk,
 	// megcsinaltam ArrayListnek. Megfelel?
@@ -23,13 +26,35 @@ public class Controller {
 		// A meghalt jatekost kiveszi a jatekosok listajabol.
 		// Ha nulla lesz a jatekosok szama, szol a Game-nek,
 		// hogy vege a jateknak.
-	
+	    try
+	    {
+	    	alivePlayers.remove(alivePlayers.indexOf(player));
+	    	deadPlayers.add(player);
+	    	if (numOfAlivePlayers()==0) 
+			{
+				game.gameEnded();
+			}
+	    }
+	    catch(IndexOutOfBoundsException e) { System.out.println("Vége van már gecó");}
 		// TODO
 	}
 	
 	public void step(){
 		
+		Scanner scanner = new Scanner(System.in);
+		Map map = Map.getInstance();
 		
+		while(scanner.hasNext())
+		{
+			String s = scanner.nextLine();
+			if (s.equals("s") || s.equals("w") || s.equals("a") || s.equals("d")) {
+			alivePlayers.get(0).recieveCommand(s);
+			map.printMap();
+			if( ended ) break;
+			}
+				
+		
+		}
 		
 		// TODO
 	}
@@ -61,5 +86,8 @@ public class Controller {
 	{
 		alivePlayers.add(p);
 	}
+	
+	public void setGame(Game g) { game = g; }
+	public void ended() { ended = true; }
 	
 }

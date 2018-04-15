@@ -6,16 +6,14 @@ public class Timer {
 	private static Timer timer = new Timer();
 	Controller controller = Controller.getInstance();
 	
-	private Timer()
-	{
-	}
+	private Timer() {}
 	public static Timer getInstance() { return timer;}
 	
 	public void run(){
 		// ELinditja a Timer-nek a szalat, amely
 		// idokozonkent meghivja a Controller->step()
 		// metodusat.
-		
+		controller.step();
 		
 		
 		
