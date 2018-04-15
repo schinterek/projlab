@@ -35,7 +35,7 @@ public class Controller {
 				game.gameEnded();
 			}
 	    }
-	    catch(IndexOutOfBoundsException e) { System.out.println("Vége van már gecó");}
+	    catch(IndexOutOfBoundsException e) {}
 		// TODO
 	}
 	
