@@ -4,14 +4,24 @@ package projlab;
 public class BoxCounter {
 	// A palyan levo Box-ok szamat tartja nyilvan.
 	
-	private int numOfBoxes;
+	private int numOfBoxes=0;
 	private Game game;
 	private static BoxCounter boxcounter= new BoxCounter();
 	
+	public void increaseBoxes() {
+		numOfBoxes++;
+	}
+	
+	public void setGame(Game g) {
+		game=g;
+	}
+	
 	public void boxDisappeared(){
 		System.out.println("BoxCounter boxDisappeared fv");
-		if(numOfBoxes>1)
+		if(numOfBoxes>1){
 			numOfBoxes--;
+			System.out.println(Integer.toString(numOfBoxes));
+		}
 		else {
 			numOfBoxes--;
 			System.out.println("Nincs már több doboz -->játék vége");

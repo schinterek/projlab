@@ -133,6 +133,7 @@ public class Map {
 		case "Box":
 			Box box = new Box(item.getX(),item.getY(),(int)item.getData());
 			cells[box.getX()][box.getY()].accept(box);
+			BoxCounter.getInstance().increaseBoxes();
 			break;
 			
 		

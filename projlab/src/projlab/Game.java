@@ -22,6 +22,7 @@ public class Game {
 		map.printMap();
 		Player player = new Player();
 		controller.addPlayer(player);
+		BoxCounter.getInstance().setGame(this);
 		Worker w = (Worker)map.getWorker();
 		player.setWorker(w);
 		start();
@@ -47,7 +48,7 @@ public class Game {
 		con.addItem(new Item("MapSize",4,4,0));
 		con.addItem(new Item("Floor",0,0,1));
 		con.addItem(new Item("Floor",2,1,1));
-		con.addItem(new Item("Floor",3,0,1));
+		con.addItem(new Item("Hole",3,0,1));
 		con.addItem(new Item("Floor",0,1,1));
 		con.addItem(new Item("Floor",1,0,1));
 		con.addItem(new Item("Floor",1,1,1));
@@ -58,12 +59,12 @@ public class Game {
 		con.addItem(new Item("Floor",0,3,1));
 		con.addItem(new Item("Floor",1,3,1));
 		con.addItem(new Item("Floor",2,3,1));
-		con.addItem(new Item("Switch",2,0,2));
+		con.addItem(new Item("Switch",2,0,1));
 		con.addItem(new Item("SwitchableHole",0,2,1));
 		con.addItem(new Item("Hole",1,2,1));
 		con.addItem(new Item("Worker",0,0,10));
 		con.addItem(new Item("Box",1,0,6));
-		con.addItem(new Item("Box",2,0,3));
+		con.addItem(new Item("Box",2,0,2));
 		con.writeItems();  
 		
 	}
