@@ -3,7 +3,7 @@ package projlab;
 public class Main {
 	public static void main(String [ ] args) 
 	{
-		System.out.println("Elso teszteset: magaba foglalja a lada tol ladat, lada ures teruletre tolodik, lada switchet kapcsol");
+		/*System.out.println("Elso teszteset: magaba foglalja a lada tol ladat, lada ures teruletre tolodik, lada switchet kapcsol");
 		System.out.println();
 		Game g1 = new Game();
 		
@@ -142,6 +142,11 @@ public class Main {
 		g2.gameEnded();
 		
 		map.removeAll();
+		*/
+		
+		
+		Game game = new Game();
+		game.init();
 		
 	}
 	

@@ -1,21 +1,23 @@
 package projlab;
 
 import java.util.ArrayList;
+import java.io.IOException;
+import java.io.*;
 
 // <<singleton>>
 public class Controller {
 	// A jatekosokat kezeli.
-	
-	private ArrayList<Player> alivePlayers;
-	private ArrayList<Player> deadPlayers;
+	private static Controller controller = new Controller();
+	private ArrayList<Player> alivePlayers = new ArrayList<Player>();
+	private ArrayList<Player> deadPlayers = new ArrayList<Player>();
 	// !!!
 	// Ez a doksiban ugy volt, hogy siman csak Player a tipusuk,
 	// megcsinaltam ArrayListnek. Megfelel?
 	
-	public Controller()
+	private Controller()
 	{
-		System.out.println("Controller created");
 	}
+	public static Controller getInstance() { return controller;}
 	
 	public void playerDied(Player player){
 		// A meghalt jatekost kiveszi a jatekosok listajabol.
@@ -26,7 +28,8 @@ public class Controller {
 	}
 	
 	public void step(){
-		// Beolvassa a parancsokat es lepteti a jatekosokat.
+		
+		
 		
 		// TODO
 	}
@@ -53,4 +56,10 @@ public class Controller {
 		// TODO
 		return true;
 	}
+	
+	public void addPlayer(Player p)
+	{
+		alivePlayers.add(p);
+	}
+	
 }

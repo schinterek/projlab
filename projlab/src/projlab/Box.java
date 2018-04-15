@@ -4,19 +4,24 @@ public class Box extends Movable{
 	// Egy dobozt reprezental, amit a helyere kell tolni.
 
 	protected BoxDestination boxdestination;
+	private int weight;
 	
 	
-	public Box()
+	public Box(int x, int y, int weight)
 	{
 		System.out.println("Box created");
+		this.x = x;
+		this.y = y;
+		this.weight = weight;
+		
 	}
-	public boolean accept(Movable m){
+	public boolean accept(Movable m, Direction dir, double strength){
 		//System.out.println("Box accept fv");
 		// Ha egy Movable el akarja tolni a Boxot, akkor eldonti,
 		// hogy el tud-e tolodni, ezzel ter vissza. */
 		// TODO
 		pusher=m;
-		boolean moved = container.move(this, Direction.RIGHT, null);
+		boolean moved = container.move(this, dir, null, strength);
 		pusher = null;
 		if (moved==true)
 			System.out.println("Box lepett");
@@ -50,5 +55,15 @@ public class Box extends Movable{
 	{
 		System.out.println("Box eltunt");
 		
+	}
+	
+	public int getWeight()
+	{
+		return weight;
+	}
+	
+	public void print()
+	{
+		System.out.print(" B");
 	}
 }

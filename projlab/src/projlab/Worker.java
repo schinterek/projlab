@@ -6,17 +6,21 @@ public class Worker extends Movable {
 
 	private Player player;
 	private boolean isPushed;
+	private double strength;
 	// Azt mondja meg, hogy ladaval toltuk-e arrebb.
 	// Csak addig igaz, mig meg nem erkezett arra a cellara,
 	// amivel a ladara toltuk.
 	// Megerkezes utan hamisra allitodik.
 	
-	public Worker()
+	public Worker(int x, int y, double strength)
 	{
 		System.out.println("Worker created");
+		this.x = x;
+		this.y = y;
+		this.strength = strength;
 	}
 	
-	public boolean accept(Movable m){
+	public boolean accept(Movable m, Direction dir, double strength){
 		//System.out.println("Worker accept fv");
 		// Ha egy Movable el akarja tolni,  dd
 		// akkor o is megprobal tovabbtolodni.
@@ -27,7 +31,7 @@ public class Worker extends Movable {
 		{
 			pusher=m;
 			setPushed(true);
-			boolean canarrive = container.move(this, Direction.RIGHT, player);
+			boolean canarrive = container.move(this, dir, player, strength);
 			pusher= null;
 		   setPushed(false);
 		  if(canarrive==true)
@@ -50,7 +54,7 @@ public class Worker extends Movable {
 		System.out.println("Munkas lépett");
 		// Mozgatjuk a munkast az adott iranyba.
 		//System.out.println("Worker move fv");
-		this.getContainer().move(this, dir, src);
+		this.getContainer().move(this, dir, src, strength);
 	}
 	
 	public boolean pushWorker(){
@@ -101,6 +105,15 @@ public class Worker extends Movable {
 
 	}
 	
+	public double getStrength()
+	{
+		return strength;
+	}
+	public void print()
+	{
+		System.out.print(" W");
+	}
+	public int getWeight() { return 1; }
 	
 	
 }

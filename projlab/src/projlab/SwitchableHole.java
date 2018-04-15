@@ -5,6 +5,10 @@ import java.util.ArrayList;
 public class SwitchableHole extends Floor {
 	// Az atkapcsolhato lyukakat valositja meg.
 	
+	public SwitchableHole(int x, int y, double slippery) {
+		super(x, y, slippery);
+	}
+
 	private Switch switches;
 	
 	@Override
@@ -17,13 +21,12 @@ public class SwitchableHole extends Floor {
 		else {
 			System.out.println("SwitchHole: Ramleptek");
 			this.setContainedMovable(m);
-			m.setContainer(this);
 		}
 		
 	}
 	
 	@Override
-	public boolean canArrive(Movable toArrive, Direction dir, Player src) {
+	public boolean canArrive(Movable toArrive, Direction dir, Player src, double strength) {
 		//System.out.println("SwitchableHole canArrive fv");
 		if(switches.isOpen()) {
 			return true;
@@ -32,8 +35,25 @@ public class SwitchableHole extends Floor {
 			if(getContained()==null)
 				return true;
 			else
-				return getContained().accept(toArrive);
+			{
+				
+				strength -= slippery*(double)containedMovable.getWeight();
+				if(strength < 0) return false;
+				else return getContained().accept(toArrive,dir,strength);
+				}
 		}
+	}
+	
+	public void print()
+	{
+		if (containedMovable==null)
+		  System.out.print(" T");
+		else containedMovable.print();
+	}
+	
+	public void setSwitch(Switch sw)
+	{
+		this.switches = sw;
 	}
 
 }

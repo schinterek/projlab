@@ -3,7 +3,9 @@ package projlab;
 public class Hole extends Cell{
 	// A luykakat reprezentalja.
 
-	public Hole() {
+	public Hole(int x, int y) {
+		this.x = x;
+		this.y = y;
 		System.out.println("Hole created");
 	}
 	
@@ -15,5 +17,9 @@ public class Hole extends Cell{
 		m.Die();
 	}
 	
+	public void print()
+	{
+		System.out.print(" H");
+	}
 	
 }

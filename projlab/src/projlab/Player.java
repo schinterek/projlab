@@ -16,6 +16,8 @@ public class Player {
 		// milyen billentyukombinaciok tartoznak.
 		
 		// TODO
+
+		
 	}
 	
 	public void addPoint(){

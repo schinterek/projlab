@@ -4,6 +4,10 @@ public class BoxDestination extends Floor {
 	// Az a mezo, ahova a Box-okat kell eljuttatni.
 	
 	
+	public BoxDestination(int x, int y, double slippery) {
+		super(x, y, slippery);
+	}
+
 	public void accept(Movable m) {
 		// Ha a megfelelo Box-ot toljak ra, akkor
 		// azt eltunteti a palyarol.
@@ -13,9 +17,15 @@ public class BoxDestination extends Floor {
 		// de a doksiban ez a fuggveny void volt.
 		
 		// TODO
-		m.setContainer(this);
-		this.setContainedMovable(m);
+		setContainedMovable(m);
 		m.destinationReached();
+	}
+	
+	public void print()
+	{
+		if (containedMovable==null)
+		  System.out.print(" D");
+		else containedMovable.print();
 	}
 	
 
