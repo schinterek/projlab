@@ -22,6 +22,12 @@ public class Item implements Serializable{
 	public int getY() { return y; }
 	public double getData() { return data; }
 	public int  getIndex() {return index;}
+	public void setType(String type) { this.type = type;  }
+
+	public void setIndex(int index) {
+		this.index = index;
+		
+	}
 
 	/*public void list() {
 		System.out.print(type + " " + Integer.toString(x)+ " " + Integer.toString(y)+ " " + Double.toString(data));

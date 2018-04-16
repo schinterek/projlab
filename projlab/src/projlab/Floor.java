@@ -87,7 +87,7 @@ public class Floor extends Cell{
 	public void print()
 	{
 		if (containedMovable==null)
-		  System.out.print(" F");
+		  System.out.print(" -");
 		else containedMovable.print();
 	}
    

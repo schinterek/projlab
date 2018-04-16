@@ -64,5 +64,17 @@ public class ItemContainer {
 		}
 		return null;
 	}
+	
+	public void Set(int x, int y, String type, int index)
+	{
+		for (Item i: items)
+		{
+			if(i.getX()==x && i.getY()==y)
+			{
+				i.setType(type);
+				i.setIndex(index);
+			}
+		}
+	}
 
 }

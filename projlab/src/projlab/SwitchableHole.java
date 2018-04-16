@@ -56,7 +56,7 @@ public class SwitchableHole extends Floor {
 		if (switches.isOpen()==true)
 		  System.out.print(" T");
 		else if(containedMovable==null)
-			System.out.print(" F");
+			System.out.print(" -");
 		else containedMovable.print();
 	}
 	

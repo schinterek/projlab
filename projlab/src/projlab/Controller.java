@@ -73,7 +73,19 @@ public class Controller {
 			p.printPoints();
 			if(p.getPoints()>max) max = p.getPoints();
 		}
+		
+		for (Player p: deadPlayers)
+		{
+			p.printPoints();
+			if(p.getPoints()>max) max = p.getPoints();
+		}
+		
 		for (Player p: alivePlayers)
+		{
+			if(p.getPoints()==max) System.out.println("A gyoztes: " + p.getName());
+		}
+		
+		for (Player p: deadPlayers)
 		{
 			if(p.getPoints()==max) System.out.println("A gyoztes: " + p.getName());
 		}
