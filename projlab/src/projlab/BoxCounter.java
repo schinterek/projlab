@@ -17,14 +17,13 @@ public class BoxCounter {
 	}
 	
 	public void boxDisappeared(){
-		System.out.println("BoxCounter boxDisappeared fv");
 		if(numOfBoxes>1){
 			numOfBoxes--;
 			System.out.println(Integer.toString(numOfBoxes));
 		}
 		else {
 			numOfBoxes--;
-			System.out.println("Nincs már több doboz -->játék vége");
+			System.out.println("Nincs már több doboz");
 			game.gameEnded();
 		}
 		// Ha egy Box lyukba esett, vagy a helyere kerult,
