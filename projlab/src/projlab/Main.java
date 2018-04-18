@@ -1,9 +1,28 @@
 package projlab;
 
+import java.util.Scanner;
+
 public class Main {
 	public static void main(String [ ] args) 
 	{
-		System.out.println("Elso teszteset: magaba foglalja a lada tol ladat, lada ures teruletre tolodik, lada switchet kapcsol");
+		
+		System.out.println("A pálya 6x6-os, melynek külső széle fal");
+		System.out.println("A pálya kinézete a következő: ");
+		System.out.println();
+		System.out.println("X X X X X X");
+		
+		System.out.println("X F S F F X");
+		System.out.println("X F F B H X");
+		System.out.println("X W B F F X");
+		System.out.println("X F F F F X");
+		
+		System.out.println("X X X X X X");
+		
+		Scanner scanner = new Scanner(System.in);
+		String input = scanner.nextLine();
+	
+		
+		/*System.out.println("Elso teszteset: magaba foglalja a lada tol ladat, lada ures teruletre tolodik, lada switchet kapcsol");
 		System.out.println();
 		Game g1 = new Game();
 		
@@ -141,7 +160,7 @@ public class Main {
 		
 		g2.gameEnded();
 		
-		map.removeAll();
+		map.removeAll();*/
 		
 	}
 	
