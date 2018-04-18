@@ -22,6 +22,7 @@ public class Main {
 		String input = scanner.nextLine();
 	
 		
+
 		/*System.out.println("Elso teszteset: magaba foglalja a lada tol ladat, lada ures teruletre tolodik, lada switchet kapcsol");
 		System.out.println();
 		Game g1 = new Game();
@@ -160,7 +161,16 @@ public class Main {
 		
 		g2.gameEnded();
 		
-		map.removeAll();*/
+
+		map.removeAll();
+
+		map.removeAll();
+		*/
+		
+		
+		Game game = new Game();
+		game.init();
+
 		
 	}
 	

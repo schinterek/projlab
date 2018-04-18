@@ -3,18 +3,19 @@ package projlab;
 // <<singleton>>
 public class Timer {
 	// Az ido teleset figyelo osztaly.
+	private static Timer timer = new Timer();
+	Controller controller = Controller.getInstance();
 	
-	
-	public Timer()
-	{
-		System.out.println("Timer created");
-	}
+	private Timer() {}
+	public static Timer getInstance() { return timer;}
 	
 	public void run(){
-		System.out.println("Timer run fv");
 		// ELinditja a Timer-nek a szalat, amely
 		// idokozonkent meghivja a Controller->step()
 		// metodusat.
-		System.out.println("The game is running");
+		controller.step();
+		
+		
+		
 	}
 }

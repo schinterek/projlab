@@ -5,25 +5,33 @@ import java.util.zip.ZipEntry;
 public class Switch extends Floor {
 	// A kapcsolokat reprezentalja.
 	
+	private int index=0;
+	
 	private boolean isOpen = false;
 	private SwitchableHole switchablehole;
 	
-	public Switch() {
+	public Switch(int x, int y, double slippery, int index) {
+		super(x,y,slippery);
 		System.out.println("Switch created");
+		this.index=index;
+	}
+	
+	public int getIndex() {
+		return index;
 	}
 	
 	public void accept(Movable m) {
 		System.out.println("Switch: Ramleptek");
 		// Meghivja a Movable setSwitch metodusat.
-        this.containedMovable=m;
-        m.setContainer(this);
+        setContainedMovable(m);
 		if (m.setSwitch()) { 
 			isOpen=true;
 			System.out.println("Switch felkapcsolt");
 			if (switchablehole!=null) {
-			if(switchablehole.getContained()!=null) { 
+			if(switchablehole.getContained()!=null && switchablehole.getContained()!= this.getContained()) { 
 				switchablehole.getContained().Die();
-				switchablehole.containedLeft();}
+				switchablehole.containedLeft();
+				}
 			}
 			}
 		// TODO
@@ -31,7 +39,9 @@ public class Switch extends Floor {
 	}
 	
 	public void containedLeft(){
+		if (isOpen)
 		System.out.println("Switch lekapcsolt");
+		System.out.println("Switch: Elleptek rolam");
 		// Az isOpen attributumot false-ra allitja.
 		//elment rola a doboz, ezert lekapcsol a switch
 
@@ -53,6 +63,14 @@ public class Switch extends Floor {
 	{
 		//System.out.println("Switch setSwitchableHole fv");
 		switchablehole = sh;
+		sh.setSwitch(this);
+	}
+	
+	public void print()
+	{
+		if (containedMovable==null)
+		  System.out.print(" S");
+		else containedMovable.print();
 	}
 
 }

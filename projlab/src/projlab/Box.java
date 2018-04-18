@@ -1,22 +1,35 @@
 package projlab;
 ///
+//jezusom
 public class Box extends Movable{
 	// Egy dobozt reprezental, amit a helyere kell tolni.
 
 	protected BoxDestination boxdestination;
+	private int weight;
+	private int index=0;
 	
-	
-	public Box()
+	public void setDestination(BoxDestination d) {
+		boxdestination=d;
+	}
+	public int getIndex() {
+		return index;
+	}
+	public Box(int x, int y, int weight, int index)
 	{
 		System.out.println("Box created");
+		this.x = x;
+		this.y = y;
+		this.weight = weight;
+		this.index=index;
+		
 	}
-	public boolean accept(Movable m){
+	public boolean accept(Movable m, Direction dir, double strength){
 		//System.out.println("Box accept fv");
 		// Ha egy Movable el akarja tolni a Boxot, akkor eldonti,
 		// hogy el tud-e tolodni, ezzel ter vissza. */
 		// TODO
 		pusher=m;
-		boolean moved = container.move(this, Direction.RIGHT, null);
+		boolean moved = container.move(this, dir, null, strength);
 		pusher = null;
 		if (moved==true)
 			System.out.println("Box lepett");
@@ -36,19 +49,32 @@ public class Box extends Movable{
 	}
 	
 	public void destinationReached(){
-		System.out.println("Box: Celba ertem");
+		
 		// Ha a lada eleri a szamara kijelolt pozociot a padlon,
 		// eltunik.
-		addPoint();
-		//BoxCounter.boxDisappeared();
-        container.containedLeft();
-		Die();
+		if(container==boxdestination) {
+			System.out.println("Box: Celba ertem");
+			addPoint();
+	        container.containedLeft();
+			Die();
+		}
 		// TODO
 	}
 
 	public void Die()
 	{
+		BoxCounter.getInstance().boxDisappeared();
 		System.out.println("Box eltunt");
 		
+	}
+	
+	public int getWeight()
+	{
+		return weight;
+	}
+	
+	public void print()
+	{
+		System.out.print(" B");
 	}
 }

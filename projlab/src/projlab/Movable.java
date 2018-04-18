@@ -1,15 +1,18 @@
 package projlab;
+import java.io.*;
 
-public abstract class Movable {
+public abstract class Movable{
 	
 	protected Floor container;
 	protected Movable pusher;
+	protected int x;
+	protected int y;
 	
 	public void acceptCell(Cell v) {
 		v.accept(this);
 	}
 	
-	public abstract boolean accept(Movable m);
+	public abstract boolean accept(Movable m, Direction dir, double strength);
 	// Ehhez sem.
 	
 	public void destinationReached() {
@@ -54,5 +57,24 @@ public abstract class Movable {
 		if(pusher==null) return;
 		pusher.addPoint();
 	}
+	public int getX()
+	{
+		return x;
+	}
+	public int getY()
+	{
+		return y;
+	}
+	public void setX(int x)
+	{
+		this.x = x;
+	}
+	public void setY(int y)
+	{
+		this.y = y;
+	}
+	
+	public abstract void print();
+	public abstract int getWeight();
 	
 }
