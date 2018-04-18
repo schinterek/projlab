@@ -9,6 +9,7 @@ public class Game {
 	{
 		write();
 		controller.setGame(this);
+		BoxCounter.getInstance().setGame(this);
 		System.out.println("Game created");
 	}
 
@@ -20,7 +21,6 @@ public class Game {
 		Map map = Map.getInstance();
 		map.initMap(read());
 		map.printMap();
-		BoxCounter.getInstance().setGame(this);
 		start();
 		// TODO
 	}
