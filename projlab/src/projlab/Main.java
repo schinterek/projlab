@@ -38,6 +38,7 @@ public class Main {
 		System.out.println();
 		System.out.println("Masodik teszteset: magaba foglalja a munkas tol ladat, lada munkasra tolodik, aki mogott fal van, lada eleri a destinationjet, játék vége");
 		System.out.println();
+
 		Floor c6 = new Floor();
 		Floor c7 = new Floor();
 		BoxDestination c8 = new BoxDestination();

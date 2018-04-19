@@ -1,6 +1,5 @@
 package projlab;
 ///
-//jezusom
 public class Box extends Movable{
 	// Egy dobozt reprezental, amit a helyere kell tolni.
 
