@@ -58,7 +58,7 @@ public class Controller {
 		
 		}
 		
-		
+		scanner.close();
 		// TODO
 	}
 	
