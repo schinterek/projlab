@@ -120,23 +120,9 @@ public class Game {
         con.Set(13, 4, "BoxDestination", 7);
         con.Set(8, 7, "BoxDestination", 8);
 
-
-        con.addItem(new Item("Worker",6,9,10,0));
-        con.addItem(new Item("Worker",8,9,10,0));
-
-        con.addItem(new Item("Box",3,10,4,1));
-        con.addItem(new Item("Box",9,4,3,2));
-        con.addItem(new Item("Box",2,4,4,3));
-        con.addItem(new Item("Box",11,7,6,4));
-        con.addItem(new Item("Box",6,6,6,5));
-        con.addItem(new Item("Box",13,10,4,6));
-        con.addItem(new Item("Box",8,11,5,7));
-        con.addItem(new Item("Box",2,14,5,8));
-
-
-        
+       
         con.addItem(new Item("Worker",1,1,10,0));
-        con.addItem(new Item("Worker",8,8,10,0));
+        con.addItem(new Item("Worker2",8,8,10,0));
         con.addItem(new Item("Box",7,2,6,1));
         con.addItem(new Item("Box",3,2,2,2));
         con.addItem(new Item("Box",2,5,4,3));
