@@ -45,20 +45,75 @@ public class Controller {
 		Scanner scanner = new Scanner(System.in);
 		Map map = Map.getInstance();
 		
+		
 		while(scanner.hasNext())
 		{
 			String s = scanner.nextLine();
-			if (s.equals("s") || s.equals("w") || s.equals("a") || s.equals("d") || s.equals("o")|| s.equals("h")) {
-			alivePlayers.get(0).recieveCommand(s);
-			map.printMap();
-			if( ended ) break;
+			if (s.equals("s") || s.equals("w") || s.equals("a") || s.equals("d") || s.equals("q")|| s.equals("e")) {
+				alivePlayers.get(0).recieveCommand(s);
+				map.printMap();
+				if( ended ) break;
 			}
 				
 		
 		}
 		
+		scanner.close();
 		// TODO
 	}
+	
+public void writeTest(){
+		
+		Scanner scanner = new Scanner(System.in);
+		Map map = Map.getInstance();
+		try {
+			File statText = new File("test1.txt");
+            FileOutputStream is = new FileOutputStream(statText);
+            OutputStreamWriter osw = new OutputStreamWriter(is);    
+            Writer w = new BufferedWriter(osw);
+		
+		while(scanner.hasNext())
+		{
+			String s = scanner.nextLine();
+			if (s.equals("s") || s.equals("w") || s.equals("a") || s.equals("d") || s.equals("q")|| s.equals("e")) {
+				w.write(s+'\n');
+				alivePlayers.get(0).recieveCommand(s);
+				map.printMap();
+				if( ended ) break;
+			}
+				
+		
+		}
+		w.close();
+		}catch(Exception ex) {}
+		scanner.close();
+		
+		// TODO
+	}
+
+  public void Testing(String test){
+	
+	Map map = Map.getInstance();
+	try {
+	FileInputStream fstream = new FileInputStream(test);
+	BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
+	String s;
+	
+	while((s = br.readLine()) != null)
+	{
+		if (s.equals("s") || s.equals("w") || s.equals("a") || s.equals("d") || s.equals("q")|| s.equals("e")) {
+			alivePlayers.get(0).recieveCommand(s);
+			map.printMap();
+			if( ended ) break;
+		}
+			
+	
+	}
+	br.close();
+	}catch(IOException ex) {}
+	
+	// TODO
+}
 	
 	public void showEndScores() {
 		// Kiirja a vegeredmenyt.

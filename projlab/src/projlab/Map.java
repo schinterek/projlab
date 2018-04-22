@@ -86,6 +86,7 @@ public class Map {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Add meg a neved: ");
 		String name = sc.nextLine();
+		sc.close();
 		Item sizeitem = con.GetMapSize();
 		columns = sizeitem.getX();
 		rows = sizeitem.getY();
