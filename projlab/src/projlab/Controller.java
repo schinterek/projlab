@@ -54,6 +54,11 @@ public class Controller {
 				map.printMap();
 				if( ended ) break;
 			}
+			if (s.equals("k") || s.equals("i") || s.equals("j") || s.equals("l") || s.equals("u")|| s.equals("o")) {
+				alivePlayers.get(1).recieveCommand(s);
+				map.printMap();
+				if( ended ) break;
+			}
 				
 		
 		}
@@ -81,6 +86,12 @@ public void writeTest(){
 				map.printMap();
 				if( ended ) break;
 			}
+			if (s.equals("k") || s.equals("i") || s.equals("j") || s.equals("l") || s.equals("u")|| s.equals("o")) {
+				w.write(s+'\n');
+				alivePlayers.get(1).recieveCommand(s);
+				map.printMap();
+				if( ended ) break;
+			}
 				
 		
 		}
@@ -103,6 +114,11 @@ public void writeTest(){
 	{
 		if (s.equals("s") || s.equals("w") || s.equals("a") || s.equals("d") || s.equals("q")|| s.equals("e")) {
 			alivePlayers.get(0).recieveCommand(s);
+			map.printMap();
+			if( ended ) break;
+		}
+		if (s.equals("k") || s.equals("i") || s.equals("j") || s.equals("l") || s.equals("u")|| s.equals("o")) {
+			alivePlayers.get(1).recieveCommand(s);
 			map.printMap();
 			if( ended ) break;
 		}
