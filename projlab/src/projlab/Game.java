@@ -4,7 +4,8 @@ public class Game {
 	
 	private Timer timer = Timer.getInstance();
 	private Controller controller = Controller.getInstance();
-
+	private int level=1;
+	
 	public Game()
 	{
 		write("map1.txt");
@@ -19,7 +20,8 @@ public class Game {
 	public void init(){
 		// Inicializal, letrehozza a szukseges objektumokat.
 		Map map = Map.getInstance();
-		map.initMap(read("map3.txt"));
+		String file="map"+Integer.toString(level)+".txt";
+		map.initMap(read(file));
 		map.printMap();
 		start();
 		// TODO
@@ -33,16 +35,24 @@ public class Game {
 	
 	public void gameEnded(){
 		// A jatek veget kezeli.
-		System.out.println("Vege a jateknak");
-		controller.ended();
-		controller.showEndScores();
+		if(level==10) {
+			System.out.println("Vege a jateknak");
+			controller.ended();
+			controller.showEndScores();
+		}
+		else {
+			level++;
+			System.out.println(level+". szint következik:");
+			init();
+		}
 		// TODO
 	}
 	
 	public void write(String file)
 	{
+
 		ItemContainer con = read(file);
-		con.setWorker(3, 2, 6);
+		con.setWorker(1, 1, 6);
 		con.writeItems(file);
 		con.listItems();
 

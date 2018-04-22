@@ -1,3 +1,4 @@
+
 package projlab;
 
 import java.util.ArrayList;
@@ -88,7 +89,6 @@ public class Map {
 		String name = sc.nextLine();
 		System.out.print("Masodik jatekos adja meg a nevét: ");
 		String name2 = sc.nextLine();
-		sc.close();
 		Item sizeitem = con.GetMapSize();
 		columns = sizeitem.getX();
 		rows = sizeitem.getY();
@@ -145,7 +145,7 @@ public class Map {
 				cells[worker2.getX()][worker2.getY()].accept(worker2);
 				Player player2 = new Player(name2);
 				Controller.getInstance().addPlayer(player2);
-				player2.setWorker2(worker2);
+				player2.setWorker(worker2);
 			} 
 			
 			workers_num++;
@@ -200,5 +200,4 @@ public class Map {
 		System.out.println("");
 	}
 	
-}	
-
+} 

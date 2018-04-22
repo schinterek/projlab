@@ -67,12 +67,12 @@ public class Controller {
 		// TODO
 	}
 	
-public void writeTest(){
+/*public void writeTest(){
 		
 		Scanner scanner = new Scanner(System.in);
 		Map map = Map.getInstance();
 		try {
-			File statText = new File("nem_sikerult_eltolas.txt");
+				File statText = new File("nem_sikerult_eltolas.txt");
             FileOutputStream is = new FileOutputStream(statText);
             OutputStreamWriter osw = new OutputStreamWriter(is);    
             Writer w = new BufferedWriter(osw);
@@ -136,7 +136,7 @@ public void writeTest(){
 	
 	// TODO
 }
-	
+	*/
 	public void showEndScores() {
 		// Kiirja a vegeredmenyt.
 		
