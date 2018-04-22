@@ -67,7 +67,7 @@ public void writeTest(){
 		Scanner scanner = new Scanner(System.in);
 		Map map = Map.getInstance();
 		try {
-			File statText = new File("workert_falnak_tolnak.txt");
+			File statText = new File("nem_sikerult_eltolas.txt");
             FileOutputStream is = new FileOutputStream(statText);
             OutputStreamWriter osw = new OutputStreamWriter(is);    
             Writer w = new BufferedWriter(osw);

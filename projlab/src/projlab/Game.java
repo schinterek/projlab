@@ -121,8 +121,8 @@ public class Game {
         con.Set(8, 7, "BoxDestination", 8);
 
 
-        con.addItem(new Item("Worker",6,9,10,0));
-        con.addItem(new Item("Worker",8,9,10,0));
+        con.addItem(new Item("Worker",6,9,7,0));
+        con.addItem(new Item("Worker",8,9,7,0));
 
         con.addItem(new Item("Box",3,10,4,1));
         con.addItem(new Item("Box",9,4,3,2));
