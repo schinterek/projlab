@@ -22,9 +22,9 @@ public class Game {
 		Map map = Map.getInstance();
 		String file="map"+Integer.toString(level)+".txt";
 		System.out.println(level+". szint következik:");
-		ItemContainer ic = read("map10.txt");
+		ItemContainer ic = read("map1.txt");
 		ic.listItems();
-		map.initMap(read("map2.txt"));
+		map.initMap(read("map1.txt"));
 		map.printMap();
 		start();
 		// TODO
