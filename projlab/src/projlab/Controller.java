@@ -85,7 +85,7 @@ public class Controller {
 		// TODO
 	}
 	
-/*public void writeTest(){
+public void writeTest(){
 		
 		Scanner scanner = new Scanner(System.in);
 		Map map = Map.getInstance();
@@ -154,7 +154,7 @@ public class Controller {
 	
 	// TODO
 }
-	*/
+	
 	public void showEndScores() {
 		// Kiirja a vegeredmenyt.
 		
