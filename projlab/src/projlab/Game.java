@@ -42,7 +42,7 @@ public class Game {
 	public void write(String file)
 	{
         ItemContainer con = new ItemContainer();
-        con.addItem(new Item("MapSize",17,17,0,0));
+        con.addItem(new Item("MapSize",10,10,0,0));
 
         for (int j = 0; j < con.GetMapSize().getY();j++ )
         {
@@ -52,21 +52,29 @@ public class Game {
             }
         }
 
-        for (int a = 0; a<17; a++ ) {
+        for (int a = 0; a<10; a++ ) {
             con.Set(0, a, "Wall", 0);
         }
 
-        for (int b = 0; b<17; b++ ) {
-            con.Set(16, b, "Wall", 0);
+        for (int b = 0; b<10; b++ ) {
+            con.Set(9, b, "Wall", 0);
         }
-        for (int c = 0; c<17; c++ ) {
+        for (int c = 0; c<10; c++ ) {
             con.Set(c, 0, "Wall", 0);
         }
 
-        for (int d = 0; d<17; d++ ) {
-            con.Set(d, 16, "Wall", 0);
+        for (int d = 0; d<10; d++ ) {
+            con.Set(d, 9, "Wall", 0);
         }
-
+        con.Set(7, 3, "BoxDestination", 2);
+        con.Set(6, 5, "BoxDestination", 1);
+        con.Set(3, 6, "BoxDestination", 3);
+        con.Set(3, 7, "Wall", 0);
+        con.Set(4, 7, "Wall", 0);
+        con.Set(5, 7, "Wall", 0);
+        con.Set(3, 3, "Hole", 0);
+        con.Set(4, 4, "Switch", 1);
+        con.Set(5, 2, "SwitchableHole", 1);
         con.Set(6, 1, "Wall", 0);
         con.Set(7, 2, "Wall", 0);
 
@@ -126,6 +134,12 @@ public class Game {
         con.addItem(new Item("Box",2,14,5,8));
 
 
+        
+        con.addItem(new Item("Worker",1,1,10,0));
+        con.addItem(new Item("Worker",8,8,10,0));
+        con.addItem(new Item("Box",7,2,6,1));
+        con.addItem(new Item("Box",3,2,2,2));
+        con.addItem(new Item("Box",2,5,4,3));
         con.writeItems(file);
 
     }

@@ -9,6 +9,7 @@ public class ItemContainer {
 	public void readItems(String file)
 	{
 		try {
+
 		FileInputStream fis = new FileInputStream(file);
 		ObjectInputStream ois = new ObjectInputStream(fis);
 		items = (ArrayList<Item>) ois.readObject();
@@ -33,6 +34,7 @@ public class ItemContainer {
 	{
 		try 
 		{
+
 			FileOutputStream fos = new FileOutputStream(file);
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
 			oos.writeObject(items);
