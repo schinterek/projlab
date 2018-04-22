@@ -8,7 +8,7 @@ public class Game {
 	
 	public Game()
 	{
-		write("map1.txt");
+		//write("map1.txt");
 		controller.setGame(this);
 		BoxCounter.getInstance().setGame(this);
 		System.out.println("Game created");
@@ -22,7 +22,9 @@ public class Game {
 		Map map = Map.getInstance();
 		String file="map"+Integer.toString(level)+".txt";
 		System.out.println(level+". szint következik:");
-		map.initMap(read(file));
+		ItemContainer ic = read("map10.txt");
+		ic.listItems();
+		map.initMap(read("map2.txt"));
 		map.printMap();
 		start();
 		// TODO

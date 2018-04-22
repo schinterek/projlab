@@ -49,18 +49,30 @@ public class Controller {
 		while(scanner.hasNext())
 		{
 			String s = scanner.nextLine();
+			if (numOfAlivePlayers()==2)
+			{
 			if (s.equals("s") || s.equals("w") || s.equals("a") || s.equals("d") || s.equals("q")|| s.equals("e")) {
 				alivePlayers.get(0).recieveCommand(s);
 				map.printMap();
 				if( ended ) break;
 			}
 			if (s.equals("k") || s.equals("i") || s.equals("j") || s.equals("l") || s.equals("u")|| s.equals("o")) {
+				
 				alivePlayers.get(1).recieveCommand(s);
 				map.printMap();
 				if( ended ) break;
 			}
 				
-		
+			}
+			else
+			{
+				if (s.equals("s") || s.equals("w") || s.equals("a") || s.equals("d") || s.equals("q")|| s.equals("e") || s.equals("k") || s.equals("i") || s.equals("j") || s.equals("l") || s.equals("u")|| s.equals("o")) 
+				{
+					alivePlayers.get(0).recieveCommand(s);
+					map.printMap();
+					if( ended ) break;
+				}
+			}
 		}
 		
 		scanner.close();
