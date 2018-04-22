@@ -28,9 +28,10 @@ public class Item implements Serializable{
 		this.index = index;
 		
 	}
+	public void setData(double data) {this.data = data;}
 
-	/*public void list() {
+	public void list() {
 		System.out.print(type + " " + Integer.toString(x)+ " " + Integer.toString(y)+ " " + Double.toString(data));
 		
-	}*/
+	}
 }
