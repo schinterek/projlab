@@ -14,7 +14,7 @@ public class Timer {
 		// idokozonkent meghivja a Controller->step()
 		// metodusat.
 		//controller.writeTest();
-		controller.Testing("nem_sikerult_eltolas.txt");
-		//controller.step();
+		//controller.Testing("nem_sikerult_eltolas.txt");
+		controller.step();
 	}
 }
