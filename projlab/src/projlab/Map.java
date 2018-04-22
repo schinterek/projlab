@@ -18,7 +18,7 @@ public class Map {
 	private Map() {System.out.println("Map created") ; }
 	
 	public static Map getInstance() { return map;}
-	// A p�ly�t �s a rajta l�v� mez�ket val�s�tja meg.
+	// A palyat es a rajta levo mezoket valositja meg.
 	
 	
 	private Cell[][] cells;
@@ -30,12 +30,9 @@ public class Map {
 		// Ez a fuggveny mondja meg, hogy arra a cellara
 		// ra lehet-e lepni, es hogy allnak-e mar rajta.
 		
-		// !!!
-
-		
-		// TODO
 		int actX = toMove.getX();
 		int actY = toMove.getY();
+		
 		 if ( actX >= 0 && actY >=0  ) { 
 			 switch(dir)
 			 {
@@ -84,6 +81,7 @@ public class Map {
 	public void initMap(ItemContainer con)
 	{
 		Scanner sc = new Scanner(System.in);
+		// Miert nem BufferedReader?
 		System.out.print("Add meg a neved: ");
 		String name = sc.nextLine();
 		Item sizeitem = con.GetMapSize();

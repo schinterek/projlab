@@ -10,9 +10,11 @@ public class Box extends Movable{
 	public void setDestination(BoxDestination d) {
 		boxdestination=d;
 	}
+	
 	public int getIndex() {
 		return index;
 	}
+	
 	public Box(int x, int y, int weight, int index)
 	{
 		System.out.println("Box created");
@@ -22,11 +24,12 @@ public class Box extends Movable{
 		this.index=index;
 		
 	}
+	
 	public boolean accept(Movable m, Direction dir, double strength){
 		//System.out.println("Box accept fv");
 		// Ha egy Movable el akarja tolni a Boxot, akkor eldonti,
 		// hogy el tud-e tolodni, ezzel ter vissza. */
-		// TODO
+		
 		pusher=m;
 		boolean moved = container.move(this, dir, null, strength);
 		pusher = null;
@@ -34,7 +37,6 @@ public class Box extends Movable{
 			System.out.println("Box lepett");
 		else System.out.println("Box nem lepett");
 		return moved;
-		
 	}
 	
 	

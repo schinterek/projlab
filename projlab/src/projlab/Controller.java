@@ -67,7 +67,7 @@ public void writeTest(){
 		Scanner scanner = new Scanner(System.in);
 		Map map = Map.getInstance();
 		try {
-			File statText = new File("doboz_es_jatekos_lyukba_esik.txt");
+			File statText = new File("switch_felkapcsolasa_switchableholeba_eses.txt");
             FileOutputStream is = new FileOutputStream(statText);
             OutputStreamWriter osw = new OutputStreamWriter(is);    
             Writer w = new BufferedWriter(osw);
