@@ -67,13 +67,13 @@ public void writeTest(){
 		Scanner scanner = new Scanner(System.in);
 		Map map = Map.getInstance();
 		try {
-			File statText = new File("switch_felkapcsolasa_switchableholeba_eses.txt");
+			File statText = new File("ladat_celra_tolunk.txt");
             FileOutputStream is = new FileOutputStream(statText);
             OutputStreamWriter osw = new OutputStreamWriter(is);    
             Writer w = new BufferedWriter(osw);
-		
+            
 		while(scanner.hasNext())
-		{
+		{	
 			String s = scanner.nextLine();
 			if (s.equalsIgnoreCase("end test")) {
 				System.out.println("Teszt vege");
