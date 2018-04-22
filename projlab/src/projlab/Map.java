@@ -84,8 +84,10 @@ public class Map {
 	public void initMap(ItemContainer con)
 	{
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Add meg a neved: ");
+		System.out.print("Elsö jatekos adja meg a nevét: ");
 		String name = sc.nextLine();
+		System.out.print("Masodik jatekos adja meg a nevét: ");
+		String name2 = sc.nextLine();
 		sc.close();
 		Item sizeitem = con.GetMapSize();
 		columns = sizeitem.getX();
@@ -93,6 +95,7 @@ public class Map {
 		cells = new Cell[columns][rows];
 		for(int i = 0; i < con.Count(); i++)
 		{
+		int workers_num=0;
 		Item item = con.getItem(i);
 		switch(item.getType())
 		{
@@ -130,11 +133,22 @@ public class Map {
 			break;
 			
 		case "Worker":
-			Worker worker = new Worker(item.getX(),item.getY(),item.getData());
-			cells[worker.getX()][worker.getY()].accept(worker);
-			Player player = new Player(name);
-			Controller.getInstance().addPlayer(player);
-			player.setWorker(worker);
+			if(workers_num==0) {
+				Worker worker = new Worker(item.getX(),item.getY(),item.getData());
+				cells[worker.getX()][worker.getY()].accept(worker);
+				Player player = new Player(name);
+				Controller.getInstance().addPlayer(player);
+				player.setWorker(worker);
+			}
+			else{
+				Worker worker2 = new Worker(item.getX(),item.getY(),item.getData());
+				cells[worker2.getX()][worker2.getY()].accept(worker2);
+				Player player2 = new Player(name2);
+				Controller.getInstance().addPlayer(player2);
+				player2.setWorker2(worker2);
+			} 
+			
+			workers_num++;
 			
 			break;
 			
