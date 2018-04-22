@@ -67,63 +67,69 @@ public class Game {
             con.Set(d, 16, "Wall", 0);
         }
 
-        con.Set(6, 1, "Wall", 0);
-        con.Set(7, 2, "Wall", 0);
+        con.Set(3, 3, "Wall", 0);
+        con.Set(3, 4, "Wall", 0);
+        con.Set(3, 5, "Wall", 0);
 
-        con.Set(11, 4, "Wall", 0);
-        con.Set(4, 5, "Wall", 0);
-        con.Set(11, 5, "Wall", 0);
+        con.Set(7, 5, "Wall", 0);
+        con.Set(8, 5, "Wall", 0);
+        con.Set(9, 5, "Wall", 0);
 
-        con.Set(3, 6, "Wall", 0);
-        con.Set(2, 7, "Wall", 0);
+        con.Set(13, 3, "Wall", 0);
+        con.Set(13, 4, "Wall", 0);
+        con.Set(13, 5, "Wall", 0);
 
-        con.Set(10, 8, "Wall", 0);
-        con.Set(2, 12, "Wall", 0);
+        con.Set(7, 10, "Wall", 0);
+        con.Set(8, 10, "Wall", 0);
+        con.Set(9, 10, "Wall", 0);
 
-        con.Set(5, 12, "Wall", 0);
-        con.Set(6, 13, "Wall", 0);
-        con.Set(11, 12, "Wall", 0);
-        con.Set(11, 13, "Wall", 0);
+        con.Set(3, 11, "Wall", 0);
+        con.Set(3, 12, "Wall", 0);
+        con.Set(3, 13, "Wall", 0);
 
+        con.Set(13, 11, "Wall", 0);
+        con.Set(13, 12, "Wall", 0);
+        con.Set(13, 13, "Wall", 0);
 
-        con.Set(6, 4, "Hole", 0);
-        con.Set(10, 10, "Hole", 0);
-        con.Set(2, 9, "Hole", 0);
+        con.Set(5, 7, "Hole", 0);
+        con.Set(10, 7, "Hole", 0);
+        con.Set(14, 9, "Hole", 0);
+        con.Set(2, 10, "Hole", 0);
         con.Set(8, 13, "Hole", 0);
-        con.Set(9, 6, "Hole", 0);
-        con.Set(13, 6, "Hole", 0);
-        con.Set(4, 14, "Hole", 0);
 
-        con.Set(4, 8, "Switch", 1);
-        con.Set(8, 4, "Switch", 2);
+        con.Set(8, 4, "Switch", 1);
+        con.Set(2, 7, "Switch", 2);
+        con.Set(10, 9, "Switch", 3);
+        con.Set(7, 12, "Switch", 4);
+        con.Set(10, 14, "Switch", 5);
+
+        con.Set(9, 11, "SwitchableHole", 1);
+        con.Set(14, 7, "SwitchableHole", 2);
+        con.Set(5, 14, "SwitchableHole", 3);
+        con.Set(11, 5, "SwitchableHole", 4);
+        con.Set(5, 9, "SwitchableHole", 5);
+
+        con.Set(4, 15, "BoxDestination", 1);
+        con.Set(6, 15, "BoxDestination", 2);
+        con.Set(8, 15, "BoxDestination", 3);
+        con.Set(10, 15, "BoxDestination", 4);
+        con.Set(12, 15, "BoxDestination", 5);
+        con.Set(10, 2, "BoxDestination", 6);
+        con.Set(5, 2, "BoxDestination", 7);
 
 
-        con.Set(3, 3, "SwitchableHole", 1);
-        con.Set(12, 8, "SwitchableHole", 2);
 
+        con.addItem(new Item("Worker",1,1,10,0));
+        con.addItem(new Item("Worker",15,1,10,0));
 
+        con.addItem(new Item("Box",6,3,4,1));
+        con.addItem(new Item("Box",11,3,3,2));
+        con.addItem(new Item("Box",2,8,4,3));
+        con.addItem(new Item("Box",7,8,6,4));
+        con.addItem(new Item("Box",12,8,6,5));
+        con.addItem(new Item("Box",5,12,4,6));
+        con.addItem(new Item("Box",11,12,5,7));
 
-        con.Set(15, 6, "BoxDestination", 1);
-        con.Set(5, 15, "BoxDestination", 2);
-        con.Set(13, 13, "BoxDestination", 3);
-        con.Set(4, 2, "BoxDestination", 4);
-        con.Set(9, 14, "BoxDestination", 5);
-        con.Set(11, 2, "BoxDestination", 6);
-        con.Set(13, 4, "BoxDestination", 7);
-        con.Set(8, 7, "BoxDestination", 8);
-
-
-        con.addItem(new Item("Worker",6,9,10,0));
-        con.addItem(new Item("Worker",8,9,10,0));
-
-        con.addItem(new Item("Box",3,10,4,1));
-        con.addItem(new Item("Box",9,4,3,2));
-        con.addItem(new Item("Box",2,4,4,3));
-        con.addItem(new Item("Box",11,7,6,4));
-        con.addItem(new Item("Box",6,6,6,5));
-        con.addItem(new Item("Box",13,10,4,6));
-        con.addItem(new Item("Box",8,11,5,7));
-        con.addItem(new Item("Box",2,14,5,8));
 
 
         con.writeItems();
