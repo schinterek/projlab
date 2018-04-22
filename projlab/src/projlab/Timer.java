@@ -13,7 +13,8 @@ public class Timer {
 		// ELinditja a Timer-nek a szalat, amely
 		// idokozonkent meghivja a Controller->step()
 		// metodusat.
-		controller.step();
+		//controller.writeTest();
+		controller.Testing("test1.txt");
 		
 		
 		

@@ -19,7 +19,7 @@ public class Game {
 	public void init(){
 		// Inicializal, letrehozza a szukseges objektumokat.
 		Map map = Map.getInstance();
-		map.initMap(read("map3.txt"));
+		map.initMap(read("map1.txt"));
 		map.printMap();
 		start();
 		// TODO
