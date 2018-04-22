@@ -59,6 +59,9 @@ public class Controller {
 				map.printMap();
 				if( ended ) break;
 			}
+			if(s.equals("b")) {
+				game.gameEnded();
+			}
 				
 		
 		}
