@@ -5,9 +5,6 @@ public class Player {
 	
 	private int points=0;
 	private Worker worker;
-	private Worker worker2;
-	private Player player;
-	private Player player2;
 	private String name;
 	
 	public Player(String n) {
@@ -28,16 +25,16 @@ public class Player {
 		switch(c)
 		{
 		case "w": 
-			worker.move(Direction.UP, player);
+			worker.move(Direction.UP, this);
 			break;
 		case "a": 
-			worker.move(Direction.LEFT, player);
+			worker.move(Direction.LEFT, this);
 			break;
 		case "s": 
-			worker.move(Direction.DOWN, player);
+			worker.move(Direction.DOWN, this);
 			break;
 		case "d": 
-			worker.move(Direction.RIGHT, player);
+			worker.move(Direction.RIGHT, this);
 			break;
 		case "q":
 			worker.spillOil();
@@ -46,22 +43,22 @@ public class Player {
 			worker.spillHoney();
 			break;
 		case "i": 
-			worker2.move(Direction.UP, player2);
+			worker.move(Direction.UP, this);
 			break;
 		case "j": 
-			worker2.move(Direction.LEFT, player2);
+			worker.move(Direction.LEFT, this);
 			break;
 		case "k": 
-			worker2.move(Direction.DOWN, player2);
+			worker.move(Direction.DOWN, this);
 			break;
 		case "l": 
-			worker2.move(Direction.RIGHT, player2);
+			worker.move(Direction.RIGHT, this);
 			break;
 		case "u":
-			worker2.spillOil();
+			worker.spillOil();
 			break;
 		case "o":
-			worker2.spillHoney();
+			worker.spillHoney();
 			break;
 		}
 
@@ -76,14 +73,10 @@ public class Player {
 	public void setWorker(Worker w)
 	{
 		worker = w;
-		w.setPlayer(player);
+		w.setPlayer(this);
 	}
 	
-	public void setWorker2(Worker w2) {
-		worker2 = w2;
-		w2.setPlayer(player2);
-		
-	}
+	
 	
 	public void setPoints(int p) {points = p;}
 	public int getPoints() { return points; }

@@ -21,6 +21,7 @@ public class Game {
 		// Inicializal, letrehozza a szukseges objektumokat.
 		Map map = Map.getInstance();
 		String file="map"+Integer.toString(level)+".txt";
+		System.out.println(level+". szint következik:");
 		map.initMap(read(file));
 		map.printMap();
 		start();
@@ -42,7 +43,6 @@ public class Game {
 		}
 		else {
 			level++;
-			System.out.println(level+". szint következik:");
 			init();
 		}
 		// TODO

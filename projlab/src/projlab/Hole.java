@@ -6,7 +6,7 @@ public class Hole extends Cell{
 	public Hole(int x, int y) {
 		this.x = x;
 		this.y = y;
-		System.out.println("Hole created");
+		//System.out.println("Hole created");
 	}
 	
 	@Override

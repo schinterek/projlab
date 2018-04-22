@@ -9,7 +9,7 @@ public class Floor extends Cell{
 		this.x = x;
 		this.y = y;
 		this.slippery = slippery;
-		System.out.println("Floor created");
+		//System.out.println("Floor created");
 	}
 	
 	protected Movable containedMovable;
