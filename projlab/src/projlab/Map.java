@@ -1,3 +1,4 @@
+
 package projlab;
 
 import java.util.ArrayList;
@@ -199,5 +200,4 @@ public class Map {
 		System.out.println("");
 	}
 	
-}	
-
+} 

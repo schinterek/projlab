@@ -75,8 +75,7 @@ public class Player {
 		worker = w;
 		w.setPlayer(this);
 	}
-	
-	
+
 	
 	public void setPoints(int p) {points = p;}
 	public int getPoints() { return points; }
