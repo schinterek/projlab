@@ -4,7 +4,8 @@ public class Game {
 	
 	private Timer timer = Timer.getInstance();
 	private Controller controller = Controller.getInstance();
-
+	private int level=1;
+	
 	public Game()
 	{
 		write("map1.txt");
@@ -19,7 +20,8 @@ public class Game {
 	public void init(){
 		// Inicializal, letrehozza a szukseges objektumokat.
 		Map map = Map.getInstance();
-		map.initMap(read("map1.txt"));
+		String file="map"+Integer.toString(level)+".txt";
+		map.initMap(read(file));
 		map.printMap();
 		start();
 		// TODO
@@ -33,9 +35,16 @@ public class Game {
 	
 	public void gameEnded(){
 		// A jatek veget kezeli.
-		System.out.println("Vege a jateknak");
-		controller.ended();
-		controller.showEndScores();
+		if(level==10) {
+			System.out.println("Vege a jateknak");
+			controller.ended();
+			controller.showEndScores();
+		}
+		else {
+			level++;
+			System.out.println(level+". szint következik:");
+			init();
+		}
 		// TODO
 	}
 	
@@ -104,10 +113,20 @@ public class Game {
         con.Set(13, 4, "BoxDestination", 7);
         con.Set(8, 7, "BoxDestination", 8);
 <<<<<<< HEAD
+<<<<<<< HEAD
        
         con.addItem(new Item("Worker",1,1,10,0));
         con.addItem(new Item("Worker2",8,8,10,0));
 =======
+=======
+
+<<<<<<< HEAD
+       
+        con.addItem(new Item("Worker",1,1,10,0));
+        con.addItem(new Item("Worker2",8,8,10,0));
+=======
+
+>>>>>>> branch 'master' of https://github.com/schinterek/projlab
         con.addItem(new Item("Worker",1,1,7,0));
         con.addItem(new Item("Worker",9,9,7,0));
         con.addItem(new Item("Box",3,10,4,1));
@@ -119,6 +138,10 @@ public class Game {
         con.addItem(new Item("Box",8,11,5,7));
         con.addItem(new Item("Box",2,14,5,8));
         
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/schinterek/projlab
+=======
+>>>>>>> branch 'master' of https://github.com/schinterek/projlab
 >>>>>>> branch 'master' of https://github.com/schinterek/projlab
         con.addItem(new Item("Box",7,2,6,1));
         con.addItem(new Item("Box",3,2,2,2));
