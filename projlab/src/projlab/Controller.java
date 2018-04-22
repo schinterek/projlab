@@ -67,7 +67,7 @@ public void writeTest(){
 		Scanner scanner = new Scanner(System.in);
 		Map map = Map.getInstance();
 		try {
-			File statText = new File("test1.txt");
+			File statText = new File("doboz_es_jatekos_lyukba_esik.txt");
             FileOutputStream is = new FileOutputStream(statText);
             OutputStreamWriter osw = new OutputStreamWriter(is);    
             Writer w = new BufferedWriter(osw);
@@ -75,11 +75,17 @@ public void writeTest(){
 		while(scanner.hasNext())
 		{
 			String s = scanner.nextLine();
+			if (s.equalsIgnoreCase("end test")) {
+				System.out.println("Teszt vege");
+				w.write(s);
+				break;
+			}
 			if (s.equals("s") || s.equals("w") || s.equals("a") || s.equals("d") || s.equals("q")|| s.equals("e")) {
 				w.write(s+'\n');
 				alivePlayers.get(0).recieveCommand(s);
 				map.printMap();
 				if( ended ) break;
+				
 			}
 				
 		
