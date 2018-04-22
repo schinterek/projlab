@@ -14,9 +14,6 @@ public class Timer {
 		// idokozonkent meghivja a Controller->step()
 		// metodusat.
 		//controller.writeTest();
-		controller.Testing("ladat_celra_tolunk.txt");
-		
-		
-		
+		controller.Testing("workert_falnak_tolnak.txt");
 	}
 }
