@@ -6,10 +6,10 @@ public class ItemContainer {
 	
 	private ArrayList<Item> items = new ArrayList<Item>();
 	
-	public void readItems()
+	public void readItems(String file)
 	{
 		try {
-		FileInputStream fis = new FileInputStream("map7.txt");
+		FileInputStream fis = new FileInputStream(file);
 		ObjectInputStream ois = new ObjectInputStream(fis);
 		items = (ArrayList<Item>) ois.readObject();
 		fis.close();
@@ -29,11 +29,11 @@ public class ItemContainer {
 		items.add(i);
 	}
 	
-	public void writeItems()
+	public void writeItems(String file)
 	{
 		try 
 		{
-			FileOutputStream fos = new FileOutputStream("map7.txt");
+			FileOutputStream fos = new FileOutputStream(file);
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
 			oos.writeObject(items);
 			fos.close();

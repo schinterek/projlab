@@ -7,7 +7,7 @@ public class Game {
 
 	public Game()
 	{
-		write();
+	//	write();
 		controller.setGame(this);
 		BoxCounter.getInstance().setGame(this);
 		System.out.println("Game created");
@@ -19,7 +19,7 @@ public class Game {
 	public void init(){
 		// Inicializal, letrehozza a szukseges objektumokat.
 		Map map = Map.getInstance();
-		map.initMap(read());
+		map.initMap(read("map3.txt"));
 		map.printMap();
 		start();
 		// TODO
@@ -39,7 +39,7 @@ public class Game {
 		// TODO
 	}
 	
-	public void write()
+	public void write(String file)
 	{
         ItemContainer con = new ItemContainer();
         con.addItem(new Item("MapSize",17,17,0,0));
@@ -126,14 +126,14 @@ public class Game {
         con.addItem(new Item("Box",2,14,5,8));
 
 
-        con.writeItems();
+        con.writeItems(file);
 
     }
 	
-	public ItemContainer read()
+	public ItemContainer read(String file)
 	{
 		ItemContainer con = new ItemContainer();
-		con.readItems();
+		con.readItems(file);
 		return con;
 	}
 }
