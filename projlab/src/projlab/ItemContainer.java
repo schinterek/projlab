@@ -44,14 +44,14 @@ public class ItemContainer {
 		}catch(IOException ioe) {}
 	}
 	
-	/*public void listItems()
+	public void listItems()
 	{
 		for (Item item: items)
 		{
 			item.list();
 			System.out.println("");
 		}
-	}*/
+	}
 	
 	public int Count()
 	{
@@ -71,12 +71,24 @@ public class ItemContainer {
 	{
 		for (Item i: items)
 		{
-			if(i.getX()==x && i.getY()==y)
+			if(i.getX()==x && i.getY()==y && i.getType()!= "MapSize")
 			{
 				i.setType(type);
 				i.setIndex(index);
 			}
 		}
+	}
+	
+	public void setWorker(int x, int y, double strength)
+	{
+		for (Item i: items)
+		{
+			if(i.getX()==x && i.getY()==y && i.getType().equals("Worker"))
+			{
+				i.setData(strength);
+			}
+		}
+		
 	}
 
 }

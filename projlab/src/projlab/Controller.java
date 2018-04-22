@@ -72,19 +72,25 @@ public void writeTest(){
 		Scanner scanner = new Scanner(System.in);
 		Map map = Map.getInstance();
 		try {
-			File statText = new File("test1.txt");
+			File statText = new File("nem_sikerult_eltolas.txt");
             FileOutputStream is = new FileOutputStream(statText);
             OutputStreamWriter osw = new OutputStreamWriter(is);    
             Writer w = new BufferedWriter(osw);
-		
+            
 		while(scanner.hasNext())
-		{
+		{	
 			String s = scanner.nextLine();
+			if (s.equalsIgnoreCase("end test")) {
+				System.out.println("Teszt vege");
+				w.write(s);
+				break;
+			}
 			if (s.equals("s") || s.equals("w") || s.equals("a") || s.equals("d") || s.equals("q")|| s.equals("e")) {
 				w.write(s+'\n');
 				alivePlayers.get(0).recieveCommand(s);
 				map.printMap();
 				if( ended ) break;
+				
 			}
 			if (s.equals("k") || s.equals("i") || s.equals("j") || s.equals("l") || s.equals("u")|| s.equals("o")) {
 				w.write(s+'\n');

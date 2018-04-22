@@ -1,7 +1,7 @@
 package projlab;
 
 public class Hole extends Cell{
-	// A luykakat reprezentalja.
+	// A lyukakat reprezentalja.
 
 	public Hole(int x, int y) {
 		this.x = x;

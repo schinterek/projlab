@@ -7,7 +7,7 @@ public class Game {
 
 	public Game()
 	{
-	//	write();
+		write("map1.txt");
 		controller.setGame(this);
 		BoxCounter.getInstance().setGame(this);
 		System.out.println("Game created");
@@ -41,8 +41,8 @@ public class Game {
 	
 	public void write(String file)
 	{
-        ItemContainer con = new ItemContainer();
-        con.addItem(new Item("MapSize",10,10,0,0));
+     /*   ItemContainer con = new ItemContainer();
+        con.addItem(new Item("MapSize",15,15,0,0));
 
         for (int j = 0; j < con.GetMapSize().getY();j++ )
         {
@@ -52,19 +52,19 @@ public class Game {
             }
         }
 
-        for (int a = 0; a<10; a++ ) {
+        for (int a = 0; a<15; a++ ) {
             con.Set(0, a, "Wall", 0);
         }
 
-        for (int b = 0; b<10; b++ ) {
-            con.Set(9, b, "Wall", 0);
+        for (int b = 0; b<15; b++ ) {
+            con.Set(14, b, "Wall", 0);
         }
-        for (int c = 0; c<10; c++ ) {
+        for (int c = 0; c<15; c++ ) {
             con.Set(c, 0, "Wall", 0);
         }
 
-        for (int d = 0; d<10; d++ ) {
-            con.Set(d, 9, "Wall", 0);
+        for (int d = 0; d<15; d++ ) {
+            con.Set(d, 14, "Wall", 0);
         }
         con.Set(7, 3, "BoxDestination", 2);
         con.Set(6, 5, "BoxDestination", 1);
@@ -120,13 +120,34 @@ public class Game {
         con.Set(13, 4, "BoxDestination", 7);
         con.Set(8, 7, "BoxDestination", 8);
 
+<<<<<<< HEAD
        
         con.addItem(new Item("Worker",1,1,10,0));
         con.addItem(new Item("Worker2",8,8,10,0));
+=======
+
+        con.addItem(new Item("Worker",1,1,7,0));
+        con.addItem(new Item("Worker",9,9,7,0));
+
+        con.addItem(new Item("Box",3,10,4,1));
+        con.addItem(new Item("Box",9,4,3,2));
+        con.addItem(new Item("Box",2,4,4,3));
+        con.addItem(new Item("Box",11,7,6,4));
+        con.addItem(new Item("Box",6,6,6,5));
+        con.addItem(new Item("Box",13,10,4,6));
+        con.addItem(new Item("Box",8,11,5,7));
+        con.addItem(new Item("Box",2,14,5,8));
+
+
+        
+>>>>>>> branch 'master' of https://github.com/schinterek/projlab
         con.addItem(new Item("Box",7,2,6,1));
         con.addItem(new Item("Box",3,2,2,2));
-        con.addItem(new Item("Box",2,5,4,3));
-        con.writeItems(file);
+        con.addItem(new Item("Box",2,5,4,3));*/
+		ItemContainer con = read(file);
+		con.setWorker(1, 1, 6);
+		con.writeItems(file);
+		con.listItems();
 
     }
 	
