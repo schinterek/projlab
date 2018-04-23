@@ -11,15 +11,10 @@ public class Timer {
 	private Timer() {}
 	public static Timer getInstance() { return timer;}
 	
-	public void run(){
-		// ELinditja a Timer-nek a szalat, amely
-		// idokozonkent meghivja a Controller->step()
-		// metodusat.
+	public void run(String test){
+		//A jatek inditasaban segito fuggveny
 		//controller.writeTest();
-		System.out.println("Tesztelés(T) vagy Játék (bármelyik másik billentyű) ?");
-		Scanner scanner = new Scanner(System.in);
-		String s = scanner.nextLine();
-		if(s.equals("t") || s.equals("T")) {
+		if(test.equals("t") || test.equals("T")) {
 			controller.Testing("nem_sikerult_eltolas.txt");
 			/*controller.Testing("doboz_es_jatekos_lyukba_esik.txt");
 			controller.Testing("ladat_celra_tolunk.txt");

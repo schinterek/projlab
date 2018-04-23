@@ -13,7 +13,6 @@ public abstract class Movable{
 	}
 	
 	public abstract boolean accept(Movable m, Direction dir, double strength);
-	// Ehhez sem.
 	
 	public void destinationReached() {
 	// Megmondja, hogy a lada elerte-e a megfelelo helyet,
@@ -22,6 +21,7 @@ public abstract class Movable{
 	}
 	
 	public boolean pushWorker(){
+		//Visszaadja , hogy az adott movable eltolhat-e workert
 		return true;
 	}
 	
@@ -33,13 +33,11 @@ public abstract class Movable{
 	}
 	
 	public abstract void Die();
-		// !!!
-		// A lada es a munkas implementalja,
-		// jelezzuk, mikor meghal a munkas vagy
-		// eltunik a doboz.
+		// Az adott movable eltunteteseert felel
 	
 	
 	public boolean wallReached(){
+		//Azt kezeli mikor a movable falhoz er
 		return false;
 	}
 	
@@ -54,6 +52,7 @@ public abstract class Movable{
 	
 	public void addPoint()
 	{
+		//pontozasert felelos fuggveny
 		if(pusher==null) return;
 		pusher.addPoint();
 	}

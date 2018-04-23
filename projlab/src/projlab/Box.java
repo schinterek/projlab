@@ -7,6 +7,7 @@ public class Box extends Movable{
 	private int weight;
 	private int index=0;
 	
+	
 	public void setDestination(BoxDestination d) {
 		boxdestination=d;
 	}
@@ -26,7 +27,6 @@ public class Box extends Movable{
 	}
 	
 	public boolean accept(Movable m, Direction dir, double strength){
-		//System.out.println("Box accept fv");
 		// Ha egy Movable el akarja tolni a Boxot, akkor eldonti,
 		// hogy el tud-e tolodni, ezzel ter vissza. */
 		
@@ -41,9 +41,8 @@ public class Box extends Movable{
 	
 	
 	public boolean setSwitch(){
-	//	System.out.println("Box setSwitch fv");
-		// Ha a Box kapcsolora tolodik, ez a fuggveny kapcsolja
-		// be a kapcsolot.
+		// Ha a Box kapcsolora tolodik, ez a fuggveny igazzal 
+		//ter vissza mivel a box felkapcsolja a switchet
 		
 		// TODO
 		return true;
@@ -64,6 +63,7 @@ public class Box extends Movable{
 
 	public void Die()
 	{
+		//A lada eltunteseert felelos fuggveny
 		BoxCounter.getInstance().boxDisappeared();
 		System.out.println("Box eltunt");
 		

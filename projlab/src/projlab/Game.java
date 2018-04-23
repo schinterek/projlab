@@ -1,5 +1,7 @@
 package projlab;
 
+import java.util.Scanner;
+
 public class Game {
 	
 	private Timer timer = Timer.getInstance();
@@ -22,9 +24,9 @@ public class Game {
 		Map map = Map.getInstance();
 		String file="map"+Integer.toString(level)+".txt";
 		System.out.println(level+". szint következik:");
-		ItemContainer ic = read("map1.txt");
-		ic.listItems();
-		map.initMap(read("map1.txt"));
+		//ItemContainer ic = read("map2.txt");
+		//ic.listItems();
+		map.initMap(read(file));
 		map.printMap();
 		start();
 		// TODO
@@ -32,18 +34,26 @@ public class Game {
 	
 	public void start(){
 		// A jatek inditasahoz szukseges lepeseket vegzi el.
-		timer.run();
+		if(level==1) {
+			System.out.println("Tesztelés(T) vagy Játék (bármelyik másik billentyű) ?");
+			Scanner scanner = new Scanner(System.in);
+			String s = scanner.nextLine();
+			timer.run(s);
+		}
+		else
+			timer.run("");
 		// TODO
 	}
 	
 	public void gameEnded(){
 		// A jatek veget kezeli.
-		if(level==10) {
+		if(level==6) {
 			System.out.println("Vege a jateknak");
-			controller.ended();
 			controller.showEndScores();
+			controller.ended();
 		}
 		else {
+			controller.showEndScores();
 			level++;
 			init();
 		}
@@ -52,6 +62,7 @@ public class Game {
 	
 	public void write(String file)
 	{
+		//Map fajlba irasat vegzi
 
 		ItemContainer con = read(file);
 		con.setWorker(1, 1, 6);
@@ -62,6 +73,7 @@ public class Game {
 	
 	public ItemContainer read(String file)
 	{
+		//Map fajlbol olvasasat vegzi
 		ItemContainer con = new ItemContainer();
 		con.readItems(file);
 		return con;

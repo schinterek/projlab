@@ -1,6 +1,7 @@
 package projlab;
 import java.io.*;
 
+//A Map fajlba irasahoz hasznalt seged osztaly
 public class Item implements Serializable{
 	private String type;
 	private int x;

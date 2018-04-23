@@ -19,19 +19,13 @@ public class Map {
 	private Map() {System.out.println("Map created") ; }
 	
 	public static Map getInstance() { return map;}
-	// A p�ly�t �s a rajta l�v� mez�ket val�s�tja meg.
-	
 	
 	private Cell[][] cells;
 
 	
 	public boolean move(Movable toMove, Direction dir, Player src, double strength){
 	//	System.out.println("Map move fv");
-		// Egy bizonyos Movable egy bizonyos iranyba akar lepni.
-		// Ez a fuggveny mondja meg, hogy arra a cellara
-		// ra lehet-e lepni, es hogy allnak-e mar rajta.
-		
-		// !!!
+		// A cellak kozotti kommunikaciot vegzi
 
 		
 		// TODO
@@ -84,6 +78,7 @@ public class Map {
 	
 	public void initMap(ItemContainer con)
 	{
+		//A map betolteset vegzi
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Elsö jatekos adja meg a nevét: ");
 		String name = sc.nextLine();
@@ -95,7 +90,6 @@ public class Map {
 		cells = new Cell[columns][rows];
 		for(int i = 0; i < con.Count(); i++)
 		{
-		int workers_num=0;
 		Item item = con.getItem(i);
 		switch(item.getType())
 		{
@@ -133,7 +127,7 @@ public class Map {
 			break;
 			
 		case "Worker":
-			if(workers_num==0) {
+			if(Controller.getInstance().numOfAlivePlayers()==0) {
 				Worker worker = new Worker(item.getX(),item.getY(),item.getData());
 				cells[worker.getX()][worker.getY()].accept(worker);
 				Player player = new Player(name);
@@ -147,8 +141,6 @@ public class Map {
 				Controller.getInstance().addPlayer(player2);
 				player2.setWorker(worker2);
 			} 
-			
-			workers_num++;
 			
 			break;
 			
@@ -167,6 +159,7 @@ public class Map {
 	}
 	
 	public void BindItems() {
+		//Osszeparositja az osszetartozo elemeket a mapen
 		for(Box box: boxes) {
 			for(BoxDestination ds: des) {
 				if(ds.getIndex()==box.getIndex())

@@ -9,6 +9,7 @@ public class BoxCounter {
 	private static BoxCounter boxcounter= new BoxCounter();
 	
 	public void increaseBoxes() {
+		//a boxok szamat noveli
 		numOfBoxes++;
 	}
 	
@@ -17,6 +18,9 @@ public class BoxCounter {
 	}
 	
 	public void boxDisappeared(){
+		// Ha egy Box lyukba esett, vagy a helyere kerult,
+		// azaz eltunt, csokkenti a Box-ok szamat 1-gyel.
+		
 		if(numOfBoxes>1){
 			numOfBoxes--;
 			System.out.println(Integer.toString(numOfBoxes));
@@ -26,8 +30,6 @@ public class BoxCounter {
 			System.out.println("Nincs már több doboz");
 			game.gameEnded();
 		}
-		// Ha egy Box lyukba esett, vagy a helyere kerult,
-		// azaz eltunt, csokkenti a Box-ok szamat 1-gyel.
 		
 		// TODO
 	}

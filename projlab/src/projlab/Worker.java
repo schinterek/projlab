@@ -31,7 +31,7 @@ public class Worker extends Movable {
 	
 	public boolean accept(Movable m, Direction dir, double strength){
 		//System.out.println("Worker accept fv");
-		// Ha egy Movable el akarja tolni,  dd
+		// Ha egy Movable el akarja tolni,  
 		// akkor o is megprobal tovabbtolodni.
 		// Azzal ter vissza, hogy ez sikerult-e;
 
@@ -99,6 +99,7 @@ public class Worker extends Movable {
 	
 	public void addPoint()
 	{
+		//pontozasert felelos fuggveny
 		if(pusher==null) 
 			player.addPoint();
 		else
@@ -116,7 +117,7 @@ public class Worker extends Movable {
 	}
 
 	public void Die()
-	{
+	{//A Worker halalaert felel
 		System.out.println("Worker meghalt :( ");
 		this.setX(-1);
 		this.setY(-1);

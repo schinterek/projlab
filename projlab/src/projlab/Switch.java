@@ -12,7 +12,7 @@ public class Switch extends Floor {
 	
 	public Switch(int x, int y, double slippery, int index) {
 		super(x,y,slippery);
-		System.out.println("Switch created");
+		//System.out.println("Switch created");
 		this.index=index;
 	}
 	
@@ -26,7 +26,7 @@ public class Switch extends Floor {
         setContainedMovable(m);
 		if (m.setSwitch()) { 
 			isOpen=true;
-			System.out.println("Switch felkapcsolt");
+			//System.out.println("Switch felkapcsolt");
 			if (switchablehole!=null) {
 			if(switchablehole.getContained()!=null && switchablehole.getContained()!= this.getContained()) { 
 				switchablehole.getContained().Die();
@@ -39,11 +39,12 @@ public class Switch extends Floor {
 	}
 	
 	public void containedLeft(){
-		if (isOpen)
-		System.out.println("Switch lekapcsolt");
-		System.out.println("Switch: Elleptek rolam");
 		// Az isOpen attributumot false-ra allitja.
 		//elment rola a doboz, ezert lekapcsol a switch
+		if (isOpen)
+		//System.out.println("Switch lekapcsolt");
+		//System.out.println("Switch: Elleptek rolam");
+		
 
 		isOpen = false;
 		containedMovable=null;
@@ -61,6 +62,7 @@ public class Switch extends Floor {
 	
 	public void setSwitchableHole(SwitchableHole sh)
 	{
+		//Osszeparositja a switcheket es a holekat
 		//System.out.println("Switch setSwitchableHole fv");
 		switchablehole = sh;
 		sh.setSwitch(this);

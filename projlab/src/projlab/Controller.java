@@ -13,9 +13,6 @@ public class Controller {
 	private ArrayList<Player> deadPlayers = new ArrayList<Player>();
 	private Game game;
 	private boolean ended = false;
-	// !!!
-	// Ez a doksiban ugy volt, hogy siman csak Player a tipusuk,
-	// megcsinaltam ArrayListnek. Megfelel?
 	
 	private Controller()
 	{
@@ -28,6 +25,7 @@ public class Controller {
 		// hogy vege a jateknak.
 	    try
 	    {
+	    	System.out.println(alivePlayers.size());
 	    	alivePlayers.remove(alivePlayers.indexOf(player));
 	    	deadPlayers.add(player);
 	    	if (numOfAlivePlayers()==0) 
@@ -36,11 +34,10 @@ public class Controller {
 			}
 	    }
 	    catch(IndexOutOfBoundsException e) {}
-		// TODO
-	    //kivetel
 	}
 	
 	public void step(){
+		//a karakterek beolvasasaert es a jatekosok lepteteseert felelos fuggveny
 		
 		Scanner scanner = new Scanner(System.in);
 		Map map = Map.getInstance();
@@ -86,6 +83,7 @@ public class Controller {
 	}
 	
 public void writeTest(){
+	//Tesztek generálása
 		
 		Scanner scanner = new Scanner(System.in);
 		Map map = Map.getInstance();
@@ -127,6 +125,7 @@ public void writeTest(){
 	}
 
   public void Testing(String test){
+	  //A teszteles lebonyolitasara szolgalo fuggveny
 	
 	Map map = Map.getInstance();
 	try {
@@ -158,9 +157,6 @@ public void writeTest(){
 	public void showEndScores() {
 		// Kiirja a vegeredmenyt.
 		
-		// !!!
-		// Amit mellesleg nem szamolunk sehol egyelore.
-		
 		// TODO
 		int max = 0;
 		for (Player p: alivePlayers)
@@ -184,6 +180,8 @@ public void writeTest(){
 		{
 			if(p.getPoints()==max) System.out.println("A gyoztes: " + p.getName());
 		}
+		alivePlayers.clear();
+		deadPlayers.clear();
 		
 	}
 	
@@ -193,13 +191,6 @@ public void writeTest(){
 		return alivePlayers.size();
 	}
 	
-	public boolean movableBoxes(){
-		// Ha mar nincs olyan Boxm amit a helyere lehet rakni,
-		// visszater false-sal, egyebkent true.
-		
-		// TODO
-		return true;
-	}
 	
 	public void addPlayer(Player p)
 	{
@@ -207,6 +198,6 @@ public void writeTest(){
 	}
 	
 	public void setGame(Game g) { game = g; }
-	public void ended() { ended = true; }
+	public void ended() { ended = true; } //A jatek veget jelzi
 	
 }

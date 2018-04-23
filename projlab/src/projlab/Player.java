@@ -15,12 +15,7 @@ public class Player {
 		// Kezeli a jatekosok altal lenyomott billentyuket.
 		// Ha az adott jatekoshoz tartozik az inputkent kapott karakter,
 		// reagal ra, masok nem.
-		
-		// !!!
-		// Ezt is el kene tarolni, hogy melyik jatekoshoz
-		// milyen billentyukombinaciok tartoznak.
-		
-		// TODO
+
 		
 		switch(c)
 		{
@@ -66,12 +61,14 @@ public class Player {
 	}
 	
 	public void addPoint(){
+		//pontot ad az adott jatekosnak
 		points++;
-		System.out.println(Integer.toString(points)+" pontja van a jatekosnak");
+		System.out.println(Integer.toString(points)+" pontja van a(z) "+this.name+" nevu jatekosnak");
 	}
 	
 	public void setWorker(Worker w)
 	{
+		//a Workert parositja egy playerhez
 		worker = w;
 		w.setPlayer(this);
 	}

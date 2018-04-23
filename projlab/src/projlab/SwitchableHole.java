@@ -20,7 +20,7 @@ public class SwitchableHole extends Floor {
 	
 	@Override
 	public void accept(Movable m) {
-		
+		//Azt az esetet kezeli amikor erkezik valaki az adott hole-ra
 		if( switches.isOpen()) {
 			System.out.println("SwitchHole: Valaki leesett");
 			m.Die();
@@ -34,6 +34,7 @@ public class SwitchableHole extends Floor {
 	
 	@Override
 	public boolean canArrive(Movable toArrive, Direction dir, Player src, double strength) {
+		//Azt allapitja meg hogy erkezhet-e ra valaki
 		//System.out.println("SwitchableHole canArrive fv");
 		if(switches.isOpen()) {
 			return true;

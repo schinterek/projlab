@@ -22,7 +22,7 @@ public class Floor extends Cell{
 	@Override
 	public boolean canArrive(Movable toArrive, Direction dir, Player src, double strength) 
 	{
-		//System.out.println("Floor canArrive fv");
+		//Azt kezeli a fuggveny, hogy erkezhet-e ra egy adott elem
 		if(getContained()==null) return true;
 		else {
 			
@@ -34,21 +34,20 @@ public class Floor extends Cell{
 	
 	@Override
 	public void containedLeft(){
-		System.out.println("Floor: Elleptek rolam");
 		// Azt kezeli, hogy egy objektum elhagyta az adott cellat.
 		containedMovable = null;
 	}
 	
 	public void accept(Movable m) 
 	{
-		System.out.println("Floor: Ramleptek");
+		//Azt az esetet kezeli amikor valaki ralep erre a padlora
 		setContainedMovable(m);
 	}
 	
 	@Override
 	
 	public boolean move(Movable toMove, Direction dir, Player src, double strength) {
-		//System.out.println("Floor move fv");
+		//Jelzes a map fele hogy a rajta levo movable mozogni akar
 	    Map map = Map.getInstance();
 	    return map.move(toMove, dir, src, strength);
 		
@@ -69,6 +68,7 @@ public class Floor extends Cell{
 	}
 	
 	public void getOily() {
+		//beallitja a slipperyt olajosra
 		if(slippery==2)
 			slippery=1;
 		else
@@ -77,6 +77,7 @@ public class Floor extends Cell{
 	}
 	
 	public void getHoneyed() {
+		//beallitja a slipperyt mezesre
 		if(slippery==0.5)
 			slippery=1;
 		else

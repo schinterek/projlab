@@ -2,6 +2,7 @@ package projlab;
 import java.util.*;
 import java.io.*;
 
+//A Map fajlba irasahoz hasznalt seged osztaly
 public class ItemContainer {
 	
 	private ArrayList<Item> items = new ArrayList<Item>();
