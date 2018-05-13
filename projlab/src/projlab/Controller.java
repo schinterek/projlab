@@ -36,49 +36,48 @@ public class Controller {
 	    catch(IndexOutOfBoundsException e) {}
 	}
 	
-	public void step(){
+	public void step(String kar){
 		//a karakterek beolvasasaert es a jatekosok lepteteseert felelos fuggveny
 		
 		Scanner scanner = new Scanner(System.in);
 		Map map = Map.getInstance();
 		
 		
-		while(scanner.hasNext())
+		/*while(scanner.hasNext())
 		{
-			String s = scanner.nextLine();
+			String s = scanner.nextLine();*/
 			if (numOfAlivePlayers()==2)
 			{
-			if (s.equals("s") || s.equals("w") || s.equals("a") || s.equals("d") || s.equals("q")|| s.equals("e")) {
-				alivePlayers.get(0).recieveCommand(s);
+			if (kar.equals("s") || kar.equals("w") || kar.equals("a") || kar.equals("d") || kar.equals("q")|| kar.equals("e")) {
+				alivePlayers.get(0).recieveCommand(kar);
 				map.printMap();
-				if( ended ) break;
+				//if( ended ) break;
 			}
-			if (s.equals("k") || s.equals("i") || s.equals("j") || s.equals("l") || s.equals("u")|| s.equals("o")) {
+			if (kar.equals("k") || kar.equals("i") || kar.equals("j") || kar.equals("l") || kar.equals("u")|| kar.equals("o")) {
 				
-				alivePlayers.get(1).recieveCommand(s);
+				alivePlayers.get(1).recieveCommand(kar);
 				map.printMap();
-				if( ended ) break;
+				//if( ended ) break;
 			}
-			if(s.equals("b")) {
+			if(kar.equals("b")) {
 				game.gameEnded();
 			}
 				
 			}
 			else
 			{
-				if (s.equals("s") || s.equals("w") || s.equals("a") || s.equals("d") || s.equals("q")|| s.equals("e") || s.equals("k") || s.equals("i") || s.equals("j") || s.equals("l") || s.equals("u")|| s.equals("o")) 
+				if (kar.equals("s") || kar.equals("w") || kar.equals("a") || kar.equals("d") || kar.equals("q")|| kar.equals("e") || kar.equals("k") || kar.equals("i") || kar.equals("j") || kar.equals("l") || kar.equals("u")|| kar.equals("o")) 
 				{
-					alivePlayers.get(0).recieveCommand(s);
+					alivePlayers.get(0).recieveCommand(kar);
 					map.printMap();
-					if( ended ) break;
+					//if( ended ) break;
 				}
-				if(s.equals("b")) {
+				if(kar.equals("b")) {
 					game.gameEnded();
 				}
 			}
-		}
 		
-		scanner.close();
+		//scanner.close();
 		// TODO
 	}
 	

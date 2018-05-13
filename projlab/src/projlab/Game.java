@@ -28,16 +28,17 @@ public class Game {
 		//ic.listItems();
 		map.initMap(read(file));
 		map.printMap();
-		start();
+		//start();
 		// TODO
 	}
 	
 	public void start(){
 		// A jatek inditasahoz szukseges lepeseket vegzi el.
 		if(level==1) {
-			System.out.println("Tesztelés(T) vagy Játék (bármelyik másik billentyű) ?");
+			String s="";
+			/*System.out.println("Tesztelés(T) vagy Játék (bármelyik másik billentyű) ?");
 			Scanner scanner = new Scanner(System.in);
-			String s = scanner.nextLine();
+			String s = scanner.nextLine();*/
 			timer.run(s);
 		}
 		else
@@ -57,6 +58,7 @@ public class Game {
 			level++;
 			init();
 		}
+		BoxCounter.getInstance().reset();
 		// TODO
 	}
 	

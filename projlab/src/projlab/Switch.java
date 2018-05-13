@@ -68,11 +68,11 @@ public class Switch extends Floor {
 		sh.setSwitch(this);
 	}
 	
-	public void print()
+	public String print()
 	{
 		if (containedMovable==null)
-		  System.out.print(" S");
-		else containedMovable.print();
+		  return "images\\switch.png";
+		else return containedMovable.print();
 	}
 
 }

@@ -17,9 +17,9 @@ public class Wall extends Cell {
 		
 	}
 	
-	public void print()
+	public String print()
 	{
-		System.out.print(" X");
+		return "images\\wall.png";
 	}
 
 }

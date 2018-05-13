@@ -73,7 +73,7 @@ public abstract class Movable{
 		this.y = y;
 	}
 	
-	public abstract void print();
+	public abstract String print();
 	public abstract int getWeight();
 	
 }

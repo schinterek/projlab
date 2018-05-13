@@ -85,11 +85,11 @@ public class Floor extends Cell{
 		System.out.println("A Slippery = "+Double.toString(slippery) );
 	}
 	
-	public void print()
+	public String print()
 	{
 		if (containedMovable==null)
-		  System.out.print(" -");
-		else containedMovable.print();
+		  return "images\\floor.png";
+		else return containedMovable.print();
 	}
    
 	

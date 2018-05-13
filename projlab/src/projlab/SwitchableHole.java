@@ -52,13 +52,14 @@ public class SwitchableHole extends Floor {
 		}
 	}
 	
-	public void print()
+	public String print()
 	{
 		if (switches.isOpen()==true)
-		  System.out.print(" T");
+		  return "images\\hole.png";
 		else if(containedMovable==null)
-			System.out.print(" -");
-		else containedMovable.print();
+			return "images\\floor.png";
+		else
+			return containedMovable.print();
 	}
 	
 	public void setSwitch(Switch sw)

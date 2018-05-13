@@ -74,8 +74,8 @@ public class Box extends Movable{
 		return weight;
 	}
 	
-	public void print()
+	public String print()
 	{
-		System.out.print(" B");
+		return "images\\box.png";
 	}
 }

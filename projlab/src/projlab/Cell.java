@@ -39,6 +39,6 @@ public abstract class Cell {
 	}
 	public void setContainedMovable(Movable m) {}
 	
-	public abstract void print();
+	public abstract String print();
 	
 }

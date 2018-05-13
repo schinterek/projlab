@@ -33,6 +33,10 @@ public class BoxCounter {
 		
 		// TODO
 	}
+	public void reset() {
+		numOfBoxes=0;
+		
+	}
 	
 	public static BoxCounter getInstance() { return boxcounter;}
 

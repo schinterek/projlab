@@ -21,11 +21,11 @@ public class BoxDestination extends Floor {
 		m.destinationReached();
 	}
 	
-	public void print()
+	public String print()
 	{
 		if (containedMovable==null)
-		  System.out.print(" D");
-		else containedMovable.print();
+		  return "images\\boxdes.png";
+		else return containedMovable.print();
 	}
 	
 

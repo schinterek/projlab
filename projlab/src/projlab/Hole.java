@@ -17,9 +17,9 @@ public class Hole extends Cell{
 		m.Die();
 	}
 	
-	public void print()
+	public String print()
 	{
-		System.out.print(" H");
+		return "images\\hole.png";
 	}
 	
 }

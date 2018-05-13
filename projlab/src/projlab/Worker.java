@@ -132,9 +132,9 @@ public class Worker extends Movable {
 	{
 		return strength;
 	}
-	public void print()
+	public String print()
 	{
-		System.out.print(" W");
+		return "images\\worker.png";
 	}
 	public int getWeight() { return 1; }
 	public void setPlayer(Player p)

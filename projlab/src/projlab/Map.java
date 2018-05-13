@@ -2,6 +2,7 @@
 package projlab;
 
 import java.util.ArrayList;
+
 import java.util.*;
 
 // <<singleton>>
@@ -21,6 +22,8 @@ public class Map {
 	public static Map getInstance() { return map;}
 	
 	private Cell[][] cells;
+	
+	private Window window;
 
 	
 	public boolean move(Movable toMove, Direction dir, Player src, double strength){
@@ -79,11 +82,6 @@ public class Map {
 	public void initMap(ItemContainer con)
 	{
 		//A map betolteset vegzi
-		Scanner sc = new Scanner(System.in);
-		System.out.print("Elsö jatekos adja meg a nevét: ");
-		String name = sc.nextLine();
-		System.out.print("Masodik jatekos adja meg a nevét: ");
-		String name2 = sc.nextLine();
 		Item sizeitem = con.GetMapSize();
 		columns = sizeitem.getX();
 		rows = sizeitem.getY();
@@ -130,14 +128,14 @@ public class Map {
 			if(Controller.getInstance().numOfAlivePlayers()==0) {
 				Worker worker = new Worker(item.getX(),item.getY(),item.getData());
 				cells[worker.getX()][worker.getY()].accept(worker);
-				Player player = new Player(name);
+				Player player = new Player("1. Jatekos");
 				Controller.getInstance().addPlayer(player);
 				player.setWorker(worker);
 			}
 			else{
 				Worker worker2 = new Worker(item.getX(),item.getY(),item.getData());
 				cells[worker2.getX()][worker2.getY()].accept(worker2);
-				Player player2 = new Player(name2);
+				Player player2 = new Player("2.Jatekos");
 				Controller.getInstance().addPlayer(player2);
 				player2.setWorker(worker2);
 			} 
@@ -156,6 +154,11 @@ public class Map {
 	  }
 		BindItems();
 		System.out.println("Map created") ;
+		if(window!=null) {
+			window.setVisible(false);
+			window.close();
+		}
+		window = new Window(con.GetMapSize().getX(), cells);
 	}
 	
 	public void BindItems() {
@@ -179,7 +182,9 @@ public class Map {
 	
 	public void printMap()
 	{
-		System.out.println("");
+		window.refreshMap(cells);
+		window.setVisible(true);
+		/*System.out.println("");
 		for (int j = 0; j < rows; j++)
 		{
 			System.out.print(" ");
@@ -190,7 +195,7 @@ public class Map {
 			System.out.println("");
 			
 		}
-		System.out.println("");
+		System.out.println("");*/
 	}
 	
 } 
