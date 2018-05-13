@@ -17,13 +17,12 @@ import javax.swing.JTextField;
 
 
 import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 
-public class Window extends JFrame {
+public class Window extends JFrame implements KeyListener {
 	int frameWidth = 800, frameHeight = 800;
 	JTextField foszoveg;
 	public JButton gomb1;
@@ -64,9 +63,9 @@ public class Window extends JFrame {
 		foszoveg.setEditable(false);
 		foszoveg.setBackground(Color.WHITE);
 		foszoveg.setHorizontalAlignment(JTextField.CENTER);
-		gomb1 = new JButton("Jatek kezelese");
-		//gomb1.addActionListener(new jatekButtonActionListener());
-		gomb2 = new JButton("Jatek feladasa");
+		gomb1 = new JButton("Jatek iranyitasa");
+		gomb1.addActionListener(new informationButtonActionListener());
+		gomb2 = new JButton("Szint feladasa");
 		//gomb3 = new JButton();
 		gomb2.addActionListener(new vegeButtonActionListener());
 		gomb1.setPreferredSize(new Dimension(250, 30));
@@ -110,20 +109,45 @@ public class Window extends JFrame {
 		lastPanel.setBackground(new java.awt.Color(255, 255, 204));
 		this.add(lastPanel);
 		lastPanel.add(new JLabel("A jatekmezo"));
+		this.addKeyListener(this);
 		//botPanel.add(new JLabel("Ellenf�l j�t�kmez�"));
-		playerPanel.addKeyListener(new Keylist());
-		botPanel.addKeyListener(new Keylist());
-		lastPanel.addKeyListener(new Keylist());
-		topPanel.addKeyListener(new Keylist());
-		this.addKeyListener(new Keylist());
-		
-		
+		this.setFocusable(true);
+		this.requestFocusInWindow();
+	}
+	public void out(String s) {
+		foszoveg.setText(s);
+	}
+	
+	public void request()
+	{
+		this.requestFocusInWindow();
 	}
 	class vegeButtonActionListener implements ActionListener {
 
 		public void actionPerformed(ActionEvent ae){
+			if(!Controller.getInstance().isEnded())
 			Controller.getInstance().step("b");
 		
+	}
+	}
+	
+	
+	class informationButtonActionListener implements ActionListener {
+
+		public void actionPerformed(ActionEvent ae){
+			JFrame info = new JFrame("Iranyitas");
+			info.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+			info.setSize(200, 350);
+			info.setResizable(false);
+			JLabel f = new JLabel();
+			JPanel panel2= new JPanel();
+			panel2.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
+			panel2.setPreferredSize(new Dimension(300,400));
+			f.setText("<html>Játékosok irányítása:<br/><br/> 1. játékos (piros):<br/> fel - Fel<br/> le - Le<br/> balra - Bal<br/> jobbra - Jobb<br/> mézet letesz - Ctrl<br/> olajat letesz - Shift<br/><br/> 2. játékos (zöld):<br/> fel - W <br/>le - S <br/>balra - A<br/> jobbra - D<br/> mézet letesz - Q<br/> olajat letesz - E</html>");
+			info.add(panel2);
+			panel2.add(f);
+			info.setVisible(true);
+			request();
 	}
 	}
 	
@@ -131,6 +155,7 @@ public class Window extends JFrame {
 		for (int i = 0; i < buttons.length; i++) {
 			for (int j = 0; j < buttons[i].length; j++) {
 				buttons[i][j] = new JButton();
+				buttons[i][j].setFocusable(false);
 				buttons[i][j].setPreferredSize(new Dimension(35,35));
 				buttons[i][j].setIcon(new ImageIcon(cells[i][j].print()));
 				//buttons[i][j].addActionListener(new mezoButtonActionListener());
@@ -147,9 +172,33 @@ public class Window extends JFrame {
 			}
 		}
 	}
+	
 	public void close() {
 	}
-public class Keylist implements KeyListener{
+	
+	
+	@Override
+	public void keyPressed(KeyEvent e) {
+		if(!Controller.getInstance().isEnded())
+		{
+		String key=KeyEvent.getKeyText(e.getKeyCode());
+		Controller.getInstance().step(key);}
+		//System.out.println("mukodik");
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		
+	}
+	
+	
+/*public class Keylist implements KeyListener{
 	
 	Keylist() {
 		super();
@@ -170,7 +219,9 @@ public class Keylist implements KeyListener{
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		
+		String key=KeyEvent.getKeyText(e.getKeyCode());
+		Controller.getInstance().step(key);
+		System.out.println("mukodik");
 	}
-}
+}*/
 }

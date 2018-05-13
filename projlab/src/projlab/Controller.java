@@ -13,7 +13,7 @@ public class Controller {
 	private ArrayList<Player> deadPlayers = new ArrayList<Player>();
 	private Game game;
 	private boolean ended = false;
-	
+	int max = 0;
 	private Controller()
 	{
 	}
@@ -25,7 +25,7 @@ public class Controller {
 		// hogy vege a jateknak.
 	    try
 	    {
-	    	System.out.println(alivePlayers.size());
+	    	//System.out.println(alivePlayers.size());
 	    	alivePlayers.remove(alivePlayers.indexOf(player));
 	    	deadPlayers.add(player);
 	    	if (numOfAlivePlayers()==0) 
@@ -39,21 +39,16 @@ public class Controller {
 	public void step(String kar){
 		//a karakterek beolvasasaert es a jatekosok lepteteseert felelos fuggveny
 		
-		Scanner scanner = new Scanner(System.in);
 		Map map = Map.getInstance();
 		
-		
-		/*while(scanner.hasNext())
-		{
-			String s = scanner.nextLine();*/
 			if (numOfAlivePlayers()==2)
 			{
-			if (kar.equals("s") || kar.equals("w") || kar.equals("a") || kar.equals("d") || kar.equals("q")|| kar.equals("e")) {
+			if (kar.equals("Right") || kar.equals("Up") || kar.equals("Down") || kar.equals("Left") || kar.equals("Shift")|| kar.equals("Ctrl")) {
 				alivePlayers.get(0).recieveCommand(kar);
 				map.printMap();
 				//if( ended ) break;
 			}
-			if (kar.equals("k") || kar.equals("i") || kar.equals("j") || kar.equals("l") || kar.equals("u")|| kar.equals("o")) {
+			if (kar.equals("W") || kar.equals("A") || kar.equals("S") || kar.equals("D") || kar.equals("Q")|| kar.equals("E")) {
 				
 				alivePlayers.get(1).recieveCommand(kar);
 				map.printMap();
@@ -66,7 +61,7 @@ public class Controller {
 			}
 			else
 			{
-				if (kar.equals("s") || kar.equals("w") || kar.equals("a") || kar.equals("d") || kar.equals("q")|| kar.equals("e") || kar.equals("k") || kar.equals("i") || kar.equals("j") || kar.equals("l") || kar.equals("u")|| kar.equals("o")) 
+				if (kar.equals("S") || kar.equals("W") || kar.equals("A") || kar.equals("D") || kar.equals("Q")|| kar.equals("E") || kar.equals("Right") || kar.equals("Left") || kar.equals("Up") || kar.equals("Down") || kar.equals("Shift")|| kar.equals("Ctrl")) 
 				{
 					alivePlayers.get(0).recieveCommand(kar);
 					map.printMap();
@@ -157,7 +152,7 @@ public void writeTest(){
 		// Kiirja a vegeredmenyt.
 		
 		// TODO
-		int max = 0;
+		max = 0;
 		for (Player p: alivePlayers)
 		{
 			p.printPoints();
@@ -172,12 +167,12 @@ public void writeTest(){
 		
 		for (Player p: alivePlayers)
 		{
-			if(p.getPoints()==max) System.out.println("A gyoztes: " + p.getName());
+			if(p.getPoints()==max) Map.getInstance().out("A gyoztes: " + p.getName());
 		}
 		
 		for (Player p: deadPlayers)
 		{
-			if(p.getPoints()==max) System.out.println("A gyoztes: " + p.getName());
+			if(p.getPoints()==max) Map.getInstance().out("A gyoztes: " + p.getName());
 		}
 		alivePlayers.clear();
 		deadPlayers.clear();
@@ -198,5 +193,36 @@ public void writeTest(){
 	
 	public void setGame(Game g) { game = g; }
 	public void ended() { ended = true; } //A jatek veget jelzi
+	
+	String getScores()
+	{
+		for (Player p: alivePlayers)
+		{
+			if(p.getPoints()>max) max = p.getPoints();
+		}
+		
+		for (Player p: deadPlayers)
+		{
+			if(p.getPoints()>max) max = p.getPoints();
+		}
+		
+		String score = "<html>Győztes(ek):<br/>";
+		for (Player p: alivePlayers)
+		{
+			if(p.getPoints()==max) score+= p.getName()+": "+ p.getPoints() + "<br/>" ;
+		}
+		
+		for (Player p: deadPlayers)
+		{
+			if(p.getPoints()==max) score+= p.getName()+": "+ p.getPoints() + "<br/>" ;
+		}
+		score+="</html>";
+		alivePlayers.clear();
+		deadPlayers.clear();
+		
+		return score;
+	}
+	
+	public boolean isEnded() { return ended;}
 	
 }

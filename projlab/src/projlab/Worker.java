@@ -14,7 +14,7 @@ public class Worker extends Movable {
 	
 	public Worker(int x, int y, double strength)
 	{
-		System.out.println("Worker created");
+		//System.out.println("Worker created");
 		this.x = x;
 		this.y = y;
 		this.strength = strength;
@@ -43,9 +43,9 @@ public class Worker extends Movable {
 			boolean canarrive = container.move(this, dir, player, strength);
 			pusher= null;
 		   setPushed(false);
-		  if(canarrive==true)
-			  System.out.println("Worker lepett");
-		  else System.out.println("Worker nem lepett");
+		  //if(canarrive==true)
+			  //System.out.println("Worker lepett");
+		  //else System.out.println("Worker nem lepett");
 		   return  canarrive;
 		}
 
@@ -60,7 +60,7 @@ public class Worker extends Movable {
 	}
 	
 	public void move(Direction dir, Player src){
-		System.out.println("Munkas lépett");
+		//System.out.println("Munkas lépett");
 		// Mozgatjuk a munkast az adott iranyba.
 		//System.out.println("Worker move fv");
 		this.getContainer().move(this, dir, src, strength);
@@ -81,7 +81,7 @@ public class Worker extends Movable {
 
 		if (isPushed == true)
 		{
-			System.out.println("Munkas meghalt mert falnak toltak");
+			//System.out.println("Munkas meghalt mert falnak toltak");
 			container.containedLeft();
 			Die();
 			return true;
@@ -89,7 +89,7 @@ public class Worker extends Movable {
 			
 		}
 		else {
-			System.out.println("Falnak mentel!");
+			//System.out.println("Falnak mentel!");
 
 		return false; }
 
@@ -118,7 +118,7 @@ public class Worker extends Movable {
 
 	public void Die()
 	{//A Worker halalaert felel
-		System.out.println("Worker meghalt :( ");
+		//System.out.println("Worker meghalt :( ");
 		this.setX(-1);
 		this.setY(-1);
 		Controller cont = Controller.getInstance();
@@ -134,7 +134,24 @@ public class Worker extends Movable {
 	}
 	public String print()
 	{
-		return "images\\worker.png";
+		if(player.getName().equals("1. Jatekos")) {
+			if(container.slippery==0.5)
+				return "images\\workero.png";
+			else
+				if(container.slippery==2)
+					return "images\\workerh.png";
+				else
+					 return "images\\worker.png";
+		}
+		else {
+			if(container.slippery==0.5)
+				return "images\\workero2.png";
+			else
+				if(container.slippery==2)
+					return "images\\workerh2.png";
+				else
+					 return "images\\worker2.png";
+		}
 	}
 	public int getWeight() { return 1; }
 	public void setPlayer(Player p)

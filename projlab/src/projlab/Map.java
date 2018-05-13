@@ -17,7 +17,8 @@ public class Map {
 	private ArrayList<Box> boxes= new ArrayList<Box>();
 	private ArrayList<BoxDestination> des = new ArrayList<BoxDestination>();
 
-	private Map() {System.out.println("Map created") ; }
+	private Map() {//System.out.println("Map created") ; 
+	}
 	
 	public static Map getInstance() { return map;}
 	
@@ -38,7 +39,8 @@ public class Map {
 			 switch(dir)
 			 {
 			 case RIGHT:
-				 if (actX+1>=columns)   { System.out.println("Palya szele!"); break; }
+				 if (actX+1>=columns)   {// System.out.println("Palya szele!");
+				 break; }
 				 else 
 				 {
 					boolean canarrive = cells[actX+1][actY].canArrive(toMove, dir, src, strength);
@@ -48,7 +50,8 @@ public class Map {
 				 }
 			
 			 case DOWN:
-				 if (actY+1>=rows)   { System.out.println("Palya szele!"); break; }
+				 if (actY+1>=rows)   { //System.out.println("Palya szele!");
+				 break; }
 				 else 
 				 {
 					 boolean canarrive = cells[actX][actY+1].canArrive(toMove, dir, src, strength);
@@ -56,7 +59,8 @@ public class Map {
 						return canarrive;
 				 }
 			 case LEFT:
-				 if (actX-1<0)   { System.out.println("Palya szele!"); break; }
+				 if (actX-1<0)   { //System.out.println("Palya szele!");
+				 break; }
 				 else 
 				 {
 					 boolean canarrive = cells[actX-1][actY].canArrive(toMove, dir, src, strength);
@@ -64,7 +68,8 @@ public class Map {
 						return canarrive;
 				 }
 			 case UP:
-				 if (actY-1<0)   { System.out.println("Palya szele!"); break; }
+				 if (actY-1<0)   { //System.out.println("Palya szele!"); 
+				 break; }
 				 else 
 				 {
 					 boolean canarrive = cells[actX][actY-1].canArrive(toMove, dir, src, strength);
@@ -135,7 +140,7 @@ public class Map {
 			else{
 				Worker worker2 = new Worker(item.getX(),item.getY(),item.getData());
 				cells[worker2.getX()][worker2.getY()].accept(worker2);
-				Player player2 = new Player("2.Jatekos");
+				Player player2 = new Player("2. Jatekos");
 				Controller.getInstance().addPlayer(player2);
 				player2.setWorker(worker2);
 			} 
@@ -153,7 +158,7 @@ public class Map {
 		}
 	  }
 		BindItems();
-		System.out.println("Map created") ;
+		//System.out.println("Map created") ;
 		if(window!=null) {
 			window.setVisible(false);
 			window.close();
@@ -178,7 +183,11 @@ public class Map {
 		}
 	}
 	
-
+	public void out(String s) {
+		
+		if(window!=null)
+			window.out(s);
+	}
 	
 	public void printMap()
 	{

@@ -18,7 +18,7 @@ public class Box extends Movable{
 	
 	public Box(int x, int y, int weight, int index)
 	{
-		System.out.println("Box created");
+		//System.out.println("Box created");
 		this.x = x;
 		this.y = y;
 		this.weight = weight;
@@ -33,9 +33,9 @@ public class Box extends Movable{
 		pusher=m;
 		boolean moved = container.move(this, dir, null, strength);
 		pusher = null;
-		if (moved==true)
+		/*if (moved==true)
 			System.out.println("Box lepett");
-		else System.out.println("Box nem lepett");
+		else System.out.println("Box nem lepett");*/
 		return moved;
 	}
 	
@@ -53,7 +53,7 @@ public class Box extends Movable{
 		// Ha a lada eleri a szamara kijelolt pozociot a padlon,
 		// eltunik.
 		if(container==boxdestination) {
-			System.out.println("Box: Celba ertem");
+			//System.out.println("Box: Celba ertem");
 			addPoint();
 	        container.containedLeft();
 			Die();
@@ -65,7 +65,7 @@ public class Box extends Movable{
 	{
 		//A lada eltunteseert felelos fuggveny
 		BoxCounter.getInstance().boxDisappeared();
-		System.out.println("Box eltunt");
+		//System.out.println("Box eltunt");
 		
 	}
 	

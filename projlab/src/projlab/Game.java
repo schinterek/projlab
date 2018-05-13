@@ -1,6 +1,12 @@
 package projlab;
 
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.util.Scanner;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class Game {
 	
@@ -13,7 +19,7 @@ public class Game {
 		//write("map1.txt");
 		controller.setGame(this);
 		BoxCounter.getInstance().setGame(this);
-		System.out.println("Game created");
+		//System.out.println("Game created");
 	}
 
 	// A jatek menetet iranyitja.
@@ -23,11 +29,11 @@ public class Game {
 		// Inicializal, letrehozza a szukseges objektumokat.
 		Map map = Map.getInstance();
 		String file="map"+Integer.toString(level)+".txt";
-		System.out.println(level+". szint következik:");
 		//ItemContainer ic = read("map2.txt");
 		//ic.listItems();
 		map.initMap(read(file));
 		map.printMap();
+		Map.getInstance().out(level+". szint");
 		//start();
 		// TODO
 	}
@@ -48,17 +54,36 @@ public class Game {
 	
 	public void gameEnded(){
 		// A jatek veget kezeli.
-		if(level==6) {
-			System.out.println("Vege a jateknak");
-			controller.showEndScores();
+		BoxCounter.getInstance().reset();
+		
+		if(Controller.getInstance().isEnded())
+		{
+			Map.getInstance().out("Vege a jateknak");
+			return;
+		}
+		
+		if(level>=5) {
+			Map.getInstance().out("Vege a jateknak");
+			JFrame score = new JFrame("Eredmények");
+			score.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+			score.setSize(200, 350);
+			score.setResizable(false);
+			JLabel f = new JLabel();
+			JPanel panel2= new JPanel();
+			panel2.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
+			panel2.setPreferredSize(new Dimension(300,400));
+			f.setText(controller.getScores());
+			score.add(panel2);
+			panel2.add(f);
+			score.setVisible(true);
 			controller.ended();
+			gameEnded();
 		}
 		else {
 			controller.showEndScores();
 			level++;
 			init();
 		}
-		BoxCounter.getInstance().reset();
 		// TODO
 	}
 	

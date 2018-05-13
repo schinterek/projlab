@@ -23,11 +23,11 @@ public class BoxCounter {
 		
 		if(numOfBoxes>1){
 			numOfBoxes--;
-			System.out.println(Integer.toString(numOfBoxes));
+			//System.out.println(Integer.toString(numOfBoxes));
 		}
 		else {
 			numOfBoxes--;
-			System.out.println("Nincs már több doboz");
+			Map.getInstance().out("Nincs már több doboz");
 			game.gameEnded();
 		}
 		

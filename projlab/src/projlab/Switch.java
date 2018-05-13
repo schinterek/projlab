@@ -21,7 +21,7 @@ public class Switch extends Floor {
 	}
 	
 	public void accept(Movable m) {
-		System.out.println("Switch: Ramleptek");
+		//System.out.println("Switch: Ramleptek");
 		// Meghivja a Movable setSwitch metodusat.
         setContainedMovable(m);
 		if (m.setSwitch()) { 

@@ -27,7 +27,8 @@ public class Floor extends Cell{
 		else {
 			
 			strength -= slippery*(double)containedMovable.getWeight();
-			if(strength < 0) {  System.out.println("Nem tudsz eltolni!");   return false;   }
+			if(strength < 0) {  //System.out.println("Nem tudsz eltolni!");
+			return false;   }
 			else return getContained().accept(toArrive,dir,strength);
 			}
 	}
@@ -73,7 +74,7 @@ public class Floor extends Cell{
 			slippery=1;
 		else
 			slippery=0.5;
-		System.out.println("A Slippery = "+Double.toString(slippery) );
+		//System.out.println("A Slippery = "+Double.toString(slippery) );
 	}
 	
 	public void getHoneyed() {
@@ -82,13 +83,21 @@ public class Floor extends Cell{
 			slippery=1;
 		else
 			slippery=2;
-		System.out.println("A Slippery = "+Double.toString(slippery) );
+		//System.out.println("A Slippery = "+Double.toString(slippery) );
 	}
 	
 	public String print()
 	{
-		if (containedMovable==null)
-		  return "images\\floor.png";
+		if (containedMovable==null) {
+			if(slippery==0.5)
+				return "images\\oil.png";
+			else
+				if(slippery==2)
+					return "images\\honey.png";
+				else
+					return "images\\floor.png";
+		  
+		}
 		else return containedMovable.print();
 	}
    

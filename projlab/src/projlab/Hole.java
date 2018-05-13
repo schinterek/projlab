@@ -13,7 +13,7 @@ public class Hole extends Cell{
 	public void accept(Movable m) {		
 		// Meghivja a raerkezo Movable-nek a Die() fuggvenyet.
 		// TODO
-		System.out.println("Hole: Valaki leesett");
+		//System.out.println("Hole: Valaki leesett");
 		m.Die();
 	}
 	

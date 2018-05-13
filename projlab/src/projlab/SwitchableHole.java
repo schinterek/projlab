@@ -22,11 +22,11 @@ public class SwitchableHole extends Floor {
 	public void accept(Movable m) {
 		//Azt az esetet kezeli amikor erkezik valaki az adott hole-ra
 		if( switches.isOpen()) {
-			System.out.println("SwitchHole: Valaki leesett");
+			//System.out.println("SwitchHole: Valaki leesett");
 			m.Die();
 		}
 		else {
-			System.out.println("SwitchHole: Ramleptek");
+			//System.out.println("SwitchHole: Ramleptek");
 			this.setContainedMovable(m);
 		}
 		

@@ -19,40 +19,40 @@ public class Player {
 		
 		switch(c)
 		{
-		case "w": 
+		case "W": 
 			worker.move(Direction.UP, this);
 			break;
-		case "a": 
+		case "A": 
 			worker.move(Direction.LEFT, this);
 			break;
-		case "s": 
+		case "S": 
 			worker.move(Direction.DOWN, this);
 			break;
-		case "d": 
+		case "D": 
 			worker.move(Direction.RIGHT, this);
 			break;
-		case "q":
+		case "Q":
 			worker.spillOil();
 			break;
-		case "e":
+		case "E":
 			worker.spillHoney();
 			break;
-		case "i": 
+		case "Up": 
 			worker.move(Direction.UP, this);
 			break;
-		case "j": 
+		case "Left": 
 			worker.move(Direction.LEFT, this);
 			break;
-		case "k": 
+		case "Down": 
 			worker.move(Direction.DOWN, this);
 			break;
-		case "l": 
+		case "Right": 
 			worker.move(Direction.RIGHT, this);
 			break;
-		case "u":
+		case "Shift":
 			worker.spillOil();
 			break;
-		case "o":
+		case "Ctrl":
 			worker.spillHoney();
 			break;
 		}
@@ -63,7 +63,7 @@ public class Player {
 	public void addPoint(){
 		//pontot ad az adott jatekosnak
 		points++;
-		System.out.println(Integer.toString(points)+" pontja van a(z) "+this.name+" nevu jatekosnak");
+		Map.getInstance().out(Integer.toString(points)+" pontja van a(z) "+this.name+" nevu jatekosnak");
 	}
 	
 	public void setWorker(Worker w)
@@ -78,7 +78,7 @@ public class Player {
 	public int getPoints() { return points; }
 	public void printPoints()
 	{
-		System.out.println(name + ": " + Integer.toString(points));
+		Map.getInstance().out(name + ": " + Integer.toString(points));
 	}
 	public String getName() { return name; }
 
