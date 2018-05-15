@@ -5,7 +5,9 @@ public class Main {
 	{
 		
 		Game game = new Game();
+		PlayerWindow pw = new PlayerWindow();
 		game.init();
+		pw.toFront();
 		
 	}
 	

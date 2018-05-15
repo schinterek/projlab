@@ -72,7 +72,7 @@ public class Game {
 			JPanel panel2= new JPanel();
 			panel2.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
 			panel2.setPreferredSize(new Dimension(300,400));
-			f.setText(controller.getScores());
+			f.setText(controller.showEndScores());
 			score.add(panel2);
 			panel2.add(f);
 			score.setVisible(true);
@@ -80,7 +80,7 @@ public class Game {
 			gameEnded();
 		}
 		else {
-			controller.showEndScores();
+			controller.reset();
 			level++;
 			init();
 		}

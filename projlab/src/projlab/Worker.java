@@ -7,17 +7,19 @@ public class Worker extends Movable {
 	private Player player;
 	private boolean isPushed;
 	private double strength;
+	private int index;
 	// Azt mondja meg, hogy ladaval toltuk-e arrebb.
 	// Csak addig igaz, mig meg nem erkezett arra a cellara,
 	// amivel a ladara toltuk.
 	// Megerkezes utan hamisra allitodik.
 	
-	public Worker(int x, int y, double strength)
+	public Worker(int x, int y, double strength, int i)
 	{
 		//System.out.println("Worker created");
 		this.x = x;
 		this.y = y;
 		this.strength = strength;
+		index = i;
 	}
 	
 	public void spillOil() {//Azt a Floor olajossa teszi amin eppen all a worker
@@ -134,7 +136,7 @@ public class Worker extends Movable {
 	}
 	public String print()
 	{
-		if(player.getName().equals("1. Jatekos")) {
+		if(index == 0) {
 			if(container.slippery==0.5)
 				return "images\\workero.png";
 			else

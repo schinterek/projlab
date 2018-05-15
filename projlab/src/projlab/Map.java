@@ -16,6 +16,7 @@ public class Map {
 	private ArrayList<SwitchableHole> traps = new ArrayList<SwitchableHole>();
 	private ArrayList<Box> boxes= new ArrayList<Box>();
 	private ArrayList<BoxDestination> des = new ArrayList<BoxDestination>();
+	private ArrayList<Worker> workers = new ArrayList<Worker>();
 
 	private Map() {//System.out.println("Map created") ; 
 	}
@@ -24,7 +25,7 @@ public class Map {
 	
 	private Cell[][] cells;
 	
-	private Window window;
+	public Window window;
 
 	
 	public boolean move(Movable toMove, Direction dir, Player src, double strength){
@@ -87,6 +88,8 @@ public class Map {
 	public void initMap(ItemContainer con)
 	{
 		//A map betolteset vegzi
+		int index = 0;
+		workers.clear();
 		Item sizeitem = con.GetMapSize();
 		columns = sizeitem.getX();
 		rows = sizeitem.getY();
@@ -130,12 +133,9 @@ public class Map {
 			break;
 			
 		case "Worker":
-			if(Controller.getInstance().numOfAlivePlayers()==0) {
+		/*	if(Controller.getInstance().numOfAlivePlayers()==0) {
 				Worker worker = new Worker(item.getX(),item.getY(),item.getData());
 				cells[worker.getX()][worker.getY()].accept(worker);
-				Player player = new Player("1. Jatekos");
-				Controller.getInstance().addPlayer(player);
-				player.setWorker(worker);
 			}
 			else{
 				Worker worker2 = new Worker(item.getX(),item.getY(),item.getData());
@@ -143,7 +143,17 @@ public class Map {
 				Player player2 = new Player("2. Jatekos");
 				Controller.getInstance().addPlayer(player2);
 				player2.setWorker(worker2);
-			} 
+			} */
+			
+			Worker worker = new Worker(item.getX(),item.getY(),item.getData(),index);
+			cells[worker.getX()][worker.getY()].accept(worker);
+			workers.add(worker);
+			
+			if(Controller.getInstance().numOfAlivePlayers() == 2)
+			{
+				Controller.getInstance().getPlayer(index).setWorker(worker);
+			}
+			index++;
 			
 			break;
 			
@@ -164,6 +174,7 @@ public class Map {
 			window.close();
 		}
 		window = new Window(con.GetMapSize().getX(), cells);
+		
 	}
 	
 	public void BindItems() {
@@ -192,7 +203,7 @@ public class Map {
 	public void printMap()
 	{
 		window.refreshMap(cells);
-		window.setVisible(true);
+		//window.setVisible(true);
 		/*System.out.println("");
 		for (int j = 0; j < rows; j++)
 		{
@@ -205,6 +216,11 @@ public class Map {
 			
 		}
 		System.out.println("");*/
+	}
+	
+	public Worker getWorker(int i)
+	{
+		return workers.get(i);
 	}
 	
 } 

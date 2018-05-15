@@ -83,7 +83,7 @@ public class Window extends JFrame implements KeyListener {
 		JPanel botPanel = new JPanel();
 		if(mapsize==12) {
 			botPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 30, 12));
-			botPanel.setPreferredSize(new Dimension(frameWidth,450));
+			botPanel.setPreferredSize(new Dimension(frameWidth,430));
 			}
 		else {
 			botPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 30, 15));
@@ -110,9 +110,9 @@ public class Window extends JFrame implements KeyListener {
 		this.add(lastPanel);
 		lastPanel.add(new JLabel("A jatekmezo"));
 		this.addKeyListener(this);
-		//botPanel.add(new JLabel("Ellenf�l j�t�kmez�"));
 		this.setFocusable(true);
-		this.requestFocusInWindow();
+		//botPanel.add(new JLabel("Ellenf�l j�t�kmez�"));
+		//this.requestFocusInWindow();
 	}
 	public void out(String s) {
 		foszoveg.setText(s);
@@ -143,7 +143,7 @@ public class Window extends JFrame implements KeyListener {
 			JPanel panel2= new JPanel();
 			panel2.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
 			panel2.setPreferredSize(new Dimension(300,400));
-			f.setText("<html>Játékosok irányítása:<br/><br/> 1. játékos (piros):<br/> fel - Fel<br/> le - Le<br/> balra - Bal<br/> jobbra - Jobb<br/> mézet letesz - Ctrl<br/> olajat letesz - Shift<br/><br/> 2. játékos (zöld):<br/> fel - W <br/>le - S <br/>balra - A<br/> jobbra - D<br/> mézet letesz - Q<br/> olajat letesz - E</html>");
+			f.setText("<html>Játékosok irányítása:<br/><br/> 1. játékos (piros):<br/> fel - Fel<br/> le - Le<br/> balra - Bal<br/> jobbra - Jobb<br/> mézet letesz - Ctrl<br/> olajat letesz - Shift<br/><br/> 2. játékos (zöld):<br/> fel - W <br/>le - S <br/>balra - A<br/> jobbra - D<br/> mézet letesz - E<br/> olajat letesz - Q</html>");
 			info.add(panel2);
 			panel2.add(f);
 			info.setVisible(true);

@@ -9,6 +9,8 @@ import java.util.*;
 public class Controller {
 	// A jatekosokat kezeli.
 	private static Controller controller = new Controller();
+	private Player player1;
+	private Player player2;
 	private ArrayList<Player> alivePlayers = new ArrayList<Player>();
 	private ArrayList<Player> deadPlayers = new ArrayList<Player>();
 	private Game game;
@@ -41,36 +43,51 @@ public class Controller {
 		
 		Map map = Map.getInstance();
 		
-			if (numOfAlivePlayers()==2)
-			{
-			if (kar.equals("Right") || kar.equals("Up") || kar.equals("Down") || kar.equals("Left") || kar.equals("Shift")|| kar.equals("Ctrl")) {
-				alivePlayers.get(0).recieveCommand(kar);
-				map.printMap();
-				//if( ended ) break;
-			}
-			if (kar.equals("W") || kar.equals("A") || kar.equals("S") || kar.equals("D") || kar.equals("Q")|| kar.equals("E")) {
-				
-				alivePlayers.get(1).recieveCommand(kar);
-				map.printMap();
-				//if( ended ) break;
-			}
+		
 			if(kar.equals("b")) {
 				game.gameEnded();
 			}
-				
-			}
-			else
+			
+			if(this.isEnded()) return;
+			
+			if (this.numOfAlivePlayers()==2)
 			{
-				if (kar.equals("S") || kar.equals("W") || kar.equals("A") || kar.equals("D") || kar.equals("Q")|| kar.equals("E") || kar.equals("Right") || kar.equals("Left") || kar.equals("Up") || kar.equals("Down") || kar.equals("Shift")|| kar.equals("Ctrl")) 
+			
+				if (alivePlayers.get(0).hasControl(kar))
+					{
+					alivePlayers.get(0).recieveCommand(kar);
+					if (this.isEnded()) return;
+					}
+						if (this.numOfAlivePlayers()==2) 
+						{
+							if (alivePlayers.get(1).hasControl(kar))
+							{
+							alivePlayers.get(1).recieveCommand(kar);
+							if (this.isEnded()) return;
+							}
+						}
+						else 
+						{
+							if (alivePlayers.get(0).hasControl(kar))
+							{
+							alivePlayers.get(0).recieveCommand(kar);
+							if (this.isEnded()) return;
+							}
+						}
+				
+			
+			}else
+			{
+				if (alivePlayers.get(0).hasControl(kar))
 				{
 					alivePlayers.get(0).recieveCommand(kar);
-					map.printMap();
-					//if( ended ) break;
-				}
-				if(kar.equals("b")) {
-					game.gameEnded();
-				}
+					if (this.isEnded()) return;
+				}	
 			}
+				
+		map.printMap();
+		map.window.setVisible(true);
+			
 		
 		//scanner.close();
 		// TODO
@@ -148,54 +165,10 @@ public void writeTest(){
 	// TODO
 }
 	
-	public void showEndScores() {
+	public String showEndScores() {
 		// Kiirja a vegeredmenyt.
 		
 		// TODO
-		max = 0;
-		for (Player p: alivePlayers)
-		{
-			p.printPoints();
-			if(p.getPoints()>max) max = p.getPoints();
-		}
-		
-		for (Player p: deadPlayers)
-		{
-			p.printPoints();
-			if(p.getPoints()>max) max = p.getPoints();
-		}
-		
-		for (Player p: alivePlayers)
-		{
-			if(p.getPoints()==max) Map.getInstance().out("A gyoztes: " + p.getName());
-		}
-		
-		for (Player p: deadPlayers)
-		{
-			if(p.getPoints()==max) Map.getInstance().out("A gyoztes: " + p.getName());
-		}
-		alivePlayers.clear();
-		deadPlayers.clear();
-		
-	}
-	
-	public int numOfAlivePlayers(){
-		// A meg jatekban levo jatekosok szamat adja vissza.
-		
-		return alivePlayers.size();
-	}
-	
-	
-	public void addPlayer(Player p)
-	{
-		alivePlayers.add(p);
-	}
-	
-	public void setGame(Game g) { game = g; }
-	public void ended() { ended = true; } //A jatek veget jelzi
-	
-	String getScores()
-	{
 		for (Player p: alivePlayers)
 		{
 			if(p.getPoints()>max) max = p.getPoints();
@@ -221,8 +194,43 @@ public void writeTest(){
 		deadPlayers.clear();
 		
 		return score;
+		
+		
 	}
 	
+	public int numOfAlivePlayers(){
+		// A meg jatekban levo jatekosok szamat adja vissza.
+		
+		return alivePlayers.size();
+	}
+	
+	
+	public void addPlayer(Player p)
+	{
+		alivePlayers.add(p);
+		if (this.numOfAlivePlayers()==1) player1 = p;
+		else player2 = p;
+	}
+	
+	public void setGame(Game g) { game = g; }
+	public void ended() { ended = true; } //A jatek veget jelzi
+	
+	
+	
 	public boolean isEnded() { return ended;}
+	
+	public void reset()
+	{
+		alivePlayers.clear();
+		deadPlayers.clear();
+		alivePlayers.add(player1);
+		alivePlayers.add(player2);
+	}
+	
+	public Player getPlayer(int i)
+	{
+		return alivePlayers.get(i);
+	}
+	
 	
 }
